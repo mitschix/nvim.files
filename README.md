@@ -37,6 +37,36 @@ List of used plugins
 +  'flrnprz/plastic.vim'
 +  'ThePrimeagen/vim-be-good'
 
+## Custom statusline
+Since there is a lot going on in my custom statusline and it is not a plugin, there is a short explanation of my status line:
+
+![Left Side](img/l_statusline.png "left side of the status line")
+
+On the left side of me status line it will show:
++ The current and maximum tab number, if there is another tab open
++ The modification if in a git repository (+ line added, ~ line modified, - line deleted) it will only show them if there are changes
++ The current branch if in a git repository
++ An inidcator for current mode with different colors
++ The absolut path and filename
++ A flag that shows if help page \[Help\]
++ A flag that indicates Read-Only files \[RO\]
++ A flag that indicates if modified \[+\]; \[-\] if modifiable is off
+
+
+![Right Side](img/r_statusline.png "right side of the status line")
+
+On the right side it will show:
++ A flag for paste mode if enabled
++ A flag for spelling including spellang if enabled 
++ The word count indicator with counted words - if word count is activated
++ The filetype
++ The current line / maximum lines
++ The current column
++ A % inidicator of the position in the file,
+
+
+The  **^** symbols everywhere are there because of the split and indicates your current focused window. Have not found a way to get rid of those. ._.
+
 ## Custom keymappings
 used \<leader\> is ","
 
