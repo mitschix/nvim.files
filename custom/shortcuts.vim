@@ -91,10 +91,6 @@ map <silent> <leader>L :set list!<CR>
 inoremap <leader>D <C-r>=strftime('%F')<CR>
 nnoremap <leader>D i<C-r>=strftime('%F')<CR><Esc>
 
-" insert docstring
-inoremap <leader>i <C-r>=system('cat ~/.docstring')<CR>
-nnoremap <leader>i i<C-r>=system('cat ~/.docstring')<CR><Esc>
-
 " toggle wordcount functions
 nnoremap <leader>wc :call WordCount()<CR>
 nnoremap <leader>wu :call WordCount('update')<CR>
