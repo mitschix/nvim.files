@@ -84,3 +84,14 @@ used \<leader\> is ","
 | \<Leader\>gf | :YcmCompleter FixIt\<CR\>   | nnoremap | Use YCM Fix it command                                       |
 | )            | <Plug>(GitGutterNextHunk)   | nmap     | Jump to the next hunk of GitGutter                           |
 | (            | <Plug>(GitGutterPrevHunk)   | nmap     | Jump to the previous hunk of GitGutter                       |
+
+
+## Read Repos to find my gems
++ [BrodieRobertson](https://github.com/BrodieRobertson/dotfiles/blob/master/config/nvim/init.vim)
++ [DamianConway](https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup/blob/cbe1fb5b5505e17bd7709669168c367903d94cd4/.vimrc#L1)
++ [nickjj](https://github.com/nickjj/dotfiles/blob/master/.vimrc)
++ [junegunn](https://github.com/junegunn/dotfiles/blob/master/vimrc)
++ [christoomey](https://github.com/christoomey/dotfiles/tree/master/vim/rcfiles)
++ [godlygeek](https://github.com/godlygeek/vim-files/blob/master/.vimrc)
++ [vbrandl](https://github.com/vbrandl/dotfiles/blob/master/editors/vim/vimrc)
++ ... there have been far more, unfortunately I have not saved all of them. ):
