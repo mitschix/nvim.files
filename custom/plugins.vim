@@ -52,7 +52,10 @@ map <silent> <F4> :call ToggleGStatus()<CR>
 
 " YCM settings
 let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-set completeopt-=preview
+" disable default blacklist only for markdown - yet
+let g:ycm_filetype_blacklist={'notes': 1, 'netrw': 1, 'unite': 1,
+            \'pandoc': 1, 'tagbar': 1, 'leaderf': 1, 'vimwiki': 1, 'text': 1,
+            \'infolog': 1, 'mail': 1}
 nnoremap <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <Leader>gf :YcmCompleter FixIt<CR>
 
