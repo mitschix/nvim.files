@@ -1,6 +1,41 @@
 # nvim.files
 Outsourced dotfiles repository for nvim + plug.vim. Fully automated setup.
 
+This setup is fully automated. It has all needed directorys already setup and will install the rest during first execution.
+
+To use my setup just download this repository and create a link to your nvim config folder
+
+```
+git clone https://github.com/mitschix/nvim.files
+ln -s /path/to/repo/nvim.files ~/.config/nvim
+```
+
+Your will need to have neovim + python and clipboard support already setup.
+
+
+Below is a list of my shortcuts for quicker review, to see if there is somethink interesting for you, since it took me a long time to comb through a lot of repositorys to find some gems. Hopefully this will speed up your journey. (:
+
+There is a list of some repository I have saved, but there are far more out there.
+
+## Used Plugins
+List of used plugins
+
++  'mcchrish/nnn.vim'
++  'junegunn/goyo.vim'
++  'vimwiki/vimwiki'
++  'mbbill/undotree'
++  'junegunn/fzf', {'do': './install --all' }
++  'junegunn/fzf.vim'
++  'tpope/vim-fugitive'
++  'airblade/vim-gitgutter'
++  'ycm-core/YouCompleteMe', {'do': './install.py'}
++  'sirver/ultisnips' | Plug 'honza/vim-snippets'
++  'PotatoesMaster/i3-vim-syntax'
++  'tomtom/tcomment_vim'
++  'dhruvasagar/vim-table-mode'
++  'dbeniamine/cheat.sh-vim'
++  'flrnprz/plastic.vim'
++  'ThePrimeagen/vim-be-good'
 
 ## Custom keymappings
 used \<leader\> is ","
