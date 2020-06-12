@@ -49,8 +49,6 @@ call plug#end()
 map <silent> <f2> :NnnPicker '%:p:h'<CR>
 " plugin shortcuts
 map <silent> <F4> :call ToggleGStatus()<CR>
-" Toggle goyo plugin
-map <silent> <Leader>G :Goyo<CR>
 
 " YCM settings
 let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']

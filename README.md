@@ -25,8 +25,8 @@ used \<leader\> is ","
 | \<C-l\>          | \<C-x\>\<C-l\>                              | imap     | More convienient way to complete lines with ^X               |
 | H                | ^                                           | nmap     | Jump to beginning of line                                    |
 | L                | $                                           | nmap     | Jump to end of line                                          |
-| j                | gj                                          | nnoremap | Move on visual line down (even when wrapped)                 |
-| k                | gk                                          | nnoremap | Move on visual line up (even when wrapped)                   |
+| j                | gj                                          | nnoremap | Move one visual line down (even when wrapped)                 |
+| k                | gk                                          | nnoremap | Move one visual line up (even when wrapped)                   |
 | gj               | j                                           | nnoremap | Use default behaviour of j                                   |
 | gk               | k                                           | nnoremap | Use default behaviour of k                                   |
 | jk               | \<Esc\>                                     | inoremap | Escape mode                                                  |
@@ -61,14 +61,26 @@ used \<leader\> is ","
 | {\<CR\>          | {\<CR\>}\<Esc\>O                            | imap     | add closing } line breaks and enters surrounding above       |
 | {;\<CR\>         | {\<CR\>};\<Esc\>O                           | imap     | add closing }; line breaks and enters surrounding above      |
 | \<leader\>W      | :%s/\s\+$//\<CR\>:let @/=''\<CR\>           | nmap     | Strip trailing white spaces                                  |
-| \<C-b\>          | Buffers\<CR\>                               | nmap     | Use fzf Buffers command to switch buffer                     |
-| \<C-f\>          | :Files\<CR\>                                | nmap     | Use fzf Files command to switch file                         |
 | \<leader\>cp     | :set paste / :set nopaste                   | nnoremap | Toggle paste mode                                            |
 | \<leader\>cl     | :set list / :set nolist                     | nnoremap | Toggle list option - show tabs and spaces (listchars)        |
 | \<leader\>cn     | :set number! relativenumber!                | nnoremap | Toggle line all numbers                                      |
 | \<leader\>cw     | :set wrap / :set nowrap                     | nnoremap | Toggle wrap                                                  |
-| \<leader\>cg     | :Goyo                                       | nnoremap | Toggle Goyo - Plugin to Focus editor and disable distraction |
 | \<leader\>ch     | :set hlsearch / :set nohlsearch             | nnoremap | Toggle highlight of searched word                            |
 | \<leader\>cm     | :set mouse= / :set mouse=a                  | nnoremap | Toggle mouse support                                         |
 | \<leader\>ct     | :set textwidgt=\<nr\>                       | nnoremap | Change textwidth to given number                             |
 | \<leader\>cb     | :set background=light / set background=dark | nnoremap | Toggle background to dark/light                              |
+
+
+## Custom Key Mapping for Plugins
+
+| Mapping      | Command                     | Mode     | Description                                                  |
+|--------------|-----------------------------|----------|--------------------------------------------------------------|
+| \<C-b\>      | Buffers\<CR\>               | nmap     | Use fzf Buffers command to switch buffer                     |
+| \<C-f\>      | :Files\<CR\>                | nmap     | Use fzf Files command to switch file                         |
+| \<leader\>cg | :Goyo                       | nnoremap | Toggle Goyo - Plugin to Focus editor and disable distraction |
+| \<f2\>       | :NnnPicker '%:p:h'\<CR\>    | map      | Toggle NNN File explorer                                     |
+| \<f4\>       | :call ToggleGStatus()\<CR\> | map      | Toggle git status                                            |
+| \<leader\>gd | :YcmCompleter GoTo\<CR\>    | nnoremap | Use YCM go to definition command                             |
+| \<Leader\>gf | :YcmCompleter FixIt\<CR\>   | nnoremap | Use YCM Fix it command                                       |
+| )            | <Plug>(GitGutterNextHunk)   | nmap     | Jump to the next hunk of GitGutter                           |
+| (            | <Plug>(GitGutterPrevHunk)   | nmap     | Jump to the previous hunk of GitGutter                       |
