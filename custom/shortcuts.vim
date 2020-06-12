@@ -9,6 +9,7 @@ let mapleader = ","
 " edit nvim config
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+map <leader><Enter> :w<CR>
 
 if has('nvim')
     tmap <Esc> <C-\><C-n>
@@ -63,7 +64,6 @@ map <f6> :setlocal spell! spelllang=de_at<CR>
 map <f7> :setlocal spell! spelllang=en_us<CR>
 
 " Open new line below and above current line
-map <leader><Enter> o<esc>
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 
@@ -83,9 +83,6 @@ nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
-
-" Toggle whitespace characters
-map <silent> <leader>L :set list!<CR>
 
 " insert date
 inoremap <leader>D <C-r>=strftime('%F')<CR>
@@ -129,6 +126,7 @@ endfunction
 
 
 call s:map_change_option('p', 'paste')
+call s:map_change_option('l', 'list')
 call s:map_change_option('n', 'number')
 call s:map_change_option('w', 'wrap')
 call s:map_change_option('g', 'Goyo')

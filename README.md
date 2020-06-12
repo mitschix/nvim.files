@@ -2,73 +2,73 @@
 Outsourced dotfiles repository for nvim + plug.vim. Fully automated setup.
 
 
-## Custom keymappings 
+## Custom keymappings
 used \<leader\> is ","
 
-| Mapping          | Command                                     | Mode     | Description |
-|------------------|---------------------------------------------|----------|-------------|
-| \<leader\>sv     | :so $MYVIMRC\<CR\>                          | nmap     |             |
-| \<leader\>ev     | \<C-w\>\<C-v\>\<C-l\>:e $MYVIMRC\<CR\>      | nmap     |             |
-| \<C-Tab\>        | :tabnext\<CR\>                              | map      |             |
-| \<S-Tab\>        | :bNext\<CR\>                                | nmap     |             |
-| \<Tab\>          | :bnext\<CR\>                                | nmap     |             |
-| w!!              | %!sudo tee > /dev/null %                    | cmap     |             |
-| \<leader\>p      | "+p                                         | noremap  |             |
-| \<leader\>y      | "+y                                         | vnoremap |             |
-| \<leader\>y      | V"+y                                        | nnoremap |             |
-| \<leader\>Y      | "+y                                         | nnoremap |             |
-| Y                | y$                                          | nnoremap |             |
-| p                | pgvy                                        | xnoremap |             |
-| \<C-f\>          | \<C-x\>\<C-f\>                              | imap     |             |
-| \<C-]\>          | \<C-x\>\<C-]\>                              | imap     |             |
-| \<C-l\>          | \<C-x\>\<C-l\>                              | imap     |             |
-| H                | ^                                           | nmap     |             |
-| L                | $                                           | nmap     |             |
-| j                | gj                                          | nnoremap |             |
-| k                | gk                                          | nnoremap |             |
-| gj               | j                                           | nnoremap |             |
-| gk               | k                                           | nnoremap |             |
-| jk               | \<Esc\>                                     | inoremap |             |
-| jk               | \<Esc\>                                     | xnoremap |             |
-| jk               | \<C-c\>                                     | cnoremap |             |
-| \<f3\>           | :call ToggleNetrw()\<CR\>                   | map      |             |
-| \<f6\>           | :setlocal spell! spelllang=de_at\<CR\>      | map      |             |
-| \<f7\>           | :setlocal spell! spelllang=en_us\<CR\>      | map      |             |
-| \<leader\>\<CR\> | o\<Esc\>                                    | map      |             |
-| \<leader\>o      | o\<Esc\>                                    | nnoremap |             |
-| \<leader\>O      | O\<Esc\>                                    | nnoremap |             |
-| \<C-j\>          | \<C-W\>j                                    | map      |             |
-| \<C-k\>          | \<C-W\>k                                    | map      |             |
-| \<C-h\>          | \<C-W\>h                                    | map      |             |
-| \<C-l\>          | \<C-W\>l                                    | map      |             |
-| \<C-h\>          | \<C-o\>h                                    | inoremap |             |
-| \<C-l\>          | \<C-o\>a                                    | inoremap |             |
-| \<C-j\>          | \<C-o\>j                                    | inoremap |             |
-| \<C-k\>          | \<C-o\>k                                    | inoremap |             |
-| \<Up\>           | :resize +2\<CR\>                            | nnoremap |             |
-| \<Down\>         | :resize -2\<CR\>                            | nnoremap |             |
-| \<Left\>         | :vertical resize +2\<CR\>                   | nnoremap |             |
-| \<Righ\t>        | :vertical resize -2\<CR\>                   | nnoremap |             |
-| \<leader\>L      | :set list!\<CR\>                            | map      |             |
-| \<leader\>D      | \<C-r>=strftime('%F')\<CR\>                 | inoremap |             |
-| \<leader\>D      | i\<C-r>=strftime('%F')\<CR\>\<Esc\>         | nnoremap |             |
-| \<leader\>wc     | :call WordCount()\<CR\>                     | nnoremap |             |
-| \<leader\>wu     | :call WordCount('update')\<CR\>             | nnoremap |             |
-| "\<tab\>         | ""\<Left\>                                  | imap     |             |
-| '\<tab\>         | ''\<Left\>                                  | imap     |             |
-| (\<tab\>         | ()\<Left\>                                  | imap     |             |
-| [\<tab\>         | []\<Left\>                                  | imap     |             |
-| {\<tab\>         | {}\<Left\>                                  | imap     |             |
-| \<leader\>W      | :%s/\s\+$//\<CR\>:let @/=''\<CR\>           | nmap     |             |
-| {\<CR\>          | {\<CR\>}\<Esc\>O                            | imap     |             |
-| {;\<CR\>         | {\<CR\>};\<Esc\>O                           | imap     |             |
-| \<C-b\>          | Buffers\<CR\>                               | nmap     |             |
-| \<C-f\>          | :Files\<CR\>                                | nmap     |             |
-| \<leader\>cp     | :set paste / :set nopaste                   | nnoremap |             |
-| \<leader\>cn     | :set number! relativenumber!                | nnoremap |             |
-| \<leader\>cw     | :set wrap / :set nowrap                     | nnoremap |             |
-| \<leader\>cg     | :Goyo                                       | nnoremap |             |
-| \<leader\>ch     | :set hlsearch / :set nohlsearch             | nnoremap |             |
-| \<leader\>cm     | :set mouse= / :set mouse=a                  | nnoremap |             |
-| \<leader\>ct     | :set textwidgt=\<nr\>                       | nnoremap |             |
-| \<leader\>cb     | :set background=light / set background=dark | nnoremap |             |
+| Mapping          | Command                                     | Mode     | Description                                                  |
+|------------------|---------------------------------------------|----------|--------------------------------------------------------------|
+| \<leader\>sv     | :so $MYVIMRC\<CR\>                          | nmap     | Source config file                                           |
+| \<leader\>ev     | \<C-w\>\<C-v\>\<C-l\>:e $MYVIMRC\<CR\>      | nmap     | Edit config file in vertical split                           |
+| \<leader\>\<CR\> | :w\<CR\>                                    | map      | Quick save                                                   |
+| \<C-Tab\>        | :tabnext\<CR\>                              | map      | Switch to next Tab                                           |
+| \<S-Tab\>        | :bNext\<CR\>                                | nmap     | Switch to next Buffer                                        |
+| \<Tab\>          | :bnext\<CR\>                                | nmap     | Switch to next Buffer                                        |
+| :w!!             | %!sudo tee > /dev/null %                    | cmap     | Write read only file                                         |
+| \<leader\>p      | "+p                                         | noremap  | Paste from system clipboard                                  |
+| \<leader\>y      | "+y                                         | vnoremap | Yank visual selection to system clipboard                    |
+| \<leader\>y      | V"+y                                        | nnoremap | Yank whole line to system clipboard                          |
+| \<leader\>Y      | "+y                                         | nnoremap | Enable Yank mode for next command (e.g w[ord])               |
+| Y                | y$                                          | nnoremap | Yank till the rest of the line                               |
+| p                | pgvy                                        | xnoremap | Do not overwrite Buffer with paste                           |
+| \<C-f\>          | \<C-x\>\<C-f\>                              | imap     | More convienient way to complete files with ^X               |
+| \<C-]\>          | \<C-x\>\<C-]\>                              | imap     | More convienient way to complete tags with ^X                |
+| \<C-l\>          | \<C-x\>\<C-l\>                              | imap     | More convienient way to complete lines with ^X               |
+| H                | ^                                           | nmap     | Jump to beginning of line                                    |
+| L                | $                                           | nmap     | Jump to end of line                                          |
+| j                | gj                                          | nnoremap | Move on visual line down (even when wrapped)                 |
+| k                | gk                                          | nnoremap | Move on visual line up (even when wrapped)                   |
+| gj               | j                                           | nnoremap | Use default behaviour of j                                   |
+| gk               | k                                           | nnoremap | Use default behaviour of k                                   |
+| jk               | \<Esc\>                                     | inoremap | Escape mode                                                  |
+| jk               | \<Esc\>                                     | xnoremap | Escape mode                                                  |
+| jk               | \<C-c\>                                     | cnoremap | Escape mode                                                  |
+| \<f3\>           | :call ToggleNetrw()\<CR\>                   | map      | Toggle Netrw file explorer                                   |
+| \<f6\>           | :setlocal spell! spelllang=de_at\<CR\>      | map      | Toggle spelling in german                                    |
+| \<f7\>           | :setlocal spell! spelllang=en_us\<CR\>      | map      | Toggle spelling in english                                   |
+| \<leader\>o      | o\<Esc\>                                    | nnoremap | Add line below curser                                        |
+| \<leader\>O      | O\<Esc\>                                    | nnoremap | Add line above curser                                        |
+| \<C-j\>          | \<C-W\>j                                    | map      | Remap window movement to not need \<C-W\> prepanded          |
+| \<C-k\>          | \<C-W\>k                                    | map      | Remap window movement to not need \<C-W\> prepanded          |
+| \<C-h\>          | \<C-W\>h                                    | map      | Remap window movement to not need \<C-W\> prepanded          |
+| \<C-l\>          | \<C-W\>l                                    | map      | Remap window movement to not need \<C-W\> prepanded          |
+| \<C-h\>          | \<C-o\>h                                    | inoremap | Enable movement in insert mode with h                        |
+| \<C-l\>          | \<C-o\>a                                    | inoremap | Enable movement in insert mode with l                        |
+| \<C-j\>          | \<C-o\>j                                    | inoremap | Enable movement in insert mode with j                        |
+| \<C-k\>          | \<C-o\>k                                    | inoremap | Enable movement in insert mode with k                        |
+| \<Up\>           | :resize +2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<Down\>         | :resize -2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<Left\>         | :vertical resize +2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<Right>         | :vertical resize -2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<leader\>D      | \<C-r>=strftime('%F')\<CR\>                 | inoremap | Insert current date YYYY-MM-DD format                        |
+| \<leader\>D      | i\<C-r>=strftime('%F')\<CR\>\<Esc\>         | nnoremap | Insert current date YYYY-MM-DD format                        |
+| \<leader\>wc     | :call WordCount()\<CR\>                     | nnoremap | Toggle word count on/off                                     |
+| \<leader\>wu     | :call WordCount('update')\<CR\>             | nnoremap | Update word count                                            |
+| "\<tab\>         | ""\<Left\>                                  | imap     | add second " and enters surrounding                          |
+| '\<tab\>         | ''\<Left\>                                  | imap     | add second ' and enters surrounding                          |
+| (\<tab\>         | ()\<Left\>                                  | imap     | add closing ) and enters surrounding                         |
+| [\<tab\>         | []\<Left\>                                  | imap     | add closing ] and enters surrounding                         |
+| {\<tab\>         | {}\<Left\>                                  | imap     | add closing } and enters surrounding                         |
+| {\<CR\>          | {\<CR\>}\<Esc\>O                            | imap     | add closing } line breaks and enters surrounding above       |
+| {;\<CR\>         | {\<CR\>};\<Esc\>O                           | imap     | add closing }; line breaks and enters surrounding above      |
+| \<leader\>W      | :%s/\s\+$//\<CR\>:let @/=''\<CR\>           | nmap     | Strip trailing white spaces                                  |
+| \<C-b\>          | Buffers\<CR\>                               | nmap     | Use fzf Buffers command to switch buffer                     |
+| \<C-f\>          | :Files\<CR\>                                | nmap     | Use fzf Files command to switch file                         |
+| \<leader\>cp     | :set paste / :set nopaste                   | nnoremap | Toggle paste mode                                            |
+| \<leader\>cl     | :set list / :set nolist                     | nnoremap | Toggle list option - show tabs and spaces (listchars)        |
+| \<leader\>cn     | :set number! relativenumber!                | nnoremap | Toggle line all numbers                                      |
+| \<leader\>cw     | :set wrap / :set nowrap                     | nnoremap | Toggle wrap                                                  |
+| \<leader\>cg     | :Goyo                                       | nnoremap | Toggle Goyo - Plugin to Focus editor and disable distraction |
+| \<leader\>ch     | :set hlsearch / :set nohlsearch             | nnoremap | Toggle highlight of searched word                            |
+| \<leader\>cm     | :set mouse= / :set mouse=a                  | nnoremap | Toggle mouse support                                         |
+| \<leader\>ct     | :set textwidgt=\<nr\>                       | nnoremap | Change textwidth to given number                             |
+| \<leader\>cb     | :set background=light / set background=dark | nnoremap | Toggle background to dark/light                              |
