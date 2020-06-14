@@ -31,6 +31,7 @@ Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 " syntax
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'frazrepo/vim-rainbow'
 " programming
 Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
@@ -89,6 +90,9 @@ let g:vimwiki_list = [{'path': '~/docs/vimwiki',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 " disable global vimwiki filetype for .md
 let g:vimwiki_global_ext = 0
+
+" vim rainbow settings
+let g:rainbow_active = 1
 
 " add theme of plugin
 " adjust colors per function
