@@ -37,6 +37,10 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 
+" tags
+Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+
 " themes
 Plug 'flrnprz/plastic.vim'
 
@@ -49,7 +53,8 @@ call plug#end()
 " call nnn picker
 map <silent> <f2> :NnnPicker '%:p:h'<CR>
 " plugin shortcuts
-map <silent> <F4> :call ToggleGStatus()<CR>
+map <silent> <f4> :Tagbar<CR>
+map <silent> <f8> :call ToggleGStatus()<CR>
 
 " YCM settings
 let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
@@ -68,6 +73,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" vim gutentags settings
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['requirements.txt', '.git']
+let g:gutentags_cache_dir = '~/.config/nvim/tags'
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
 
 " NnnPicker settings
 let g:nnn#layout = { 'left': '~20%' } "
