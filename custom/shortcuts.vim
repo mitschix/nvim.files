@@ -104,10 +104,6 @@ imap {;<CR> {<CR>};<ESC>O
 " remove trailing whitespace from lines
 nmap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Fzf easy commands
-nmap <C-b> :Buffers<cr>
-nmap <C-f> :Files<cr>
-
 " ----------------------------------------------------------------------------
 " co? : Toggle options
 " ----------------------------------------------------------------------------
@@ -129,11 +125,33 @@ call s:map_change_option('p', 'paste')
 call s:map_change_option('l', 'list')
 call s:map_change_option('n', 'number')
 call s:map_change_option('w', 'wrap')
-call s:map_change_option('g', 'Goyo')
 call s:map_change_option('h', 'hlsearch')
 call s:map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
 call s:map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
 call s:map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
+
+" == plugin shortcuts
+call s:map_change_option('g', 'Goyo')
+
+" Fzf easy commands
+nmap <C-b> :Buffers<cr>
+nmap <C-f> :Files<cr>
+inoremap <expr> <c-f> fzf#vim#complete#path('rg --files')
+
+" call nnn picker
+map <silent> <f2> :NnnPicker '%:p:h'<CR>
+" toggle tagbar
+map <silent> <f4> :Tagbar<CR>
+" toggle git fungitive status
+map <silent> <f8> :call ToggleGStatus()<CR>
+
+" YCM settings
+nnoremap <Leader>gd :YcmCompleter GoTo<CR>
+nnoremap <Leader>gf :YcmCompleter FixIt<CR>
+
+" gitgutter settings
+nmap ) <Plug>(GitGutterNextHunk)
+nmap ( <Plug>(GitGutterPrevHunk)
 
 
 " settings for TODO management

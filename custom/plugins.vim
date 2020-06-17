@@ -50,20 +50,12 @@ Plug 'ThePrimeagen/vim-be-good'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
 
-" call nnn picker
-map <silent> <f2> :NnnPicker '%:p:h'<CR>
-" plugin shortcuts
-map <silent> <f4> :Tagbar<CR>
-map <silent> <f8> :call ToggleGStatus()<CR>
-
 " YCM settings
 let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 " disable default blacklist only for markdown - yet
 let g:ycm_filetype_blacklist={'notes': 1, 'netrw': 1, 'unite': 1,
             \'pandoc': 1, 'tagbar': 1, 'leaderf': 1, 'vimwiki': 1, 'text': 1,
             \'infolog': 1, 'mail': 1}
-nnoremap <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <Leader>gf :YcmCompleter FixIt<CR>
 
 " Ultisnips settings
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -129,7 +121,6 @@ autocmd ColorScheme * call AdaptColorscheme()
 silent! colorscheme plastic
 
 " further gitgutter changes
-nmap ) <Plug>(GitGutterNextHunk)
-nmap ( <Plug>(GitGutterPrevHunk)
 let g:gitgutter_enabled = 1
 let g:gitgutter_map_keys = 0
+
