@@ -117,6 +117,9 @@ hi TabLineSel ctermfg=204 ctermbg=59
 hi TabLineFill ctermfg=235
 
 " abbrevations
+cabbrev help vertical help
+
+
 iabbrev todo TODO
 
 " #!! | Shebang
