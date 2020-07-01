@@ -20,6 +20,8 @@ Plug 'mcchrish/nnn.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
+Plug 'unblevable/quick-scope'
+
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -78,6 +80,10 @@ let g:gutentags_ctags_extra_args = [
 " NnnPicker settings
 let g:nnn#layout = { 'left': '~20%' } "
 let g:nnn#action = {'<c-t>': 'tab split', '<c-x>': 'split', '<c-v>': 'vsplit' }
+
+" quickscope settings
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 
 " function to toggle git status"
 function! ToggleGStatus()
