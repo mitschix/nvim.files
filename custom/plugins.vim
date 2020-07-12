@@ -47,7 +47,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'flrnprz/plastic.vim'
 
 " others
-Plug 'ThePrimeagen/vim-be-good'
+Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+Plug 'itchyny/calendar.vim'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
