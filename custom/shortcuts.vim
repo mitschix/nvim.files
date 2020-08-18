@@ -9,7 +9,8 @@ let mapleader = ","
 " edit nvim config
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-map <leader><Enter> :w<CR>
+nmap <leader><Enter> :w<CR>
+imap <leader><Enter> <Esc>:w<CR>i
 
 if has('nvim')
     tmap <Esc> <C-\><C-n>
@@ -55,8 +56,8 @@ nnoremap gk k
 
 " jk | Escaping!
 inoremap jk <Esc>
-xnoremap jk <Esc>
-cnoremap jk <C-c>
+" xnoremap jk <Esc>
+" cnoremap jk <C-c>
 
 map <silent> <f3> :call ToggleNetrw()<CR>
 set pastetoggle=<F5>
