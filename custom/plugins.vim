@@ -34,6 +34,9 @@ Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 " syntax
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'frazrepo/vim-rainbow'
+Plug 'lilydjwg/colorizer' " suggests to use hexokinase
+" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  -- needs
+" termguicolors which destroys complete theme!
 " programming
 Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
