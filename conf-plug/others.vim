@@ -23,7 +23,5 @@ nmap <C-b> :Buffers<cr>
 nmap <C-f> :Files<cr>
 inoremap <expr> <c-f> fzf#vim#complete#path('rg --files')
 
-" call nnn picker
-map <silent> <f2> :NnnPicker '%:p:h'<CR>
 " toggle tagbar
 map <silent> <f4> :Tagbar<CR>

@@ -16,7 +16,6 @@ endif
 " add plugins
 call plug#begin('~/.config/nvim/plugged')
 " useful tools
-Plug 'mcchrish/nnn.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
@@ -29,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 
