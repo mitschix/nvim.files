@@ -142,29 +142,8 @@ call s:map_change_option('h', 'hlsearch')
 call s:map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
 call s:map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
 call s:map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
-
-" == plugin shortcuts
+" !! plugin goyo needed
 call s:map_change_option('g', 'Goyo')
-
-" Fzf easy commands
-nmap <C-b> :Buffers<cr>
-nmap <C-f> :Files<cr>
-inoremap <expr> <c-f> fzf#vim#complete#path('rg --files')
-
-" call nnn picker
-map <silent> <f2> :NnnPicker '%:p:h'<CR>
-" toggle tagbar
-map <silent> <f4> :Tagbar<CR>
-" toggle git fungitive status
-map <silent> <f8> :call ToggleGStatus()<CR>
-
-" YCM settings
-nnoremap <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <Leader>gf :YcmCompleter FixIt<CR>
-
-" gitgutter settings
-nmap ) <Plug>(GitGutterNextHunk)
-nmap ( <Plug>(GitGutterPrevHunk)
 
 
 " == other magic shortcuts
@@ -196,28 +175,4 @@ nmap ( <Plug>(GitGutterPrevHunk)
 " if you do you'll probably want to use another mark.
 inoremap <C-u> <esc>mzgUiw`za
 
-
-" settings for TODO management
-
-" Navigating with guides
-" placeholder is <++>
-" inoremap <leader>t <++><Esc>
-" map <leader>t <Esc>i<++><Esc>
-"
-" inoremap <leader>T <Esc>/<++><Enter>"_c4l
-" map <leader>T <Esc>/<++><Enter>"_c4l
-"
-" inoremap <leader><space> <Esc>/<++><Enter>
-" map <leader><space> <Esc>/<++><Enter>
-
-
-" FIXME key still mapped after commented out
-" List navigation {{{
-"
-" nmap <left>  :cprev<cr>zvzz
-" nmap <right> :cnext<cr>zvzz
-" nmap <up>    :lprev<cr>zvzz
-" nmap <down>  :lnext<cr>zvzz
-"
-" " }}}
 

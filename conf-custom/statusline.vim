@@ -3,6 +3,8 @@
 " === STATUSLINE SETTINGS & FUNCTIONS ===
 
 
+set laststatus=2    " permanently set statusline
+
 " Toggle word count in the panel if you hit <leader>wc
 " Update the word count if you hit <leader>wu, display in statusline
 " Add %{g:word_count} to statusline to see wordcount.
@@ -35,6 +37,7 @@ endfunction
 
 
 "statusline settings and functions
+" !! need fugitive installed
 function! StatuslineGit()
     if exists(':Git')
         " check if vim-fugitive is installed to prevent errors on first setup
@@ -46,6 +49,7 @@ function! StatuslineGit()
 endfunction
 
 " vim gitgutter statusline
+" !! need gitgutter installed
 function! GitStatus()
     " check if gitgutter is installed to prevent errors on first setup
     if exists(':GitGutter')
