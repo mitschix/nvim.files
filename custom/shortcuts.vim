@@ -80,10 +80,22 @@ inoremap <C-l> <C-o>a
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+" remap arrow keys to use hjkl
+" nnoremap <Up> :resize +2<CR>
+" nnoremap <Down> :resize -2<CR>
+" nnoremap <Left> :vertical resize +2<CR>
+" nnoremap <Right> :vertical resize -2<CR>
+
+" Better indenting
+vnoremap < <g
+vnoremap > >gv
+
+" Use alt + hjkl to resize windows
+nnoremap <silent> <M-j>    :resize -2<CR>
+nnoremap <silent> <M-k>    :resize +2<CR>
+nnoremap <silent> <M-h>    :vertical resize -2<CR>
+nnoremap <silent> <M-l>    :vertical resize +2<CR>
+
 
 " insert date
 inoremap <leader>D <C-r>=strftime('%F')<CR>
