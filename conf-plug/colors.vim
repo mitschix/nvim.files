@@ -31,9 +31,6 @@ set t_Co=256
 set colorcolumn=90
 hi ColorColumn ctermbg=green
 
-" change theme for completion windows
-highlight Pmenu ctermfg=blue ctermbg=black
-
 " adjust color of tabline
 hi TabLine ctermfg=green ctermbg=235
 hi TabLineSel ctermfg=204 ctermbg=59
