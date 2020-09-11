@@ -20,7 +20,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
+
+" start screen with file type icons
 Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
 
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all' }
