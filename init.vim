@@ -32,5 +32,8 @@ let g:config_file_list = [ 'conf-custom/basic-settings.vim',
             \ ]
 
 for f in g:config_file_list
-    execute 'source ' . g:nvim_config_root . '/' . f
+    let file = g:nvim_config_root . '/' . f
+    if filereadable(file)
+            execute 'source ' . file
+    endif
 endfor
