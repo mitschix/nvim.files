@@ -20,6 +20,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
+Plug 'mhinz/vim-startify'
 
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all' }
