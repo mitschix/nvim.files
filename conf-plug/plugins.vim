@@ -29,25 +29,27 @@ Plug 'ryanoasis/vim-devicons'
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 " git plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 " completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
-
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+
 " syntax
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'frazrepo/vim-rainbow'
 Plug 'lilydjwg/colorizer' " suggests to use hexokinase
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  -- needs
 " termguicolors which destroys complete theme!
+
 " programming
 Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 " tags
 Plug 'majutsushi/tagbar'
