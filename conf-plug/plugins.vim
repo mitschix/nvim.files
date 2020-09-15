@@ -20,6 +20,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
+Plug 'junegunn/vim-emoji'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
@@ -56,7 +57,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'flrnprz/plastic.vim'
 
 " others
-Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+Plug 'ThePrimeagen/vim-be-good'
 Plug 'itchyny/calendar.vim'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy

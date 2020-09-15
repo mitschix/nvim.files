@@ -11,6 +11,7 @@
 "conf-plug/plugins.vim  	        " containing list of plugins for plug
 "conf-plug/colors.vim   	        " settings for colorscheme and colors
 "conf-plug/coc.vim                  " coc settings
+"conf-plug/emoji.vim                " emoji settings
 "conf-plug/git.vim          	    " settings for git related plugins
 "conf-plug/snippets.vim     	    " settings for all snippet plugins
 "conf-plug/tags.vim         	    " settings for primarly gutentags
@@ -25,6 +26,7 @@ let g:config_file_list = [ 'conf-custom/basic-settings.vim',
             \ 'conf-plug/colors.vim',
             \ 'conf-plug/startify.vim',
             \ 'conf-plug/coc.vim',
+            \ 'conf-plug/emoji.vim',
             \ 'conf-plug/git.vim',
             \ 'conf-plug/snippets.vim',
             \ 'conf-plug/tags.vim',
