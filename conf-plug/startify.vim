@@ -17,6 +17,7 @@ let g:startify_lists = [
             \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
             \ { 'type': 'sessions',  'header': ['   Sessions']                     },
             \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+            \ { 'type': 'commands',  'header': ['   Commands' ]                    },
             \ ]
 
 
@@ -37,6 +38,10 @@ let g:startify_bookmarks = [
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'z': '~/.config/zsh/.zshrc' },
             \ { 'd': '~/.config/dotfiles' },
+            \ ]
+let g:startify_commands = [
+            \ { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+            \ { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
             \ ]
 
 let g:startify_enable_special = 0
