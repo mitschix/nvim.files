@@ -27,7 +27,7 @@ Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 " install fzf as command and as plugin
-Plug 'junegunn/fzf', {'do': './install --all' }
+Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 Plug 'junegunn/fzf.vim'
 
 " git plugins
