@@ -52,12 +52,16 @@ Plug 'dbeniamine/cheat.sh-vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
+" all in one python plugin --> better than coc? 
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 " tags
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " themes
 Plug 'flrnprz/plastic.vim'
+" Plug 'marcus/vim-mustang'
 
 " others
 Plug 'ThePrimeagen/vim-be-good'
