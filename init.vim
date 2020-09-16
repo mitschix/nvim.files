@@ -15,6 +15,7 @@
 "conf-plug/git.vim          	    " settings for git related plugins
 "conf-plug/snippets.vim     	    " settings for all snippet plugins
 "conf-plug/tags.vim         	    " settings for primarly gutentags
+"conf-plug/floaterm.vim             " settings and shortcuts for floaterm
 "conf-plug/others.vim'        	    " simple settings for other plugins
 
 let g:nvim_config_root = stdpath('config')
@@ -30,6 +31,7 @@ let g:config_file_list = [ 'conf-custom/basic-settings.vim',
             \ 'conf-plug/git.vim',
             \ 'conf-plug/snippets.vim',
             \ 'conf-plug/tags.vim',
+            \ 'conf-plug/floaterm.vim',
             \ 'conf-plug/others.vim'
             \ ]
 

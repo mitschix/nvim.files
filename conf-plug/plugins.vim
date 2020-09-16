@@ -20,7 +20,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
-Plug 'junegunn/vim-emoji'
+Plug 'voldikss/vim-floaterm'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
@@ -50,6 +50,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
 " tags
 Plug 'majutsushi/tagbar'
@@ -60,16 +61,7 @@ Plug 'flrnprz/plastic.vim'
 
 " others
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'itchyny/calendar.vim'
+Plug 'junegunn/vim-emoji'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
-
-" " YCM settings
-" let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-" " disable default blacklist only for markdown - yet
-" let g:ycm_filetype_blacklist={'notes': 1, 'netrw': 1, 'unite': 1,
-"             \'pandoc': 1, 'tagbar': 1, 'leaderf': 1, 'vimwiki': 1, 'text': 1,
-"             \'infolog': 1, 'mail': 1}
-
-
