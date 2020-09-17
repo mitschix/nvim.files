@@ -25,6 +25,9 @@ nmap <silent> <Tab> :bnext<Enter>
 " force writing RO file
 cmap w!! %!sudo tee > /dev/null %
 
+" qq to record, Q to replay
+nnoremap Q @q
+
 " Copying/pasting text to the system clipboard.
 noremap  <leader>p "+p
 vnoremap <leader>y "+y
@@ -59,7 +62,6 @@ inoremap jk <Esc>
 " xnoremap jk <Esc>
 " cnoremap jk <C-c>
 
-map <silent> <f3> :call ToggleNetrw()<CR>
 set pastetoggle=<F5>
 map <f6> :setlocal spell! spelllang=de_at<CR>
 map <f7> :setlocal spell! spelllang=en_us<CR>
@@ -87,7 +89,7 @@ inoremap <C-k> <C-o>k
 " nnoremap <Right> :vertical resize -2<CR>
 
 " Better indenting
-vnoremap < <g
+vnoremap < <gv
 vnoremap > >gv
 
 " Use alt + hjkl to resize windows
@@ -144,6 +146,19 @@ call s:map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth ("
 call s:map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
 " !! plugin goyo needed
 call s:map_change_option('g', 'Goyo')
+
+" custom exit function to close buffers before exiting
+function! CustomExit()
+    if (len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1)
+        q
+    else
+        bd
+    endif
+endfunction
+
+nmap <Leader>qw :w<CR><Esc>:call CustomExit()<CR>
+nmap <Leader>q  :call CustomExit()<CR>
+nmap <Leader>qf <Esc>:call CustomExit()!<CR>
 
 
 " == other magic shortcuts
