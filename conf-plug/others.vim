@@ -25,3 +25,6 @@ inoremap <expr> <c-f> fzf#vim#complete#path('rg --files')
 
 " toggle tagbar
 map <silent> <f4> :Tagbar<CR>
+
+" remove pydocstring mappings
+nmap <silent> <C-_> <Plug>(pydocstring)
