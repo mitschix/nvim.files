@@ -4,16 +4,16 @@
 let g:floaterm_autoclose = 1
 
 " setup shortcuts to handle floaterm mostly '<leader>t'
-nnoremap   <silent>   <leader>t   :FloatermNew<CR>
-tnoremap   <silent>   <leader>t   <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <leader>T   :FloatermNew<CR>
+tnoremap   <silent>   <leader>T   <C-\><C-n>:FloatermNew<CR>
 nnoremap   <silent>   <leader>tp   :FloatermPrev<CR>
 tnoremap   <silent>   <leader>tp  <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <leader>tn   :FloatermNext<CR>
 tnoremap   <silent>   <leader>tn  <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <leader>tk   :FloatermKill<CR>
 tnoremap   <silent>   <leader>tk  <C-\><C-n>:FloatermKill<CR>
-nnoremap   <silent>   <leader>T   :FloatermToggle<CR>
-tnoremap   <silent>   <leader>T  <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <leader>t   :FloatermToggle<CR>
+tnoremap   <silent>   <leader>t  <C-\><C-n>:FloatermToggle<CR>
 
 nnoremap   <leader>ts   :FloatermSend
 vnoremap   <leader>ts   :FloatermSend
