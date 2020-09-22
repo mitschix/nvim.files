@@ -21,7 +21,7 @@ let g:vimwiki_global_ext = 0
 " Fzf easy commands
 nmap <C-b> :Buffers<cr>
 nmap <C-f> :Files<cr>
-inoremap <expr> <c-f> fzf#vim#complete#path('rg --files')
+inoremap <expr> <c-f> fzf#vim#complete#path('rg --hidden --files')
 
 " toggle tagbar
 map <silent> <f4> :Tagbar<CR>
