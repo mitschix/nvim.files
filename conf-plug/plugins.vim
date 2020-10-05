@@ -21,6 +21,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
+Plug 'mechatroner/rainbow_csv'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
