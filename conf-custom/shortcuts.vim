@@ -76,6 +76,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
 " Movement in insert mode
 inoremap <C-h> <C-o>h
 inoremap <C-l> <C-o>a
@@ -91,6 +95,11 @@ inoremap <C-k> <C-o>k
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Use alt + hjkl to resize windows
 nnoremap <silent> <M-j>    :resize -2<CR>
@@ -118,6 +127,12 @@ imap {;<CR> {<CR>};<ESC>O
 
 " remove trailing whitespace from lines
 nmap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+"" Set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+"" Opens an edit command with the path of the currently edited file filled in
+noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+"" Opens a tab edit command with the path of the currently edited file filled
+noremap <Leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " ----------------------------------------------------------------------------
 " co? : Toggle options

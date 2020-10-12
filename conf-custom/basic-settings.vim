@@ -20,20 +20,14 @@ set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smartindent  " indention and 
 set listchars=tab:»─,nbsp:·,eol:¬,trail:-,extends:»,precedes:«  " Toggle whitespace characters
 set whichwrap=b,s,h,l                                           " <BS> <Space> h l <Left> <Right> can change lines
 set splitbelow splitright                                       " change split behaviour
+set encoding=utf-8 fileencoding=utf-8 fileencodings=utf-8       " encoding
+set fileformats=unix,dos,mac                                    " EOL formats order
 
 " Unset paste on InsertLeave.
 autocmd InsertLeave * silent! set nopaste
 
 " jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" fix cursor of zsh-vi-mode (deprecated?)
-" autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
-" autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
-
-" highlight insert mode
-" autocmd InsertEnter * set cul
-" autocmd InsertLeave * set nocul
 
 " Persistent undo and controlling swap files
 if has('persistent_undo')
@@ -42,3 +36,11 @@ if has('persistent_undo')
     set undolevels=1000
     set undoreload=10000
 endif
+
+" fix cursor of zsh-vi-mode (deprecated?)
+" autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
+" autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
+
+" highlight insert mode
+" autocmd InsertEnter * set cul
+" autocmd InsertLeave * set nocul

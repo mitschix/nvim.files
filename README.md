@@ -162,4 +162,5 @@ used \<leader\> is ","
 + [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim)
 + [stevelosh](https://stevelosh.com/blog/2010/09/coming-home-to-vim/)
 + [nicknisi](https://github.com/nicknisi/dotfiles/blob/master/config/nvim/init.vim)
++ [vim-bootstrap](https://vim-bootstrap.com/)
 + ... there have been far more, unfortunately I have not saved all of them. - sorry ):

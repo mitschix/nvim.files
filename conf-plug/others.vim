@@ -16,15 +16,17 @@ let g:vimwiki_list = [{'path': '~/docs/vimwiki',
 " disable global vimwiki filetype for .md
 let g:vimwiki_global_ext = 0
 
-" == plugin shortcuts
+" == indentline settings
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
 
-" Fzf easy commands
-nmap <C-b> :Buffers<cr>
-nmap <C-f> :Files<cr>
-inoremap <expr> <c-f> fzf#vim#complete#path('rg --hidden --files')
+" == plugin shortcuts
 
 " toggle tagbar
 map <silent> <f4> :Tagbar<CR>
+let g:tagbar_autofocus = 1
 
 " remove pydocstring mappings
 nmap <silent> <C-_> <Plug>(pydocstring)

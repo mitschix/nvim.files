@@ -50,6 +50,8 @@ Plug 'lilydjwg/colorizer' " suggests to use hexokinase
 Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'Yggdroot/indentLine'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
