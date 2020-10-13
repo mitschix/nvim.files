@@ -10,7 +10,7 @@ function! AdaptColorscheme()
     hi LineNr ctermbg=none ctermfg=180
     hi CursorLineNr ctermbg=none ctermfg=173
     hi Comment ctermbg=none ctermfg=145
-    hi SignColum ctermbg=none
+    hi SignColumn ctermbg=none
 
     " adjust git gutter colors
     hi GitGutterAdd ctermfg=2
