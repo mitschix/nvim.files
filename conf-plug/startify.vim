@@ -44,9 +44,6 @@ let g:startify_commands = [
             \ { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
             \ ]
 
-let g:startify_enable_special = 0
-
-
 " This plugin will let us manage our sessions very easily
 " Add ! to skip the prompt
 ":SLoad       load a session
