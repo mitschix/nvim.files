@@ -49,6 +49,7 @@ Plug 'lilydjwg/colorizer' " suggests to use hexokinase
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  -- needs
 " termguicolors which destroys complete theme!
 Plug 'mechatroner/rainbow_csv'
+Plug 'andymass/vim-matchup'
 
 " programming
 Plug 'tomtom/tcomment_vim'
