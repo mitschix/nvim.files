@@ -5,37 +5,6 @@
 
 set laststatus=2    " permanently set statusline
 
-" Toggle word count in the panel if you hit <leader>wc
-" Update the word count if you hit <leader>wu, display in statusline
-" Add %{g:word_count} to statusline to see wordcount.
-" set statusline+=%{g:word_count}
-let g:word_count = ''
-function! WordCount(...)
-    if a:0 < 1
-        let s:update = 0
-    else
-        let s:update = 1
-    endif
-    if g:word_count == '' || s:update == 1
-        let position = getpos(".")
-        exe ":silent normal g\<c-g>"
-        let stat = v:statusmsg
-        let g:word_count = 0
-        if stat != '--No lines in buffer--'
-            let s:words =  str2nr(split(v:statusmsg)[11])
-            let g:word_count = printf('.Words [%d].', s:words)
-        else
-            let g:word_count = 'Words [none]'
-        end
-        call setpos('.', position)
-        return g:word_count
-    else
-        let g:word_count = ''
-        return g:word_count
-    end
-endfunction
-
-
 "statusline settings and functions
 " !! need fugitive installed
 function! StatuslineGit()

@@ -5,6 +5,7 @@
 
 " define the config files one per line to make them easier edjustable
 "conf-custom/basic-settings.vim     " all basic setings and au groups
+"conf-custom/functions.vim          " function to use for mappings
 "conf-custom/abbrev.vim      	    " containing all abbrevations
 "conf-custom/shortcuts.vim   	    " containing all shortcuts
 "conf-custom/statusline.vim  	    " custom statusline with functions - depends on some plugins
@@ -22,6 +23,7 @@
 
 let g:nvim_config_root = stdpath('config')
 let g:config_file_list = [ 'conf-custom/basic-settings.vim',
+            \ 'conf-custom/functions.vim',
             \ 'conf-custom/abbrev.vim',
             \ 'conf-custom/shortcuts.vim',
             \ 'conf-custom/statusline.vim',

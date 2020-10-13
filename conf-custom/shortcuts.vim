@@ -93,8 +93,10 @@ inoremap <C-k> <C-o>k
 " nnoremap <Right> :vertical resize -2<CR>
 
 " Better indenting
-vnoremap < <gv
-vnoremap > >gv
+xnoremap < <gv
+xnoremap > >gv
+nnoremap > >>_
+nnoremap < <<_
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -134,46 +136,23 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" ----------------------------------------------------------------------------
-" co? : Toggle options
-" ----------------------------------------------------------------------------
-function! s:map_change_option(...)
-    let [key, opt] = a:000[0:1]
-    " remap for number to disable number and relativenumber
-    if key == "n"
-        execute printf("nnoremap <leader>c%s :set number! relativenumber!<CR>", key)
-    elseif key == "g"
-        execute printf("nnoremap <leader>c%s :Goyo<CR>", key)
-    else
-        let op = get(a:, 3, 'set '.opt.'!')
-        execute printf("nnoremap <leader>c%s :%s<bar>set %s?<CR>", key, op, opt)
-    endif
-endfunction
 
-
-call s:map_change_option('p', 'paste')
-call s:map_change_option('l', 'list')
-call s:map_change_option('n', 'number')
-call s:map_change_option('w', 'wrap')
-call s:map_change_option('h', 'hlsearch')
-call s:map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
-call s:map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
-call s:map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
-" !! plugin goyo needed
-call s:map_change_option('g', 'Goyo')
-
-" custom exit function to close buffers before exiting
-function! CustomExit()
-    if (len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1)
-        q
-    else
-        bd
-    endif
-endfunction
-
+" call functions from functsion.vim
 nmap <Leader>qw :w<CR><Esc>:call CustomExit()<CR>
 nmap <Leader>q  :call CustomExit()<CR>
 nmap <Leader>qf <Esc>:call CustomExit()!<CR>
+nnoremap <C-q> :call SmartClose()<cr>
+
+call Map_change_option('p', 'paste')
+call Map_change_option('l', 'list')
+call Map_change_option('n', 'number')
+call Map_change_option('w', 'wrap')
+call Map_change_option('h', 'hlsearch')
+call Map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
+call Map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
+call Map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
+" !! plugin goyo needed
+call Map_change_option('g', 'Goyo')
 
 
 " == other magic shortcuts
