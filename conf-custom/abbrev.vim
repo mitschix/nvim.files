@@ -1,8 +1,6 @@
 " abbrevations
 cabbrev help vertical help
 
-iabbrev todo TODO
-
 inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)
 " ----------------------------------------------------------------------------
 

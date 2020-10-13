@@ -21,15 +21,18 @@ Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
-Plug 'mechatroner/rainbow_csv'
+Plug 'wsdjeg/vim-todo'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
+" fuzzy search utils
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 Plug 'junegunn/fzf.vim'
+" @todo create function for all mappings to add to menu for denite
+" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " git plugins
 Plug 'tpope/vim-fugitive'
@@ -45,6 +48,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'lilydjwg/colorizer' " suggests to use hexokinase
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  -- needs
 " termguicolors which destroys complete theme!
+Plug 'mechatroner/rainbow_csv'
 
 " programming
 Plug 'tomtom/tcomment_vim'
@@ -55,7 +59,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
-" all in one python plugin --> better than coc? 
+" all in one python plugin --> @question better than coc? 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " tags
@@ -64,7 +68,6 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " themes
 Plug 'flrnprz/plastic.vim'
-" Plug 'marcus/vim-mustang'
 
 " others
 Plug 'ThePrimeagen/vim-be-good'
