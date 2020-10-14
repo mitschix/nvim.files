@@ -29,4 +29,7 @@ map <silent> <f4> :Tagbar<CR>
 let g:tagbar_autofocus = 1
 
 " remove pydocstring mappings
-nmap <silent> <C-_> <Plug>(pydocstring)
+" nmap <silent> <C-_> <Plug>(pydocstring)
+
+" toggle undotree
+nmap <silent> <leader>u :UndotreeToggle<CR>

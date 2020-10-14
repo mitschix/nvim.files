@@ -17,7 +17,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 " useful tools
 Plug 'junegunn/goyo.vim'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
@@ -57,7 +57,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
 " all in one python plugin --> @question better than coc? 
