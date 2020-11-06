@@ -139,7 +139,7 @@ noremap <Leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " call functions from functsion.vim
 nmap <Leader>qw :w<CR><Esc>:call CustomExit()<CR>
-nmap <Leader>q  :call CustomExit()<CR>
+nmap <Leader>qq  :call CustomExit()<CR>
 nmap <Leader>qf <Esc>:call CustomExit()!<CR>
 nnoremap <C-q> :call SmartClose()<cr>
 
