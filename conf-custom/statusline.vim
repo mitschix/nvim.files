@@ -3,9 +3,7 @@
 " === STATUSLINE SETTINGS & FUNCTIONS ===
 
 
-set laststatus=2    " permanently set statusline
-
-"statusline settings and functions
+" Git functions {{{
 " !! need fugitive installed
 function! StatuslineGit()
     if exists(':Git')
@@ -39,14 +37,17 @@ function! GitStatus()
         return ""
     endif
 endfunction
+" }}}
 
-" display number of tabs
+" Display number of tabs {{{
 function! GetTabs()
     let l:maxtabnr = tabpagenr('$')
     let l:curtab = tabpagenr()
     return maxtabnr > 1?printf('  %d/%d ', l:curtab, l:maxtabnr):''
 endfunction
+" }}}
 
+" Create Mode Display {{{
 function! GetMode()
     " possible commands TODO
     "     \ 'n'  : 'N',
@@ -96,7 +97,10 @@ function! GetMode()
     endif
     return l:out
 endfunction
+" }}}
 
+" Statusline Settings {{{
+set laststatus=2    " permanently set statusline
 set statusline=
 set statusline+=%#MoreMsg#%{GetTabs()}%*
 set statusline+=%{GitStatus()}
@@ -111,3 +115,4 @@ set statusline+=%#WildMenu#%{g:word_count}%*
 set statusline+=\ %y\ \|
 set statusline+=\ %l/%L\ \-\ %c\ \|
 set statusline+=%#MoreMsg#\ %p%%
+" }}}

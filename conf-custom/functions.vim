@@ -1,3 +1,9 @@
+
+
+" === FUNCTIONS ===
+
+
+" Closing and Exit {{{
 let g:spacevim_smartcloseignorewin     = ['__Tagbar__' , 'vimfiler:default']
 let g:spacevim_smartcloseignoreft      = []
 
@@ -33,7 +39,9 @@ function! CustomExit()
         bd
     endif
 endfunction
+" }}}
 
+" Change Settings Functions {{{
 " ----------------------------------------------------------------------------
 " <leader>c? : Toggle options
 " ----------------------------------------------------------------------------
@@ -49,7 +57,9 @@ function! Map_change_option(...)
         execute printf("nnoremap <leader>c%s :%s<bar>set %s?<CR>", key, op, opt)
     endif
 endfunction
+" }}}
 
+" WordCount for the Statusline {{{
 " Toggle word count in the panel if you hit <leader>wc
 " Update the word count if you hit <leader>wu, display in statusline
 " Add %{g:word_count} to statusline to see wordcount.
@@ -79,4 +89,4 @@ function! WordCount(...)
         return g:word_count
     end
 endfunction
-
+" }}}
