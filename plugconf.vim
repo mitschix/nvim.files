@@ -14,10 +14,9 @@ endif
 " nvim -- curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " add plugins
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
 " useful tools
 Plug 'junegunn/goyo.vim'
-" Plug 'vimwiki/vimwiki'
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
@@ -50,13 +49,13 @@ Plug 'lilydjwg/colorizer' " suggests to use hexokinase
 " termguicolors which destroys complete theme!
 Plug 'mechatroner/rainbow_csv'
 Plug 'andymass/vim-matchup'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " programming
 Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
 
@@ -73,6 +72,7 @@ Plug 'flrnprz/plastic.vim'
 " others
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'junegunn/vim-emoji'
+Plug 'hyiltiz/vim-plugins-profile'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
