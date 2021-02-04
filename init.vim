@@ -1,5 +1,6 @@
 
 
+" === MAIN VIMRC & BASIC SETTINGS===
 
 
 " PLugin config files overview{{{

@@ -67,7 +67,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " themes
-Plug 'flrnprz/plastic.vim'
+Plug 'mitschix/plastic.vim'
 
 " others
 Plug 'ThePrimeagen/vim-be-good'
