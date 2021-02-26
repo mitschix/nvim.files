@@ -21,6 +21,7 @@ Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
 Plug 'wsdjeg/vim-todo'
+Plug 'will133/vim-dirdiff'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
@@ -73,6 +74,7 @@ Plug 'mitschix/plastic.vim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'junegunn/vim-emoji'
 Plug 'hyiltiz/vim-plugins-profile'
+Plug 'dstein64/vim-startuptime'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
