@@ -55,7 +55,7 @@ imap {<CR> {<CR>}<ESC>O
 imap {;<CR> {<CR>};<ESC>O
 
 " insert date
-inoremap .D <C-r>=strftime('%F')<CR>
+inoremap ;D <C-r>=strftime('%F')<CR>
 nnoremap <leader>D i<C-r>=strftime('%F')<CR><Esc>
 
 if has('nvim')
@@ -65,6 +65,7 @@ endif
 
 " jk | Escaping!
 inoremap jk <Esc>
+inoremap jj <Esc>
 " xnoremap jk <Esc>
 " cnoremap jk <C-c>
 
