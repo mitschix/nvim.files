@@ -69,6 +69,13 @@ inoremap jj <Esc>
 " xnoremap jk <Esc>
 " cnoremap jk <C-c>
 
+" Use C-Space to Esc out of any mode
+nnoremap <C-Space> <Esc>:noh<CR>
+vnoremap <C-Space> <Esc>gV
+onoremap <C-Space> <Esc>
+cnoremap <C-Space> <C-c>
+inoremap <C-Space> <Esc>
+
 " }}}
 
 " Movement Settings {{{
