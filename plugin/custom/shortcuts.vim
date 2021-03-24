@@ -84,10 +84,10 @@ nmap H ^
 nmap L $
 
 " remap movement up and down on wrapped files
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+" count wraped lines as one line when doing relative jumps
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
 " }}}
 
 " Window Settings {{{
