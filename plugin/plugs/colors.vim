@@ -12,3 +12,4 @@ set t_Co=256
 
 " add visible column
 set colorcolumn=81
+highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
