@@ -75,6 +75,7 @@ vnoremap <C-Space> <Esc>gV
 onoremap <C-Space> <Esc>
 cnoremap <C-Space> <C-c>
 inoremap <C-Space> <Esc>
+tnoremap <C-Space> <C-\><C-n>
 
 " }}}
 
