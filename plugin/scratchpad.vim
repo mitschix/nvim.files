@@ -37,36 +37,6 @@ vnoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
 " general insert commands
 inoremap ;g <++>
 
-" Markdown {{{
-autocmd FileType markdown :call MarkdownShorts()
-
-function MarkdownShorts() abort
-    inoremap ,i ![](<++>){#fig:<++>}<Space><CR><CR><++><Esc>kkF]i
-    inoremap ,a [](<++>)<Space><++><Esc>F]i
-    inoremap ,1 #<Space><CR><CR><++><Esc>2k<S-a>
-    inoremap ,2 ##<Space><CR><CR><++><Esc>2k<S-a>
-    inoremap ,3 ###<Space><CR><CR><++><Esc>2k<S-a>
-    inoremap ,4 ####<Space><CR><CR><++><Esc>2k<S-a>
-    inoremap ,5 #####<Space><CR><CR><++><Esc>2k<S-a>
-    inoremap ,u +<Space><CR><++><Esc>1k<S-a>
-    inoremap ,o 1.<Space><CR><++><Esc>1k<S-a>
-    inoremap ,f +@fig:
-endfunction
-" }}}
-
-" shell {{{
-autocmd FileType sh :call ShellShorts()
-function ShellShorts() abort
-map <leader>b i#!/bin/sh<CR><CR>
-    inoremap ,f ()<Space>{<CR><Tab><++><CR>}<CR><CR><++><Esc>?()<CR>
-    inoremap ,i if<Space>[<Space>];<Space>then<CR><++><CR>fi<CR><CR><++><Esc>?];<CR>hi<Space>
-    inoremap ,ei elif<Space>[<Space>];<Space>then<CR><++><CR><Esc>?];<CR>hi<Space>
-    inoremap ,sw case<Space>""<Space>in<CR><++>)<Space><++><Space>;;<CR><++><CR>esac<CR><CR><++><Esc>?"<CR>i
-    inoremap ,ca )<Space><++><Space>;;<CR><++><Esc>?)<CR>i
-endfunction
-" }}}
-" }}}
-
 """ Abbreviations {{{
 " remove whitespace after abbrev
 " https://github.com/godlygeek/vim-files/blob/master/.vimrc

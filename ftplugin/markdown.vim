@@ -1,0 +1,10 @@
+inoremap ,i ![](<++>){#fig:<++>}<Space><CR><CR><++><Esc>kkF]i
+inoremap ,a [](<++>)<Space><++><Esc>F]i
+inoremap ,1 #<Space><CR><CR><++><Esc>2k<S-a>
+inoremap ,2 ##<Space><CR><CR><++><Esc>2k<S-a>
+inoremap ,3 ###<Space><CR><CR><++><Esc>2k<S-a>
+inoremap ,4 ####<Space><CR><CR><++><Esc>2k<S-a>
+inoremap ,5 #####<Space><CR><CR><++><Esc>2k<S-a>
+inoremap ,u +<Space><CR><++><Esc>1k<S-a>
+inoremap ,o 1.<Space><CR><++><Esc>1k<S-a>
+inoremap ,f +@fig:
