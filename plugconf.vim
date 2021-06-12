@@ -14,7 +14,7 @@ endif
 " nvim -- curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " add plugins
-call plug#begin()
+call plug#begin('~/.config/nvim/vim-plugged')
 " useful tools
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
@@ -46,8 +46,7 @@ Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'frazrepo/vim-rainbow'
 Plug 'lilydjwg/colorizer' " suggests to use hexokinase
-" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  -- needs
-" termguicolors which destroys complete theme!
+
 Plug 'mechatroner/rainbow_csv'
 Plug 'andymass/vim-matchup'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -57,11 +56,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'Yggdroot/indentLine'
-" Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-" Plug 'ChristianChiarulli/codi.vim' " cool python repl - very bugy
-
-" all in one python plugin --> @question better than coc? 
-" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " tags
 Plug 'majutsushi/tagbar'
