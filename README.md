@@ -20,22 +20,57 @@ There is a list of some repository I have saved, but there are far more out ther
 ## Used Plugins
 List of used plugins
 
-+  'mcchrish/nnn.vim'
-+  'junegunn/goyo.vim'
-+  'vimwiki/vimwiki'
-+  'mbbill/undotree'
-+  'junegunn/fzf', {'do': './install --all' }
-+  'junegunn/fzf.vim'
-+  'tpope/vim-fugitive'
-+  'airblade/vim-gitgutter'
-+  'ycm-core/YouCompleteMe', {'do': './install.py'}
-+  'sirver/ultisnips' | Plug 'honza/vim-snippets'
-+  'PotatoesMaster/i3-vim-syntax'
-+  'tomtom/tcomment_vim'
-+  'dhruvasagar/vim-table-mode'
-+  'dbeniamine/cheat.sh-vim'
-+  'flrnprz/plastic.vim'
-+  'ThePrimeagen/vim-be-good'
+### useful tools
++ 'junegunn/goyo.vim'
++ 'mbbill/undotree'
++ 'unblevable/quick-scope'
++ 'voldikss/vim-floaterm'
++ 'wsdjeg/vim-todo'
++ 'will133/vim-dirdiff'
+
+### start screen with file type icons
++ 'mhinz/vim-startify'
++ 'ryanoasis/vim-devicons'
+
+### fuzzy search utils
+installs fzf as command and as plugin
++ 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
++ 'junegunn/fzf.vim'
+
+### git Plugins
++ 'tpope/vim-fugitive'
++ 'airblade/vim-gitgutter'
+
+### completion
++ 'neoclide/coc.nvim', {'branch': 'release'}
++ 'sirver/ultisnips'
++ 'honza/vim-snippets'
+
+### syntax
++ 'PotatoesMaster/i3-vim-syntax'
++ 'frazrepo/vim-rainbow'
++ 'lilydjwg/colorizer' " suggests to use hexokinase
+
++ 'mechatroner/rainbow_csv'
++ 'andymass/vim-matchup'
++ 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+### programming
++ 'tomtom/tcomment_vim'
++ 'dhruvasagar/vim-table-mode'
++ 'dbeniamine/cheat.sh-vim'
++ 'Yggdroot/indentLine'
+
+### tags
++ 'majutsushi/tagbar'
++ 'ludovicchabant/vim-gutentags'
+
+### themes
++ 'mitschix/plastic.vim'
+
+### others
++ 'junegunn/vim-emoji'
+
 
 ## Custom statusline
 Since there is a lot going on in my custom statusline and it is not a plugin, there is a short explanation of my status line:
@@ -57,7 +92,7 @@ On the left side of me status line it will show:
 
 On the right side it will show:
 + A flag for paste mode if enabled
-+ A flag for spelling including spellang if enabled 
++ A flag for spelling including spellang if enabled
 + The word count indicator with counted words - if word count is activated
 + The filetype
 + The current line / maximum lines
@@ -85,19 +120,21 @@ used \<leader\> is ","
 | \<leader\>Y      | "+y                                         | nnoremap | Enable Yank mode for next command (e.g w[ord])               |
 | Y                | y$                                          | nnoremap | Yank till the rest of the line                               |
 | p                | pgvy                                        | xnoremap | Do not overwrite Buffer with paste                           |
+| x/X              | "_x/"_X                                     | nnoremap | Do not overwrite Buffer when cut out
 | \<C-f\>          | \<C-x\>\<C-f\>                              | imap     | More convienient way to complete files with ^X               |
 | \<C-]\>          | \<C-x\>\<C-]\>                              | imap     | More convienient way to complete tags with ^X                |
 | \<C-l\>          | \<C-x\>\<C-l\>                              | imap     | More convienient way to complete lines with ^X               |
 | H                | ^                                           | nmap     | Jump to beginning of line                                    |
 | L                | $                                           | nmap     | Jump to end of line                                          |
-| j                | gj                                          | nnoremap | Move one visual line down (even when wrapped)                 |
-| k                | gk                                          | nnoremap | Move one visual line up (even when wrapped)                   |
+| j                | gj                                          | nnoremap | Move one visual line down (even when wrapped)                |
+| k                | gk                                          | nnoremap | Move one visual line up (even when wrapped)                  |
 | gj               | j                                           | nnoremap | Use default behaviour of j                                   |
 | gk               | k                                           | nnoremap | Use default behaviour of k                                   |
 | jk               | \<Esc\>                                     | inoremap | Escape mode                                                  |
+| jj               | \<Esc\>                                     | inoremap | Escape mode                                                  |
 | jk               | \<Esc\>                                     | xnoremap | Escape mode                                                  |
 | jk               | \<C-c\>                                     | cnoremap | Escape mode                                                  |
-| \<f3\>           | :call ToggleNetrw()\<CR\>                   | map      | Toggle Netrw file explorer                                   |
+| \<f5\>           |                                             |          | Toggle Paste mode                                            |
 | \<f6\>           | :setlocal spell! spelllang=de_at\<CR\>      | map      | Toggle spelling in german                                    |
 | \<f7\>           | :setlocal spell! spelllang=en_us\<CR\>      | map      | Toggle spelling in english                                   |
 | \<leader\>o      | o\<Esc\>                                    | nnoremap | Add line below curser                                        |
@@ -110,11 +147,11 @@ used \<leader\> is ","
 | \<C-l\>          | \<C-o\>a                                    | inoremap | Enable movement in insert mode with l                        |
 | \<C-j\>          | \<C-o\>j                                    | inoremap | Enable movement in insert mode with j                        |
 | \<C-k\>          | \<C-o\>k                                    | inoremap | Enable movement in insert mode with k                        |
-| \<Up\>           | :resize +2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
-| \<Down\>         | :resize -2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
-| \<Left\>         | :vertical resize +2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
-| \<Right>         | :vertical resize -2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
-| \<leader\>D      | \<C-r>=strftime('%F')\<CR\>                 | inoremap | Insert current date YYYY-MM-DD format                        |
+| \<A-h\>          | :resize +2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<A-l\>          | :resize -2\<CR\>                            | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<A-j\>          | :vertical resize +2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| \<A-k>           | :vertical resize -2\<CR\>                   | nnoremap | Remap arrow keys to not use them (or only to resize windows) |
+| ;D               | \<C-r>=strftime('%F')\<CR\>                 | inoremap | Insert current date YYYY-MM-DD format                        |
 | \<leader\>D      | i\<C-r>=strftime('%F')\<CR\>\<Esc\>         | nnoremap | Insert current date YYYY-MM-DD format                        |
 | \<leader\>wc     | :call WordCount()\<CR\>                     | nnoremap | Toggle word count on/off                                     |
 | \<leader\>wu     | :call WordCount('update')\<CR\>             | nnoremap | Update word count                                            |
@@ -134,21 +171,26 @@ used \<leader\> is ","
 | \<leader\>cm     | :set mouse= / :set mouse=a                  | nnoremap | Toggle mouse support                                         |
 | \<leader\>ct     | :set textwidgt=\<nr\>                       | nnoremap | Change textwidth to given number                             |
 | \<leader\>cb     | :set background=light / set background=dark | nnoremap | Toggle background to dark/light                              |
+| -                | -                                           | -        | TBD - for more infos look at maps.md|
 
 
 ## Custom Key Mapping for Plugins
 
-| Mapping      | Command                     | Mode     | Description                                                  |
-|--------------|-----------------------------|----------|--------------------------------------------------------------|
-| \<C-b\>      | Buffers\<CR\>               | nmap     | Use fzf Buffers command to switch buffer                     |
-| \<C-f\>      | :Files\<CR\>                | nmap     | Use fzf Files command to switch file                         |
-| \<leader\>cg | :Goyo                       | nnoremap | Toggle Goyo - Plugin to Focus editor and disable distraction |
-| \<f2\>       | :NnnPicker '%:p:h'\<CR\>    | map      | Toggle NNN File explorer                                     |
-| \<f4\>       | :call ToggleGStatus()\<CR\> | map      | Toggle git status                                            |
-| \<leader\>gd | :YcmCompleter GoTo\<CR\>    | nnoremap | Use YCM go to definition command                             |
-| \<Leader\>gf | :YcmCompleter FixIt\<CR\>   | nnoremap | Use YCM Fix it command                                       |
-| )            | <Plug>(GitGutterNextHunk)   | nmap     | Jump to the next hunk of GitGutter                           |
-| (            | <Plug>(GitGutterPrevHunk)   | nmap     | Jump to the previous hunk of GitGutter                       |
+| Mapping               | Command                                       | Mode     | Description                                                      |
+|-----------------------|-----------------------------------------------|----------|------------------------------------------------------------------|
+| \<leader\>b           | Buffers\<CR\>                                 | nnoremap | Use fzf Buffers command to switch buffer                         |
+| \<leader\>e           | :Fzf -m\<CR\>                                 | nnoremap | Use fzf Files command to switch file                             |
+| \<leader\>\<leader\>h | :History:\<CR\>                               | nmap     | Use fzf History command to show and select history               |
+| \<leader\>cg          | :Goyo                                         | nnoremap | Toggle Goyo - Plugin to Focus editor and disable distraction     |
+| \<leader\>u           | :UndotreeToggle\<CR\>                         | nmap     | Toggle Undotree - Plugin to follow multiple undo trees  |
+| \<f2\>                | :CocCommand explorer\<CR\>                    | nmap     | Toggle coc-explorer                                              |
+| \<f3\>                | :CocCommand explorer --present floating\<CR\> | nmap     | Toggle coc-explorer in floating                                  |
+| \<f4\>                | :Tagbar\<CR\>                                 | map      | Toggle bar for tags                                              |
+| \<f8\>                | :call ToggleGStatus()\<CR\>                   | map      | Toggle git status                                                |
+| )                     | <Plug>(GitGutterNextHunk)                     | nmap     | Jump to the next hunk of GitGutter                               |
+| (                     | <Plug>(GitGutterPrevHunk)                     | nmap     | Jump to the previous hunk of GitGutter                           |
+| -                     | -                                             | -        | For Coc-Settings/Shortcuts see plugin/plugs/coc.vim              |
+
 
 
 ## Read Repos/dotfiles/posts to find my gems
