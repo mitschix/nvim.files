@@ -42,6 +42,8 @@ set splitbelow splitright                                       " change split b
 set encoding=utf-8 fileencoding=utf-8 fileencodings=utf-8       " encoding
 set fileformats=unix,dos,mac                                    " EOL formats order
 set foldlevel=99 foldmethod=indent                              " do not fold when opening - fold at indention
+set linebreak showbreak=→                                       " wrap long lines at a character in 'breakat' - display start of wrapped lines
+set scrolloff=7                                                 " Minimal number of screen lines to keep above/below the cursor.
 " }}}
 
 " Undo Settings {{{
