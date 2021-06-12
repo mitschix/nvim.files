@@ -31,8 +31,6 @@ Plug 'ryanoasis/vim-devicons'
 " install fzf as command and as plugin
 Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 Plug 'junegunn/fzf.vim'
-" @todo create function for all mappings to add to menu for denite
-" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " git plugins
 Plug 'tpope/vim-fugitive'
@@ -65,10 +63,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mitschix/plastic.vim'
 
 " others
-Plug 'ThePrimeagen/vim-be-good'
 Plug 'junegunn/vim-emoji'
-Plug 'hyiltiz/vim-plugins-profile'
-Plug 'dstein64/vim-startuptime'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()
