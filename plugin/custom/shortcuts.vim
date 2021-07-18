@@ -6,6 +6,8 @@
 " remap leader
 let mapleader = ","
 
+nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+
 " Nvim config/Opening Settings {{{
 " edit nvim config
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -215,3 +217,30 @@ inoremap <C-u> <esc>mzgUiw`za
 " }}}
 " }}}
 
+" Plugin Settings {{{
+nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
+" Completion settings {{{
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" }}}
+
+" LSP config mappings{{{
+nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> ca :Lspsaga code_action<CR>
+nnoremap <silent> cd :Lspsaga show_line_diagnostics<CR>
+" nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> K :Lspsaga hover_doc<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>
+"}}}
+
+" }}}
