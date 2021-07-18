@@ -25,7 +25,7 @@ filetype plugin indent on
 " enable syntax highlighting
 syntax on
 
-set autoread                                                    " Automatically read a file that has changed on disk 
+set autoread                                                    " Automatically read a file that has changed on disk
 set showcmd                                                     " Displays the command in the right corner
 set noshowmode                                                  " dont show mode in command line
 set hidden                                                      " let modified buffers move to the background
@@ -41,6 +41,10 @@ set fileformats=unix,dos,mac                                    " EOL formats or
 set foldlevel=99 foldmethod=indent                              " do not fold when opening - fold at indention
 set linebreak showbreak=→                                       " wrap long lines at a character in 'breakat' - display start of wrapped lines
 set scrolloff=7                                                 " Minimal number of screen lines to keep above/below the cursor.
+set termguicolors                                               " set termguicolors -> here and not in colors.vim because of source order
+set updatetime=30
+
+set completeopt=menuone,noinsert,noselect
 " }}}
 
 " Undo Settings {{{
@@ -69,3 +73,14 @@ if filereadable(plugfile)
 endif
 " source plugins.vim " containing list of plugins for plug
 " }}}
+
+" nvim 0.5 config
+luafile /home/mitschix/.config/nvim/lua/init.lua
+
+" prev coc stuff
+" " Give more space for displaying messages.
+" set cmdheight=2
+"
+" " Don't pass messages to |ins-completion-menu|.
+" set shortmess+=c
+

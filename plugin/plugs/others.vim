@@ -9,13 +9,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " == vim rainbow settings
 let g:rainbow_active = 1
 
-
-" == vimwiki settings
-let g:vimwiki_list = [{'path': '~/docs/vimwiki',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-" disable global vimwiki filetype for .md
-let g:vimwiki_global_ext = 0
-
 " == indentline settings
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
@@ -33,3 +26,17 @@ let g:tagbar_autofocus = 1
 
 " toggle undotree
 nmap <silent> <leader>u :UndotreeToggle<CR>
+
+" configure ctrlsf
+let g:ctrlsf_position = 'right'
+
+" configure nvim-tree
+let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_close = 1
+let g:nvim_tree_auto_ignore_ft = 'startify'
+let g:nvim_tree_add_trailing = 1
+let g:nvim_tree_indent_markers = 1
+" TODO might move to init.vim
+hi def NvimTreeRootFolder guifg=x
+let g:nvim_tree_root_folder_modifier = ':h'
+

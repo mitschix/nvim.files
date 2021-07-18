@@ -12,7 +12,6 @@ ln -s /path/to/repo/nvim.files ~/.config/nvim
 
 Your will need to have neovim + python and clipboard support already setup.
 
-
 Below is a list of my shortcuts for quicker review, to see if there is somethink interesting for you, since it took me a long time to comb through a lot of repositorys to find some gems. Hopefully this will speed up your journey. (:
 
 There is a list of some repository I have saved, but there are far more out there.
@@ -21,42 +20,53 @@ There is a list of some repository I have saved, but there are far more out ther
 List of used plugins
 
 ### useful tools
-+ 'junegunn/goyo.vim'
++ 'kdav5758/TrueZen.nvim' " goyo replacement
 + 'mbbill/undotree'
 + 'unblevable/quick-scope'
-+ 'voldikss/vim-floaterm'
-+ 'wsdjeg/vim-todo'
++ 'voldikss/vim-floaterm' " todo might be replaced by lspasge - floatterm
++ 'wsdjeg/vim-todo' " TODO broken?
 + 'will133/vim-dirdiff'
++ 'tversteeg/registers.nvim' " previews registers
+
+### File explorer
++ 'kyazdani42/nvim-web-devicons' " for file icons
++ 'kyazdani42/nvim-tree.lua'
 
 ### start screen with file type icons
 + 'mhinz/vim-startify'
 + 'ryanoasis/vim-devicons'
 
+### cocsearch replacement @todo configure it
++ 'dyng/ctrlsf.vim'
+
 ### fuzzy search utils
-installs fzf as command and as plugin
 + 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 + 'junegunn/fzf.vim'
 
-### git Plugins
-+ 'tpope/vim-fugitive'
-+ 'airblade/vim-gitgutter'
+### git plugins
++ 'nvim-lua/plenary.nvim' " set of lua functions needed by gitsigns
++ 'lewis6991/gitsigns.nvim'
 
 ### completion
-+ 'neoclide/coc.nvim', {'branch': 'release'}
 + 'sirver/ultisnips'
 + 'honza/vim-snippets'
++ 'hrsh7th/nvim-compe'
+### lsps
++ 'neovim/nvim-lspconfig'
++ 'glepnir/lspsaga.nvim'
 
 ### syntax
 + 'PotatoesMaster/i3-vim-syntax'
 + 'frazrepo/vim-rainbow'
-+ 'lilydjwg/colorizer' " suggests to use hexokinase
++ 'norcalli/nvim-colorizer.lua' " needs termguicolors
++ 'nvim-treesitter/nvim-treesitter'
 
 + 'mechatroner/rainbow_csv'
 + 'andymass/vim-matchup'
 + 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 ### programming
-+ 'tomtom/tcomment_vim'
++ 'terrortylor/nvim-comment'
 + 'dhruvasagar/vim-table-mode'
 + 'dbeniamine/cheat.sh-vim'
 + 'Yggdroot/indentLine'
@@ -69,8 +79,7 @@ installs fzf as command and as plugin
 + 'mitschix/plastic.vim'
 
 ### others
-+ 'junegunn/vim-emoji'
-
++ 'ThePrimeagen/vim-be-good'
 
 ## Custom statusline
 Since there is a lot going on in my custom statusline and it is not a plugin, there is a short explanation of my status line:

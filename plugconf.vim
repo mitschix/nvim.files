@@ -16,16 +16,24 @@ endif
 " add plugins
 call plug#begin('~/.config/nvim/vim-plugged')
 " useful tools
-Plug 'junegunn/goyo.vim'
+Plug 'kdav5758/TrueZen.nvim' " goyo replacement
 Plug 'mbbill/undotree'
 Plug 'unblevable/quick-scope'
-Plug 'voldikss/vim-floaterm'
-Plug 'wsdjeg/vim-todo'
+Plug 'voldikss/vim-floaterm' " todo might be replaced by lspasge - floatterm
+Plug 'wsdjeg/vim-todo' " TODO broken?
 Plug 'will133/vim-dirdiff'
+Plug 'tversteeg/registers.nvim' " previews registers
+
+" File explorer
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " start screen with file type icons
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+
+" cocsearch replacement @todo configure it
+Plug 'dyng/ctrlsf.vim'
 
 " fuzzy search utils
 " install fzf as command and as plugin
@@ -33,21 +41,28 @@ Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 Plug 'junegunn/fzf.vim'
 
 " git plugins
+Plug 'nvim-lua/plenary.nvim' " set of lua functions needed by gitsigns
+Plug 'lewis6991/gitsigns.nvim'
 
 " completion
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'hrsh7th/nvim-compe'
+" lsps
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 
 " syntax
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'frazrepo/vim-rainbow'
-Plug 'lilydjwg/colorizer' " suggests to use hexokinase
+Plug 'norcalli/nvim-colorizer.lua' " needs termguicolors
+Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'mechatroner/rainbow_csv'
 Plug 'andymass/vim-matchup'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " programming
-Plug 'tomtom/tcomment_vim'
+Plug 'terrortylor/nvim-comment'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'Yggdroot/indentLine'
@@ -60,6 +75,5 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mitschix/plastic.vim'
 
 " others
-
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
