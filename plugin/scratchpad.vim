@@ -90,3 +90,9 @@ nnoremap <Leader>pL :Lines<CR>
 nnoremap <Leader>pt :Tags<CR>
 nnoremap <Leader>pb :Buffers<CR>
 "}}}
+
+
+" highlight insert mode
+" autocmd InsertEnter * set cul
+" autocmd InsertLeave * set nocul
+
