@@ -1,3 +1,5 @@
+" let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
+
 " https://github.com/tjdevries/config_manager/tree/master/xdg_config {{{
 " Execute this file
 function! s:save_and_exec() abort
