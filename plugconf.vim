@@ -33,11 +33,8 @@ Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
 Plug 'junegunn/fzf.vim'
 
 " git plugins
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 
 " completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " syntax
@@ -63,7 +60,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mitschix/plastic.vim'
 
 " others
-Plug 'junegunn/vim-emoji'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " little buggy
 call plug#end()

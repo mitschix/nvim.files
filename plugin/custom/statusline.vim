@@ -3,42 +3,6 @@
 " === STATUSLINE SETTINGS & FUNCTIONS ===
 
 
-" Git functions {{{
-" !! need fugitive installed
-function! StatuslineGit()
-    if exists(':Git')
-        " check if vim-fugitive is installed to prevent errors on first setup
-        let l:branchname = fugitive#head()
-        return strlen(l:branchname) > 0?printf('  %s ', l:branchname):''
-    else
-        return ""
-    endif
-endfunction
-
-" vim gitgutter statusline
-" !! need gitgutter installed
-function! GitStatus()
-    " check if gitgutter is installed to prevent errors on first setup
-    if exists(':GitGutter')
-        let l:changes = ''
-        let hunks_symbols = ['+', '~', '-'] " changes this if you want to have other symbols [add, change, delete]
-        let hunks = GitGutterGetHunkSummary()
-        for i in [0, 1, 2]
-            if hunks[i] > 0
-                let l:changes .= printf(' %s%d', hunks_symbols[i], hunks[i])
-
-            endif
-        endfor
-        if strlen(l:changes) > 0
-            let l:changes = printf(' %s ', l:changes)
-        endif
-        return l:changes
-    else
-        return ""
-    endif
-endfunction
-" }}}
-
 " Display number of tabs {{{
 function! GetTabs()
     let l:maxtabnr = tabpagenr('$')

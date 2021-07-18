@@ -12,9 +12,6 @@
 " plugin/custom/augroups.vim            " summary of augroups
 " plugin/timestamp.vim                  " autoupdater for timestamps
 " plugin/plugs/colors.vim   	        " settings for colorscheme and colors
-" plugin/plugs/coc.vim                  " coc settings
-" plugin/plugs/emoji.vim                " emoji settings
-" plugin/plugs/git.vim          	    " settings for git related plugins
 " plugin/plugs/snippets.vim     	    " settings for all snippet plugins
 " plugin/plugs/tags.vim         	    " settings for primarly gutentags
 " plugin/plugs/floaterm.vim             " settings and shortcuts for floaterm
