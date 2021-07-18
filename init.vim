@@ -47,9 +47,7 @@ set scrolloff=7                                                 " Minimal number
 " }}}
 
 " Undo Settings {{{
-" Persistent undo and controlling swap files
 if has('persistent_undo')
-    set undodir=$HOME/.config/nvim/undo
     set undofile
     set undolevels=1000
     set undoreload=10000
