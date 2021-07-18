@@ -27,6 +27,7 @@ syntax on
 
 set autoread                                                    " Automatically read a file that has changed on disk
 set showcmd                                                     " Displays the command in the right corner
+set cmdheight=2
 set noshowmode                                                  " dont show mode in command line
 set hidden                                                      " let modified buffers move to the background
 set number relativenumber                                       " linenumbers
@@ -76,11 +77,3 @@ endif
 
 " nvim 0.5 config
 luafile /home/mitschix/.config/nvim/lua/init.lua
-
-" prev coc stuff
-" " Give more space for displaying messages.
-" set cmdheight=2
-"
-" " Don't pass messages to |ins-completion-menu|.
-" set shortmess+=c
-
