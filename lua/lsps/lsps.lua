@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
     end
 end
 
-require'lspconfig'.pyls.setup{on_attach=on_attach,
+require'lspconfig'.pylsp.setup{on_attach=on_attach,
     settings = {
         pyls = {
             plugins = {

@@ -76,4 +76,4 @@ endif
 " }}}
 
 " nvim 0.5 config
-luafile /home/mitschix/.config/nvim/lua/init.lua
+luafile /home/$USER/.config/nvim/lua/init.lua
