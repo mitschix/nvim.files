@@ -35,12 +35,12 @@ require'compe'.setup {
 }
 
 -- treesitter config
--- require'nvim-treesitter.configs'.setup {
---   ensure_installed = "maintained",
---   highlight = {
---     enable = true
---   },
--- }
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true
+  },
+}
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 

@@ -56,7 +56,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'frazrepo/vim-rainbow'
 Plug 'norcalli/nvim-colorizer.lua' " needs termguicolors
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'mechatroner/rainbow_csv'
 Plug 'andymass/vim-matchup'
