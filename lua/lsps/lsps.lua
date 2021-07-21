@@ -5,6 +5,8 @@ vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiag
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
 
 
+require'lsp_signature'.setup()
+
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
 -- Set autocommands conditional on server_capabilities

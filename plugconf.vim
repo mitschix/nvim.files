@@ -50,6 +50,7 @@ Plug 'hrsh7th/nvim-compe'
 " lsps
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 " syntax
 Plug 'PotatoesMaster/i3-vim-syntax'
