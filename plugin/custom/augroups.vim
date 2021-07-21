@@ -54,7 +54,7 @@ augroup END
 " Misc {{{
 augroup mark-fold
   autocmd!
-  autocmd FileType vim,zsh setlocal foldmethod=marker foldlevel=0
+  autocmd FileType tex,vim,zsh setlocal foldmethod=marker foldlevel=0
 augroup END
 " }}}
 
