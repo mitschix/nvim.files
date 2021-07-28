@@ -24,7 +24,7 @@ return require('packer').startup({function(use)
     use {'kdav5758/TrueZen.nvim', opt=true, cmd = {'TZMinimalist', 'TZAtaraxis'} } -- goyo replacement
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
-    use {'voldikss/vim-floaterm', opt=true, cmd = {'FloattermNew'}} -- todo might be replaced by lspasge - floatterm
+    use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo might be replaced by lspasge - floatterm
     use 'wsdjeg/vim-todo' -- TODO broken?
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
