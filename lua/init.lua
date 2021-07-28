@@ -1,6 +1,8 @@
+
+require('plugin-packer')
+
 require('nvim_comment').setup()
 require('colorizer').setup()
-require('true-zen').setup()
 
 -- setup completion menu
 vim.cmd("set shortmess+=c")
@@ -40,6 +42,7 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true
   },
+  rainbow = {enable = true}
 }
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback

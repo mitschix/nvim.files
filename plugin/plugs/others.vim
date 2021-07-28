@@ -3,12 +3,6 @@
 " === OTHER MISC PLUGIN SETTINGS ===
 
 
-" == quickscope settings
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" == vim rainbow settings
-let g:rainbow_active = 1
-
 " == indentline settings
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
@@ -19,16 +13,9 @@ let g:indentLine_faster = 1
 
 " toggle tagbar
 map <silent> <f4> :Tagbar<CR>
-let g:tagbar_autofocus = 1
-
-" remove pydocstring mappings
-" nmap <silent> <C-_> <Plug>(pydocstring)
 
 " toggle undotree
 nmap <silent> <leader>u :UndotreeToggle<CR>
-
-" configure ctrlsf
-let g:ctrlsf_position = 'right'
 
 " configure nvim-tree
 let g:nvim_tree_auto_open = 1

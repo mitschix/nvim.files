@@ -64,16 +64,5 @@ autocmd InsertLeave * silent! set nopaste
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " }}}
 
-" Source Plug-Plugins File{{{
-" source this file seperatly because of buggy behaviour when sourced with
-" plugin runtime path
-let g:nvim_config_root = stdpath('config')
-let plugfile = g:nvim_config_root . '/' . 'plugconf.vim'
-if filereadable(plugfile)
-    execute 'source ' . plugfile
-endif
-" source plugins.vim " containing list of plugins for plug
-" }}}
-
 " nvim 0.5 config
 luafile /home/$USER/.config/nvim/lua/init.lua
