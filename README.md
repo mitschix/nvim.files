@@ -111,10 +111,6 @@ On the right side it will show:
 
 The  **^** symbols everywhere are there because of the split and indicates your current focused window. Have not found a way to get rid of those. ._.
 
-## Custom keymappings
-A list of my keymappings can be found at maps.md. Some of them are pretty formatted and explained, but since I got lazy
-the rest is just greped and parsed and may be deprecated (sorry).
-
 ## Read Repos/dotfiles/posts to find my gems
 + [BrodieRobertson](https://github.com/BrodieRobertson/dotfiles/blob/master/config/nvim/init.vim)
 + [DamianConway](https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup/blob/cbe1fb5b5505e17bd7709669168c367903d94cd4/.vimrc#L1)
@@ -126,5 +122,6 @@ the rest is just greped and parsed and may be deprecated (sorry).
 + [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim)
 + [stevelosh](https://stevelosh.com/blog/2010/09/coming-home-to-vim/)
 + [nicknisi](https://github.com/nicknisi/dotfiles/blob/master/config/nvim/init.vim)
++ [uolot](https://github.com/uolot/dotfiles/blob/master/vim/mappings.vim)
 + [vim-bootstrap](https://vim-bootstrap.com/)
 + ... there have been far more, unfortunately I have not saved all of them. - sorry ):
