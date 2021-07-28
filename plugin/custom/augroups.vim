@@ -56,6 +56,11 @@ augroup mark-fold
   autocmd!
   autocmd FileType tex,vim,zsh setlocal foldmethod=marker foldlevel=0
 augroup END
+
+" open images with imv
+autocmd BufEnter *.png,*.jpg,*.gif exec "!sxiv ".expand("%") | :bw
+" open PDFs with zathura
+autocmd BufEnter *.pdf exec "!zathura ".expand("%") | :bw
 " }}}
 
 " Auto-format *.files prior to saving them{{{
