@@ -78,7 +78,7 @@ set statusline=
 set statusline+=%#MoreMsg#%{GetTabs()}%*
 set statusline+=%{get(b:,'gitsigns_status','')}
 set statusline+=%#DiffAdd#\%{GetHead()}\%*
-set statusline+=%#ModeColor#%{GetMode()}%*\
+set statusline+=%#ModeColor#%{GetMode()}%*
 set statusline+=%F
 set statusline+=\ %#Statement#%h%r%m%w%*
 set statusline+=%=
