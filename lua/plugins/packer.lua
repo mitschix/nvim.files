@@ -56,7 +56,16 @@ return require('packer').startup({function(use)
 
     -- " completion
     use {'hrsh7th/nvim-compe',
-        require = {{use 'sirver/ultisnips'}, { use 'honza/vim-snippets'}}}
+        require = {
+            {use 'sirver/ultisnips', setup = function ()
+                    -- Trigger configuration.
+                    vim.g.UltiSnipsExpandTrigger="sS"
+                    vim.g.UltiSnipsJumpForwardTrigger="sF"
+                    vim.g.UltiSnipsJumpBackwardTrigger="sB"
+                    -- If you want :UltiSnipsEdit to split your window.
+                    vim.g.UltiSnipsEditSplit="vertical"
+                end},
+            { use 'honza/vim-snippets'}}}
     -- " lsps
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'
@@ -85,10 +94,10 @@ return require('packer').startup({function(use)
     -- " start screen with file type icons
     use {'mhinz/vim-startify', requires = { use 'ryanoasis/vim-devicons', opt=true}}
 
-    -- " fuzzy search utils
-    -- " install fzf as command and as plugin
-    -- Plug 'junegunn/fzf', {'do': './install --all --xdg --no-zsh --no-bash' }
-    -- Plug 'junegunn/fzf.vim'
+    -- fuzzy search utils
+    -- install fzf as command and as plugin
+    use {'junegunn/fzf', run = './install --all --xdg --no-zsh --no-bash' }
+    use 'junegunn/fzf.vim'
     --
     -- themes
     use 'mitschix/plastic.vim'
