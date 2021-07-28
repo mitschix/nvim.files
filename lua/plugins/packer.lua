@@ -43,10 +43,16 @@ return require('packer').startup({function(use)
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
 
     -- programming
-    use 'terrortylor/nvim-comment'
+    use {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end}
     use {'dhruvasagar/vim-table-mode', opt=true, cmd={'TableModeToggle'}}
     use {'dbeniamine/cheat.sh-vim', opt=true}
-    use 'Yggdroot/indentLine'
+    use {'Yggdroot/indentLine', setup = function ()
+            -- indentline settings
+            vim.g.indentLine_enabled = 1
+            vim.g.indentLine_concealcursor = 0
+            vim.g.indentLine_char = '┆'
+            vim.g.indentLine_faster = 1
+        end}
 
     -- " completion
     use {'hrsh7th/nvim-compe',
@@ -59,7 +65,7 @@ return require('packer').startup({function(use)
     -- " syntax
     use {'PotatoesMaster/i3-vim-syntax', opt=true}
     use {'p00f/nvim-ts-rainbow'} -- replace old rainbow
-    use 'norcalli/nvim-colorizer.lua'
+    use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'mechatroner/rainbow_csv'
@@ -67,7 +73,14 @@ return require('packer').startup({function(use)
 
     -- tags
     use {'majutsushi/tagbar', opt=true, cmd={'Tagbar'}, setup = [[vim.g.tagbar_autofocus = 1]]}
-    use 'ludovicchabant/vim-gutentags'
+    use {'ludovicchabant/vim-gutentags', setup = function ()
+            --  vim gutentags settings
+            vim.g.gutentags_add_default_project_roots = 0
+            vim.g.gutentags_project_root = {'requirements.txt', '.git'}
+            vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS'}
+            -- TODO does not work with lua?
+            vim.cmd("let g:gutentags_cache_dir = stdpath('data').'//tags'")
+        end}
 
     -- " start screen with file type icons
     use {'mhinz/vim-startify', requires = { use 'ryanoasis/vim-devicons', opt=true}}
