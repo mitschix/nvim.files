@@ -217,13 +217,6 @@ inoremap <C-u> <esc>mzgUiw`za
 " }}}
 
 " Plugin Settings {{{
-nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
-nnoremap <leader>gd :Gitsigns preview_hunk<CR>
-nnoremap <leader>gn :Gitsigns next_hunk<CR>
-nnoremap <leader>gp :Gitsigns prev_hunk<CR>
-nnoremap <leader>gs :Gitsigns stage_hunk<CR>
-nnoremap <leader>gu :Gitsigns undo_stage_hunk<CR>
-
 " Completion settings {{{
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
