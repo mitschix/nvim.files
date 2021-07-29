@@ -14,6 +14,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
+-- auto compile
+vim.api.nvim_exec(
+  [[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost init.lua PackerCompile
+  augroup end
+]],
+  false
+)
+
 return require('packer').startup({function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'

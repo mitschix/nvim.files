@@ -3,11 +3,6 @@
 -- === MAIN VIMRC & BASIC SETTINGS===
 
 
--- " load indentation rules and plugins according to the detected filetype.
-vim.cmd('filetype plugin indent on')
--- " enable syntax highlighting
-vim.cmd('syntax on')
-
 -- basic settings {{{
 -- Automatically read a file that has changed on disk
 vim.opt.autoread = true
