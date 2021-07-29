@@ -65,20 +65,7 @@ inoremap <leader>dd <Esc>ddi
 inoremap <leader>> <esc>>>a
 inoremap <leader>< <esc><<a
 
-set lazyredraw " screen will not redraw while executing macros
 "}}}
-
-
-" https://github.com/sheerun/vimrc{{{
-" Keep 8 lines above or below the cursor when scrolling.
-
-set scrolloff=8
-
-" Keep 15 columns next to the cursor when scrolling horizontally.
-
-set sidescroll=1
-set sidescrolloff=15
-" }}}
 
 
 " fzf settings{{{

@@ -61,6 +61,13 @@ augroup END
 autocmd BufEnter *.png,*.jpg,*.gif exec "!sxiv ".expand("%") | :bw
 " open PDFs with zathura
 autocmd BufEnter *.pdf exec "!zathura ".expand("%") | :bw
+
+" Unset paste on InsertLeave.
+autocmd InsertLeave * silent! set nopaste
+
+" jump to the last position when reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 " }}}
 
 " Auto-format *.files prior to saving them{{{

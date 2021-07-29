@@ -123,5 +123,6 @@ The  **^** symbols everywhere are there because of the split and indicates your 
 + [stevelosh](https://stevelosh.com/blog/2010/09/coming-home-to-vim/)
 + [nicknisi](https://github.com/nicknisi/dotfiles/blob/master/config/nvim/init.vim)
 + [uolot](https://github.com/uolot/dotfiles/blob/master/vim/mappings.vim)
++ [sheerun](https://github.com/sheerun/vimrc)
 + [vim-bootstrap](https://vim-bootstrap.com/)
 + ... there have been far more, unfortunately I have not saved all of them. - sorry ):
