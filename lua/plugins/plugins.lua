@@ -3,6 +3,7 @@
 require('plugins.compe')
 require('plugins.nvimtree')
 require('plugins.git')
+require('plugins.floatterm')
 
 -- setup and configure minor plugins
 -- treesitter config
