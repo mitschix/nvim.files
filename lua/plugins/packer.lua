@@ -39,6 +39,7 @@ return require('packer').startup({function(use)
     use 'wsdjeg/vim-todo' -- TODO broken?
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
+    use 'xiyaowong/nvim-cursorword'
 
     -- cocsearch replacement @todo configure it
     -- use {'dyng/ctrlsf.vim', opt=true, cmd = {''}}
