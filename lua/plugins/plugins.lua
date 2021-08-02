@@ -1,5 +1,6 @@
 
 -- source plugin configs
+require('plugins.packer')
 require('plugins.compe')
 require('plugins.nvimtree')
 require('plugins.git')

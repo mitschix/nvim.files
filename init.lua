@@ -1,5 +1,4 @@
 require('settings')
 require('shortcuts')
-require('plugins/packer')
 require('plugins/plugins')
 require('lsps/lsps')
