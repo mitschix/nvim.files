@@ -24,4 +24,5 @@ vim.api.nvim_set_keymap('', '<f4>', ':Tagbar<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', key_opts)
 
 -- plugin settings
-
+vim.g.spacevim_todo_labels = {'FIXME','NOTE','TODO','QUESTION'}
+vim.g.spacevim_todo_labels_pattern = '\vTODO:?|FIXME:?|NOTE:?'
