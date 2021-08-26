@@ -1,5 +1,3 @@
-" let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
-
 " https://github.com/tjdevries/config_manager/tree/master/xdg_config {{{
 " Execute this file
 function! s:save_and_exec() abort
@@ -20,14 +18,6 @@ nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
 nnoremap <leader>rr :%s/<c-r><c-w>//g<left><left><left>
 nnoremap <leader>rc :%s/<c-r><c-w>//gc<left><left><left>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-" }}}
-
-" Prevent x from overriding what's in the clipboard. {{{
-" https://github.com/nickjj/dotfiles/blob/master/.vimrc
-noremap x "_x
-noremap X "_x
-
 " }}}
 
 " -----Code Generation----- {{{
@@ -42,6 +32,7 @@ inoremap ;g <++>
 """ Abbreviations {{{
 " remove whitespace after abbrev
 " https://github.com/godlygeek/vim-files/blob/master/.vimrc
+" @TODO currently broken
 function! EatChar(pat)
   let c = nr2char(getchar(0))
   return (c =~ a:pat) ? '' : c
@@ -64,7 +55,6 @@ inoremap <leader>dd <Esc>ddi
 " fix to adjust curser position, might with mark
 inoremap <leader>> <esc>>>a
 inoremap <leader>< <esc><<a
-
 "}}}
 
 
@@ -77,9 +67,4 @@ nnoremap <Leader>pL :Lines<CR>
 nnoremap <Leader>pt :Tags<CR>
 nnoremap <Leader>pb :Buffers<CR>
 "}}}
-
-
-" highlight insert mode
-" autocmd InsertEnter * set cul
-" autocmd InsertLeave * set nocul
 
