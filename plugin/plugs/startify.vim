@@ -1,12 +1,12 @@
 let g:startify_custom_header = [
-            \ '          ▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄  ▄▄▄ ',
-            \ '          ███   ███▀▀▀▀▀██▀▀█▀██  ██▀▀██▀███  ███ ',
-            \ '          ██▀█  ███    ██    ███  ██  ██ ████████ ',
-            \ '          ██ ██ █████████    ███  ██  ██ ██ ██ ██ ',
-            \ '          ██  █▄███    ██    ██████   ██ ██ ▀▀ ██ ',
-            \ '          ██   ████▄▄▄▄▄██▄▄██ ████ ▄▄██▄██    ██ ',
-            \ '          ▀▀   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀ ▀▀▀▀▀▀▀    ▀▀ ',
-            \]                                         
+            \ '          ▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄  ▄▄▄',
+            \ '          ███   ███▀▀▀▀▀██▀▀█▀██  ██▀▀██▀███  ███',
+            \ '          ██▀█  ███    ██    ███  ██  ██ ████████',
+            \ '          ██ ██ █████████    ███  ██  ██ ██ ██ ██',
+            \ '          ██  █▄███    ██    ██████   ██ ██ ▀▀ ██',
+            \ '          ██   ████▄▄▄▄▄██▄▄██ ████ ▄▄██▄██    ██',
+            \ '          ▀▀   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀ ▀▀▀▀▀▀▀    ▀▀',
+            \]
 
 
 let g:startify_session_dir = '~/.config/nvim/sessions'
@@ -40,8 +40,8 @@ let g:startify_bookmarks = [
             \ { 'd': '~/.config/dotfiles' },
             \ ]
 let g:startify_commands = [
-            \ { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
-            \ { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+            \ { 'up': [ 'Update Plugins', ':PackerUpdate' ] },
+            \ { 'ug': [ 'Upgrade Plugin Manager', ':PackerCompile' ] },
             \ ]
 
 " This plugin will let us manage our sessions very easily
