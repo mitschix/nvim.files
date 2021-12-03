@@ -36,7 +36,7 @@ return require('packer').startup({function(use)
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
     use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo might be replaced by lspasge - floatterm
-    use 'wsdjeg/vim-todo' -- TODO broken?
+    use 'wsdjeg/vim-todo'
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
     use 'xiyaowong/nvim-cursorword'
@@ -112,7 +112,7 @@ return require('packer').startup({function(use)
     use 'junegunn/fzf.vim'
     --
     -- themes
-    use 'mitschix/plastic.vim'
+    use {'mitschix/plastic.vim', opt=true, cmd = {'colorscheme plastic'}}
     use 'sainnhe/sonokai'
 
     -- others
