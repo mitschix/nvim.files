@@ -5,7 +5,8 @@
 
 " add theme of plugin
 " set plastic if installed silent to suppress errors if not
-silent! colorscheme plastic
+silent! colorscheme sonokai
+" silent! colorscheme plastic
 
 " add visible column
 set colorcolumn=81
@@ -14,17 +15,17 @@ nnoremap <F9> :set termguicolors!<CR>
 set termguicolors
 
 " LSP diagnostics color config {{{
-hi LspDiagnosticsDefaultError ctermfg=red guifg=#D54E53
-hi LspDiagnosticsVirtualTextError ctermfg=red  guifg=#D54E53
+hi DiagnosticDefaultError ctermfg=red guifg=#D54E53
+hi DiagnosticVirtualTextError ctermfg=red  guifg=#D54E53
 
-hi LspDiagnosticsDefaultWarning ctermfg=yellow guifg=#E7C547
-hi LspDiagnosticsVirtualTextWarning ctermfg=yellow guifg=#E7C547
+hi DiagnosticDefaultWarn ctermfg=yellow guifg=#E7C547
+hi DiagnosticVirtualTextWarn ctermfg=yellow guifg=#E7C547
 
-hi LspDiagnosticsDefaultInfo ctermfg=white guifg=#EAEAEA
-hi LspDiagnosticsVirtualTextInfo ctermfg=white guifg=#EAEAEA
+hi DiagnosticDefaultInfo ctermfg=white guifg=#EAEAEA
+hi DiagnosticVirtualTextInfo ctermfg=white guifg=#EAEAEA
 
-hi LspDiagnosticsDefaultHint ctermfg=blue guifg=#7AA6DA
-hi LspDiagnosticsVirtualTextHint ctermfg=blue guifg=#7AA6DA
+hi DiagnosticDefaultHint ctermfg=blue guifg=#7AA6DA
+hi DiagnosticVirtualTextHint ctermfg=blue guifg=#7AA6DA
 " }}}
 
 " GitSigns color config {{{
