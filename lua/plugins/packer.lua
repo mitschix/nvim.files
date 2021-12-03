@@ -113,6 +113,7 @@ return require('packer').startup({function(use)
     --
     -- themes
     use 'mitschix/plastic.vim'
+    use 'sainnhe/sonokai'
 
     -- others
     use {'ThePrimeagen/vim-be-good', opt=true, cmd = {'VimBeGood'}}
