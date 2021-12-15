@@ -80,7 +80,7 @@ return require('packer').startup({function(use)
             { use 'honza/vim-snippets'}}}
     -- " lsps
     use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
+    use 'tami5/lspsaga.nvim'
     use 'ray-x/lsp_signature.nvim'
 
     -- " syntax
