@@ -4,7 +4,7 @@ git clone https://github.com/sumneko/lua-language-server (XDG_Data/lsps)
 cd lua-language-server
 git submodule update --init --recursive
 cd 3rd/luamake
-ninja -f ninja/linux.ninja
+./compile/install.sh
 cd ../..
 ./3rd/luamake/luamake rebuild
 ]]--
@@ -12,7 +12,7 @@ cd ../..
 
 -- set the path to the sumneko installation
 local sumneko_root_path = vim.fn.getenv('XDG_DATA_HOME')..'/lsps/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
+local sumneko_binary = sumneko_root_path.."/bin/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};

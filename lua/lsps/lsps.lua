@@ -7,6 +7,7 @@ vim.fn.sign_define("DiagnosticSignHint", {text = "", numhl = "DiagnosticDefaultH
 
 require'lsp_signature'.setup()
 
+-- pip install 'python-lsp-server[all]'
 require'lspconfig'.pylsp.setup{
     settings = {
         pyls = {
@@ -18,6 +19,7 @@ require'lspconfig'.pylsp.setup{
 }
 
 
+-- go install golang.org/x/tools/gopls@latest
 -- needs a .git to be attached
 -- root_dir = root_pattern("go.mod", ".git")
 require'lspconfig'.gopls.setup{
@@ -31,6 +33,7 @@ require'lspconfig'.gopls.setup{
     },
 }
 
+-- sudo npm install -g vim-language-server
 require'lspconfig'.vimls.setup{}
 
 -- require other files lsp config folder
