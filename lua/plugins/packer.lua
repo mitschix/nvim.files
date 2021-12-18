@@ -67,8 +67,18 @@ return require('packer').startup({function(use)
         end}
 
     -- " completion
-    use {'hrsh7th/nvim-compe',
+    -- https://github.com/hrsh7th/nvim-cmp
+    use {"hrsh7th/nvim-cmp",
         require = {
+            use "hrsh7th/cmp-nvim-lsp",
+            use "hrsh7th/cmp-nvim-lua",
+            use "hrsh7th/cmp-buffer",
+            use "ray-x/cmp-treesitter",
+            use "hrsh7th/cmp-path",
+            use "f3fora/cmp-spell",
+            use "hrsh7th/cmp-calc",
+            use "hrsh7th/cmp-emoji",
+            -- use "hrsh7th/cmp-cmdline", --TODO have a look
             {use 'sirver/ultisnips', setup = function ()
                     -- Trigger configuration.
                     vim.g.UltiSnipsExpandTrigger="sS"
@@ -76,8 +86,12 @@ return require('packer').startup({function(use)
                     vim.g.UltiSnipsJumpBackwardTrigger="sB"
                     -- If you want :UltiSnipsEdit to split your window.
                     vim.g.UltiSnipsEditSplit="vertical"
-                end},
-            { use 'honza/vim-snippets'}}}
+                end}, use 'quangnguyen30192/cmp-nvim-ultisnips',
+            -- https://github.com/onsails/lspkind-nvim - pictograms
+            use "onsails/lspkind-nvim"
+        }
+    }
+
     -- " lsps
     use 'neovim/nvim-lspconfig'
     use 'tami5/lspsaga.nvim'

@@ -4,6 +4,8 @@ vim.fn.sign_define("DiagnosticSignWarn", {text = "", numhl = "DiagnosticDefaultW
 vim.fn.sign_define("DiagnosticSignInfo", {text = "", numhl = "DiagnosticDefaultInfo"})
 vim.fn.sign_define("DiagnosticSignHint", {text = "", numhl = "DiagnosticDefaultHint"})
 
+-- Setup lspconfig for cmp
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'lsp_signature'.setup()
 
@@ -15,7 +17,8 @@ require'lspconfig'.pylsp.setup{
                 pylint = {enabled = true; }
             }
         }
-    }
+    },
+    capabilities = capabilities
 }
 
 
@@ -31,10 +34,11 @@ require'lspconfig'.gopls.setup{
             staticcheck = true,
       },
     },
+    capabilities = capabilities
 }
 
 -- sudo npm install -g vim-language-server
-require'lspconfig'.vimls.setup{}
+require'lspconfig'.vimls.setup{capabilities = capabilities}
 
 -- require other files lsp config folder
 require('lsps/lua-sumneko')

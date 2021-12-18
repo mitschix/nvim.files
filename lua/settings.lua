@@ -20,7 +20,7 @@ vim.opt.hidden = true
 -- Show matching brackets.
 vim.opt.showmatch = true
 
-vim.opt.completeopt={'menuone','noinsert','noselect'}
+vim.opt.completeopt={'menu','menuone','noselect'}
 
 -- settings for searching= true
 vim.opt.incsearch = true
