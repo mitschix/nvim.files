@@ -87,8 +87,6 @@ return require('packer').startup({function(use)
                     -- If you want :UltiSnipsEdit to split your window.
                     vim.g.UltiSnipsEditSplit="vertical"
                 end}, use 'quangnguyen30192/cmp-nvim-ultisnips',
-            -- https://github.com/onsails/lspkind-nvim - pictograms
-            use "onsails/lspkind-nvim"
         }
     }
 
