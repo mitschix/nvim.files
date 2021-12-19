@@ -41,17 +41,18 @@ cmp.setup( {
             nvim_lsp = "[LSP]",
             calc = "[Calc]",
             ultisnips = "[UltiSnip]",
-            treesitter = "[TreeS]",
+            treesitter = "[TS]",
             spell = "[Spell]",
             nvim_lua = "[Lua]",
+            cmp_tabnine = "[TN]",
           })[entry.source.name]
           return vim_item
         end
     },
     sources = {
-        {name = "nvim_lsp"}, {name = "buffer", keyword_length = 5},
+        {name = "nvim_lsp"}, {name = "cmp_tabnine"}, {name = "buffer", keyword_length = 5},
         {name = "ultisnips"}, {name = "calc"}, {name = "emoji"}, {name = "spell"},
-        {name = "path"}, {name = 'treesitter'}
+        {name = "path"}, {name = 'treesitter', keyword_length = 5}
     },
     mapping = {
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -75,6 +76,19 @@ cmp.setup( {
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
+})
+
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	};
 })
 
 -- Use buffer source for `/`.
