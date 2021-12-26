@@ -109,6 +109,9 @@ nnoremap <silent> <M-l>    :vertical resize +2<CR>
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
+" Close file but not buffer
+nmap ,d :b#<bar>bd#<CR>
+
 " switch tabs and buffers
 map <silent> <C-Tab> :tabnext<Enter>
 nmap <silent> <S-Tab> :bNext<Enter>
