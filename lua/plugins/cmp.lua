@@ -50,7 +50,7 @@ cmp.setup( {
         end
     },
     sources = {
-        {name = "nvim_lsp"}, {name = "cmp_tabnine"}, {name = "buffer", keyword_length = 5},
+        {name = "nvim_lsp", priority=100}, {name = "cmp_tabnine"}, {name = "buffer", keyword_length = 5},
         {name = "ultisnips"}, {name = "calc"}, {name = "emoji"}, {name = "spell"},
         {name = "path"}, {name = 'treesitter', keyword_length = 5}
     },
