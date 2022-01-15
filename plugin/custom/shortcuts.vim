@@ -222,7 +222,8 @@ inoremap <C-u> <esc>mzgUiw`za
 " Plugin Settings {{{
 
 " LSP config mappings{{{
-nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+" nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>rn :Lspsaga rename<CR>
 nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
