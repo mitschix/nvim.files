@@ -5,6 +5,7 @@ require('plugins.cmp')
 require('plugins.nvimtree')
 require('plugins.git')
 require('plugins.floatterm')
+require("luasnip.loaders.from_vscode").load()
 
 -- setup and configure minor plugins
 -- treesitter config

@@ -80,16 +80,13 @@ return require('packer').startup({function(use)
             use "hrsh7th/cmp-emoji",
             use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'},
             -- use "hrsh7th/cmp-cmdline", --TODO have a look
-            {use 'sirver/ultisnips', setup = function ()
-                    -- Trigger configuration.
-                    vim.g.UltiSnipsExpandTrigger="sS"
-                    vim.g.UltiSnipsJumpForwardTrigger="sF"
-                    vim.g.UltiSnipsJumpBackwardTrigger="sB"
-                    -- If you want :UltiSnipsEdit to split your window.
-                    vim.g.UltiSnipsEditSplit="vertical"
-                end}, use 'quangnguyen30192/cmp-nvim-ultisnips',
+            use { 'saadparwaiz1/cmp_luasnip' }
         }
     }
+
+    -- snippets
+    use { 'L3MON4D3/LuaSnip' }
+    use "rafamadriz/friendly-snippets"
 
     -- " lsps
     use 'neovim/nvim-lspconfig'

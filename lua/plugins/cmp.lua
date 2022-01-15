@@ -51,7 +51,7 @@ cmp.setup( {
     },
     sources = {
         {name = "nvim_lsp", priority=100}, {name = "cmp_tabnine"}, {name = "buffer", keyword_length = 5},
-        {name = "ultisnips"}, {name = "calc"}, {name = "emoji"}, {name = "spell"},
+        {name = "luasnip"}, {name = "calc"}, {name = "emoji"}, {name = "spell"},
         {name = "path"}, {name = 'treesitter', keyword_length = 5}
     },
     mapping = {
@@ -71,8 +71,8 @@ cmp.setup( {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
