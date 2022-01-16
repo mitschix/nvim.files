@@ -64,6 +64,7 @@ return require('packer').startup({function(use)
             vim.g.indentLine_concealcursor = 0
             vim.g.indentLine_char = '┆'
             vim.g.indentLine_faster = 1
+            vim.g.indentLine_fileTypeExclude = {'alpha'}
         end}
 
     -- " completion
@@ -114,7 +115,55 @@ return require('packer').startup({function(use)
         end}
 
     -- " start screen with file type icons
-    use {'mhinz/vim-startify', requires = { use 'ryanoasis/vim-devicons', opt=true}}
+    use {
+    'goolord/alpha-nvim',
+    config = function ()
+            local handle = io.popen('fortune -s -n 90')
+            local fortune = handle:read("*a")
+            handle:close()
+            local startify = require'alpha.themes.startify'
+            startify.section.header.val = {
+                [[          ▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄  ▄▄▄]],
+                [[          ███   ███▀▀▀▀▀██▀▀█▀██  ██▀▀██▀███  ███]],
+                [[          ██▀█  ███    ██    ███  ██  ██ ████████]],
+                [[          ██ ██ █████████    ███  ██  ██ ██ ██ ██]],
+                [[          ██  █▄███    ██    ██████   ██ ██ ▀▀ ██]],
+                [[          ██   ████▄▄▄▄▄██▄▄██ ████ ▄▄██▄██    ██]],
+                [[          ▀▀   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀ ▀▀▀▀▀▀▀    ▀▀]],
+            }
+            startify.section.header.opts = { position = "center"}
+            startify.section.top_buttons.opts = { position = "center"}
+            startify.section.bottom_buttons.opts = { position = "center"}
+            startify.section.footer.opts = { position = "center"}
+            startify.section.top_buttons.val = {
+                startify.button( "e", "  New file" , ":ene <BAR> startinsert <CR>"),
+            }
+            startify.section.bottom_buttons.val = {
+                { type = "text", val = "Commands", opts = { hl = "SpecialComment", shrink_margin = false } },
+                { type = "padding", val = 1 },
+                startify.button( "up", " Update Plugins" , ":PackerUpdate<CR>"),
+                startify.button( "ug", " Compile Plugins" , ":PackerCompile<CR>"),
+                { type = "padding", val = 1 },
+                startify.button( "q", "  Quit NVIM" , ":qa<CR>"),
+            }
+            startify.section.footer.val = {
+                { type = "text", val = fortune, opts = { position = "center"} },
+            }
+            startify.opts.layout = {
+                    { type = "padding", val = 8 },
+                    startify.section.header,
+                    { type = "padding", val = 2 },
+                    startify.section.top_buttons,
+                    startify.section.mru,
+                    startify.section.mru_cwd,
+                    { type = "padding", val = 1 },
+                    startify.section.bottom_buttons,
+                    { type = "padding", val = 2 },
+                    startify.section.footer,
+            }
+            require'alpha'.setup(startify.opts)
+        end
+    }
 
     -- fuzzy search utils
     -- install fzf as command and as plugin

@@ -29,3 +29,6 @@ vim.g.spacevim_todo_labels = {'FIXME','NOTE','TODO','QUESTION'}
 vim.g.spacevim_todo_labels_pattern = '\vTODO:?|FIXME:?|NOTE:?'
 
 vim.g.sonokai_transparent_background = 1
+
+-- disable extra whitespace for alpha startup screen
+vim.cmd('autocmd FileType alpha highlight ExtraWhitespace NONE')
