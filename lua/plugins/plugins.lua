@@ -4,6 +4,7 @@ require('plugins.packer')
 require('plugins.cmp')
 require('plugins.nvimtree')
 require('plugins.git')
+require('plugins.dap')
 require('plugins.floatterm')
 require("luasnip.loaders.from_vscode").load()
 

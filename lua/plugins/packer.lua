@@ -94,6 +94,12 @@ return require('packer').startup({function(use)
     use 'tami5/lspsaga.nvim'
     use 'ray-x/lsp_signature.nvim'
 
+    -- " debug
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'mfussenegger/nvim-dap-python'
+
+
     -- " syntax
     use {'PotatoesMaster/i3-vim-syntax', opt=true}
     use {'p00f/nvim-ts-rainbow'} -- replace old rainbow
