@@ -121,9 +121,7 @@ return require('packer').startup({function(use)
         end}
 
     -- " start screen with file type icons
-    use {
-    'goolord/alpha-nvim',
-    config = use('plugins.alpha')}
+    use {'goolord/alpha-nvim', config = [[require('plugins.alpha')]]}
 
     -- fuzzy search utils
     -- install fzf as command and as plugin
