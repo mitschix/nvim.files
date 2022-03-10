@@ -56,15 +56,3 @@ inoremap <leader>dd <Esc>ddi
 inoremap <leader>> <esc>>>a
 inoremap <leader>< <esc><<a
 "}}}
-
-
-" fzf settings{{{
-" https://github.com/uolot/dotfiles/blob/master/vim/files-fzf.vim
-nnoremap <Leader>pf :GFiles<CR>
-nnoremap <Leader>pF :Files<CR>
-nnoremap <Leader>pl :BLines<CR>
-nnoremap <Leader>pL :Lines<CR>
-nnoremap <Leader>pt :Tags<CR>
-nnoremap <Leader>pb :Buffers<CR>
-"}}}
-

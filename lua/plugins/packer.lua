@@ -107,7 +107,7 @@ return require('packer').startup({function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'mechatroner/rainbow_csv'
-    use {'andymass/vim-matchup', event = 'VimEnter'}
+    -- use {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
 
     -- tags
     use {'majutsushi/tagbar', opt=true, cmd={'Tagbar'}, setup = [[vim.g.tagbar_autofocus = 1]]}
