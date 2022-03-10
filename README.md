@@ -17,8 +17,6 @@ git checkout pre-nvim-0.5
 ## Custom statusline
 Since there is a lot going on in my custom statusline and it is not a plugin, there is a short explanation of my status line:
 
-![Left Side](img/l_statusline.png "left side of the status line")
-
 On the left side of me status line it will show:
 + The current and maximum tab number, if there is another tab open
 + The modification if in a git repository (+ line added, ~ line modified, - line deleted) it will only show them if there are changes
@@ -30,8 +28,6 @@ On the left side of me status line it will show:
 + A flag that indicates if modified \[+\]; \[-\] if modifiable is off
 
 
-![Right Side](img/r_statusline.png "right side of the status line")
-
 On the right side it will show:
 + A flag for paste mode if enabled
 + A flag for spelling including spellang if enabled
@@ -40,8 +36,6 @@ On the right side it will show:
 + The current line / maximum lines
 + The current column
 + A % inidicator of the position in the file,
-
-The  **^** symbols everywhere are there because of the split and indicates your current focused window. Have not found a way to get rid of those. ._.
 
 ## Read Repos/dotfiles/posts to find my gems
 It took me a long time to comb through a lot of repositorys to find some gems, hopefully this will speed up your journey. (:
