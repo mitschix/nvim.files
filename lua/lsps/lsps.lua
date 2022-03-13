@@ -42,3 +42,22 @@ require'lspconfig'.vimls.setup{capabilities = capabilities}
 
 -- require other files lsp config folder
 require('lsps/lua-sumneko')
+
+-- LSP config mappings{{{
+vim.g.mapleader = ','
+local key_opts = {silent=true, noremap=true}
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
+-- vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'ca', ':Lspsaga code_action<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'cd', ':Lspsaga show_line_diagnostics<CR>', key_opts)
+-- vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<C-p>', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<C-n>', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
+-- }}}
