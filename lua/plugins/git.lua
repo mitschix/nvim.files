@@ -13,6 +13,19 @@ function GitSignsPadding(status)
           return table.concat(status_txt, ' ')
 end
 
+-- GitSigns color config {{{
+-- TODO highlight currently not in vim.api
+-- augroup -> fix to change hi even if theme uses `highlight clear`
+vim.cmd([[
+  augroup custom_theme_highlights
+    autocmd!
+    au ColorScheme * hi GitSignsAdd ctermfg=green guifg=#A3BE8C
+    au ColorScheme * hi GitSignsChange ctermfg=yellow guifg=#E0C387
+    au ColorScheme * hi GitSignsDelete ctermfg=red guifg=#BF616A
+  augroup END
+]])
+-- }}}
+
 require('gitsigns').setup{
     signs={add={text='+'},change={text='~'}},
     status_formatter = GitSignsPadding}
@@ -24,4 +37,3 @@ vim.api.nvim_set_keymap('n', '<leader>gn', ':Gitsigns next_hunk<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', key_opts)
-
