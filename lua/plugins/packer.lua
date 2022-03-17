@@ -40,6 +40,8 @@ return require('packer').startup({function(use)
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
     use 'xiyaowong/nvim-cursorword'
+    use {"jbyuki/instant.nvim", opt=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
+        setup = function () vim.g.instant_username = "mitschix" end}
 
     -- cocsearch replacement @todo configure it
     -- use {'dyng/ctrlsf.vim', opt=true, cmd = {''}}
