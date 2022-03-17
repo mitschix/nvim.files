@@ -1,4 +1,3 @@
-vim.cmd[[hi def NvimTreeRootFolder guifg=red]]
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 vim.g.nvim_tree_auto_ignore_ft = {'startify'}
 vim.g.nvim_tree_add_trailing = 1
