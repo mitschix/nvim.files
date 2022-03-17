@@ -134,6 +134,8 @@ return require('packer').startup({function(use)
 
     -- others
     use {'ThePrimeagen/vim-be-good', opt=true, cmd = {'VimBeGood'}}
+    -- lua module loading speedup -> improve starttime
+    use 'lewis6991/impatient.nvim'
 end,
 config = {
     display = {
