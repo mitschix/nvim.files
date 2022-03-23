@@ -2,6 +2,7 @@
 -- source plugin configs
 require('plugins.packer')
 require('plugins.cmp')
+require('plugins.lsps')
 require('plugins.nvimtree')
 require('plugins.git')
 require('plugins.dap')
