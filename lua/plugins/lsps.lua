@@ -67,7 +67,7 @@ local servers = {
     "sumneko_lua",
     "texlab", -- testing
     "vimls",
-    "zk" -- markdown for Zettelkasten
+    "zk" -- markdown for Zettelkasten - need 'zk' installed
 }
 
 for _, name in pairs(servers) do
@@ -91,6 +91,12 @@ local enhance_server_opts = {
                 staticcheck = true,
             }
         }
+    end,
+
+    ["jsonls"] = function(opts)
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls
+        -- should need snippet support
+        opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
     end,
 
     -- ["pylsp"] = function(opts)
