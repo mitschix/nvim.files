@@ -35,7 +35,7 @@ return require('packer').startup({function(use)
     use {'kdav5758/TrueZen.nvim', opt=true, cmd = {'TZMinimalist', 'TZAtaraxis'} } -- goyo replacement
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
-    use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo might be replaced by lspasge - floatterm
+    -- use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo replace akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim
     use 'wsdjeg/vim-todo'
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
@@ -124,7 +124,7 @@ return require('packer').startup({function(use)
         end}
 
     -- " start screen with file type icons
-    use {'goolord/alpha-nvim', config = [[require('plugins.alpha')]]}
+    use {'goolord/alpha-nvim'}
 
     -- fuzzy search utils
     -- install fzf as command and as plugin

@@ -24,12 +24,13 @@ local function on_attach(client, bufnr)
     buf_set_keymap('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
     -- vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', key_opts)
     buf_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', key_opts)
-    buf_set_keymap('n', 'ca', ':Lspsaga code_action<CR>', key_opts)
+    buf_set_keymap('n', '<leader>ca', ':Lspsaga code_action<CR>', key_opts)
     buf_set_keymap('n', 'cd', ':Lspsaga show_line_diagnostics<CR>', key_opts)
     -- vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', key_opts)
     buf_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', key_opts)
-    buf_set_keymap('n', '<C-p>', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
-    buf_set_keymap('n', '<C-n>', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
+    buf_set_keymap('n', '[d', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
+    buf_set_keymap('n', ']d', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
+    buf_set_keymap('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
     -- }}}
 
 

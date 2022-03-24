@@ -3,6 +3,7 @@
 --
 --
 -- set sonokai if installed silent to suppress errors if not
+vim.g.sonokai_transparent_background = 1
 vim.cmd('silent! colorscheme sonokai')
 -- " add visible column
 vim.opt.termguicolors = true

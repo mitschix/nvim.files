@@ -1,0 +1,11 @@
+-- Auto-format *.files prior to saving them{{{
+-- quickfix for jumping cursor on format
+-- not yet available
+-- local function formatPy()
+--     local lineno = vim.api.nvim_win_get_cursor(0)
+--     vim.lsp.buf.formatting_sync(nil, 1000)
+--     vim.api.nvim_win_set_cursor(0, lineno)
+-- end
+-- vim.api.nvim_create_autocmd("BufWritePre", {pattern="*.py", callback=formatPy()})
+-- autocmd BufWritePre *.py lua format_py()
+-- "}}}
