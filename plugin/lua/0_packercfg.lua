@@ -4,26 +4,20 @@
 
 
 -- automatically load vim-plug and install plugins
-local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
 if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-    execute 'packadd packer.nvim'
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 -- auto compile
-vim.api.nvim_exec(
-  [[
-  augroup Packer
+vim.cmd([[
+  augroup packer_user_config
     autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+    autocmd BufWritePost 0_packercfg.lua source <afile> | PackerCompile
   augroup end
-]],
-  false
-)
+]])
+
 
 return require('packer').startup({function(use)
     -- Packer can manage itself
@@ -81,7 +75,7 @@ return require('packer').startup({function(use)
             use "f3fora/cmp-spell",
             use "hrsh7th/cmp-calc",
             use "hrsh7th/cmp-emoji",
-            use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'},
+            use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}, -- needs unzip installed
             -- use "hrsh7th/cmp-cmdline", --TODO have a look
             use { 'saadparwaiz1/cmp_luasnip' }
         }
@@ -139,6 +133,14 @@ return require('packer').startup({function(use)
     use {'ThePrimeagen/vim-be-good', opt=true, cmd = {'VimBeGood'}}
     -- lua module loading speedup -> improve starttime
     use 'lewis6991/impatient.nvim'
+
+
+    -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+    require('packer').compile()
+  end
 end,
 config = {
     display = {
