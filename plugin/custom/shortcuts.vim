@@ -174,6 +174,8 @@ nnoremap <C-q> :call SmartClose()<cr>
 nnoremap <leader>wc :call WordCount()<CR>
 nnoremap <leader>wu :call WordCount('update')<CR>
 
+nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
+
 " map change settings with function {{{
 call Map_change_option('p', 'paste')
 call Map_change_option('l', 'list')

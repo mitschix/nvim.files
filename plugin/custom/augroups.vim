@@ -54,7 +54,7 @@ augroup END
 " Misc {{{
 augroup mark-fold
   autocmd!
-  autocmd FileType tex,vim,zsh setlocal foldmethod=marker foldlevel=0
+  autocmd FileType tex,vim,lua,zsh setlocal foldmethod=marker foldlevel=0
 augroup END
 
 " open images with imv
