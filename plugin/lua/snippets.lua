@@ -9,18 +9,21 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
-ls.snippets = {
-    -- all = {
-    --     s("test", {t("this is a test")}),
-    -- },
+ls.add_snippets(nil, {
     all = {
-        s("startmain", fmt([[#!/usr/bin/env python
+        s("test", {t("this is a test")}),
+    },
+    }
+)
+ls.add_snippets("python",{
+    s("startmain", fmt([[#!/usr/bin/env python
+
 
 def {}() -> None:
     pass
 
+
 if __name__ == "__main__":
     {}()]], {i(1, "main"), rep(1)}))
     }
-
-}
+)
