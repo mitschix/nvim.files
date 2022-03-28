@@ -36,6 +36,14 @@ return require('packer').startup({function(use)
       config = function() require("todo-comments").setup { } end,
       opt=true, cmd = {'TodoLocList'}
     }
+    -- Trouble to show diagnostics/loc list/quickfix prettier
+    -- also show TODO if toggled
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require("trouble").setup { } end,
+        opt=true, cmd = {'Trouble'}
+    }
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
     use 'xiyaowong/nvim-cursorword'

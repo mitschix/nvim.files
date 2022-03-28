@@ -33,3 +33,18 @@ vim.api.nvim_set_keymap('n', 'go', 'o<Esc>', key_opts)
 vim.api.nvim_set_keymap('n', 'gO', 'O<Esc>j', key_opts)
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>A', key_opts)
 -- }}}
+
+
+
+-- short Plugin shortcuts {{{
+
+-- Trouble shortcuts {{{
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", key_opts_silent)
+-- }}}
+
+-- }}}
