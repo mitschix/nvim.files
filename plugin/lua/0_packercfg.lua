@@ -30,7 +30,11 @@ return require('packer').startup({function(use)
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
     -- use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo replace akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim
-    use 'wsdjeg/vim-todo'
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function() require("todo-comments").setup { } end
+    }
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
     use 'tversteeg/registers.nvim' -- previews registers
     use 'xiyaowong/nvim-cursorword'
