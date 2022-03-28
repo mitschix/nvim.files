@@ -9,7 +9,6 @@ vim.g.nvim_tree_show_icons = vim.api.nvim_eval('{"git": 0, "folders": 1, "files"
 require'nvim-tree'.setup{
     hijack_cursor = true,
     open_on_setup = true,
-    auto_close = true,
 
     mappings = {
         list = {
@@ -51,3 +50,6 @@ require'nvim-tree'.setup{
 
     }
 }
+
+-- autoclose nvim tree when last file
+vim.cmd[[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]]

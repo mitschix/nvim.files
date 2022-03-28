@@ -1,15 +1,3 @@
-
--- source plugin configs
--- require('plugins.packer')
--- require('plugins.cmp')
--- require('plugins.lsps')
--- require('plugins.nvimtree')
--- require('plugins.git')
--- require('plugins.dap')
--- require('plugins.floatterm')
--- require('plugins.fzf')
-require("luasnip.loaders.from_vscode").load()
-
 -- setup and configure minor plugins
 -- treesitter config
 require'nvim-treesitter.configs'.setup {

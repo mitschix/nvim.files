@@ -29,7 +29,7 @@ return require('packer').startup({function(use)
     use {'kdav5758/TrueZen.nvim', opt=true, cmd = {'TZMinimalist', 'TZAtaraxis'} } -- goyo replacement
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
-    -- use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- todo replace akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim
+    -- use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- TODO: replace akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim
     use {
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim",
@@ -41,7 +41,7 @@ return require('packer').startup({function(use)
     use {"jbyuki/instant.nvim", opt=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         setup = function () vim.g.instant_username = "mitschix" end}
 
-    -- cocsearch replacement @todo configure it
+    -- cocsearch replacement TODO: configure it
     -- use {'dyng/ctrlsf.vim', opt=true, cmd = {''}}
     use {'dyng/ctrlsf.vim', setup = [[vim.g.ctrlsf_position = 'right']]}
 
@@ -80,7 +80,7 @@ return require('packer').startup({function(use)
             use "hrsh7th/cmp-calc",
             use "hrsh7th/cmp-emoji",
             use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}, -- needs unzip installed
-            -- use "hrsh7th/cmp-cmdline", --TODO have a look
+            -- use "hrsh7th/cmp-cmdline", -- TODO: have a look
             use { 'saadparwaiz1/cmp_luasnip' }
         }
     }
