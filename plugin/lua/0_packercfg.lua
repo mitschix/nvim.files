@@ -132,6 +132,7 @@ return require('packer').startup({function(use)
 
     -- " start screen with file type icons
     use {'goolord/alpha-nvim'}
+    use {"kyazdani42/nvim-web-devicons"}
 
     -- fuzzy search utils
     -- install fzf as command and as plugin
