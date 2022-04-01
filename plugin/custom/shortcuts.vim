@@ -55,10 +55,6 @@ imap {<tab> {}<Left>
 imap {<CR> {<CR>}<ESC>O
 imap {;<CR> {<CR>};<ESC>O
 
-" insert date
-inoremap ;D <C-r>=strftime('%F')<CR>
-nnoremap <leader>D i<C-r>=strftime('%F')<CR><Esc>
-
 if has('nvim')
     tmap <Esc> <C-\><C-n>
     tmap <leader><esc> <esc>
@@ -114,7 +110,7 @@ nmap ,d :b#<bar>bd#<CR>
 
 " switch tabs and buffers
 map <silent> <C-Tab> :tabnext<Enter>
-nmap <silent> <S-Tab> :bNext<Enter>
+nmap <silent> <S-Tab> :bprevious<Enter>
 nmap <silent> <Tab> :bnext<Enter>
 " }}}
 
@@ -168,7 +164,6 @@ map <f7> :setlocal spell! spelllang=en_us<CR>
 nmap <Leader>qw :w<CR><Esc>:call CustomExit()<CR>
 nmap <Leader>qq  :call CustomExit()<CR>
 nmap <Leader>qf <Esc>:call CustomExit()!<CR>
-nnoremap <C-q> :call SmartClose()<cr>
 
 " toggle wordcount functions
 nnoremap <leader>wc :call WordCount()<CR>
@@ -185,38 +180,6 @@ call Map_change_option('h', 'hlsearch')
 call Map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
 call Map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
 call Map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
-" !! plugin goyo needed
-call Map_change_option('g', 'Goyo')
 " }}}
-" }}}
-" }}}
-
-" == other magic shortcuts {{{
-
-" "Uppercase word" mapping from stevelosh {{{
-"
-" This mapping allows you to press <c-u> in insert mode to convert the current
-" word to uppercase.  It's handy when you're writing names of constants and
-" don't want to use Capslock.
-"
-" To use it you type the name of the constant in lowercase.  While your
-" cursor is at the end of the word, press <c-u> to uppercase it, and then
-" continue happily on your way:
-"
-"                            cursor
-"                            v
-"     max_connections_allowed|
-"     <c-u>
-"     MAX_CONNECTIONS_ALLOWED|
-"                            ^
-"                            cursor
-"
-" It works by exiting out of insert mode, recording the current cursor location
-" in the z mark, using gUiw to uppercase inside the current word, moving back to
-" the z mark, and entering insert mode again.
-"
-" Note that this will overwrite the contents of the z mark.  I never use it, but
-" if you do you'll probably want to use another mark.
-inoremap <C-u> <esc>mzgUiw`za
 " }}}
 " }}}

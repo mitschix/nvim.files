@@ -3,14 +3,6 @@
 " === STATUSLINE SETTINGS & FUNCTIONS ===
 
 
-" Display number of tabs {{{
-function! GetTabs()
-    let l:maxtabnr = tabpagenr('$')
-    let l:curtab = tabpagenr()
-    return maxtabnr > 1?printf('  %d/%d ', l:curtab, l:maxtabnr):''
-endfunction
-" }}}
-
 function! GetHead()
     let l:head = get(b:,'gitsigns_head','')
     if l:head != ''
@@ -75,7 +67,6 @@ endfunction
 " Statusline Settings {{{
 set laststatus=2    " permanently set statusline
 set statusline=
-set statusline+=%#MoreMsg#%{GetTabs()}%*
 set statusline+=%{get(b:,'gitsigns_status','')}
 set statusline+=%#debugPC#\%{GetHead()}\%*
 set statusline+=%#ModeColor#%{GetMode()}%*
