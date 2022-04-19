@@ -89,7 +89,7 @@ return require('packer').startup({function(use)
             use "hrsh7th/cmp-calc",
             use "hrsh7th/cmp-emoji",
             use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}, -- needs unzip installed
-            -- use "hrsh7th/cmp-cmdline", -- TODO: have a look
+            use "hrsh7th/cmp-cmdline",
             use { 'saadparwaiz1/cmp_luasnip' }
         }
     }

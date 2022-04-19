@@ -60,18 +60,13 @@ cmp.setup( {
         {name = "luasnip"}, {name = "calc"}, {name = "emoji"}, {name = "spell"},
         {name = "path"}, {name = 'treesitter', keyword_length = 5}
     },
-    mapping = {
-        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ['<C-e>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -93,7 +88,7 @@ cmp.setup( {
                 fallback()
             end
         end, { "i", "s" }),
-    },
+    }),
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -118,16 +113,18 @@ tabnine:setup({
 	};
 })
 
--- Use buffer source for `/`.
-cmp.setup.cmdline("/", {sources = {{name = "buffer"}}})
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline({
+        ['<C-e>'] = {c = cmp.mapping.close()}
+    }),
+    sources = {{name = 'buffer'}}
+})
 
--- currently bugged
--- vim.cmd[[
--- " Setup buffer configuration (nvim-lua source only enables in Lua filetype).
--- autocmd FileType lua lua require'cmp'.setup.buffer {
-    --    sources = {
-        --      {name = 'nvim_lua'},
-        --      {name = 'buffer'},
-        --    },
-        --  }
-        -- ]]
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline({
+        ['<C-e>'] = {c = cmp.mapping.close()}
+    }),
+    sources = {{name = 'path'}, {name = 'cmdline'}}
+})
