@@ -160,10 +160,6 @@ map <f6> :setlocal spell! spelllang=de_at<CR>
 map <f7> :setlocal spell! spelllang=en_us<CR>
 
 " self defined functions.vim {{{
-" custom exit und closing
-nmap <Leader>qw :w<CR><Esc>:call CustomExit()<CR>
-nmap <Leader>qq  :call CustomExit()<CR>
-nmap <Leader>qf <Esc>:call CustomExit()!<CR>
 
 " toggle wordcount functions
 nnoremap <leader>wc :call WordCount()<CR>

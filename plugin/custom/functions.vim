@@ -3,17 +3,6 @@
 " === FUNCTIONS ===
 
 
-" Closing and Exit {{{
-" custom exit function to close buffers before exiting
-function! CustomExit()
-    if (len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1)
-        q
-    else
-        bd
-    endif
-endfunction
-" }}}
-
 " https://github.com/tjdevries/config_manager/tree/master/xdg_config {{{
 " Execute this file
 function! s:save_and_exec() abort
