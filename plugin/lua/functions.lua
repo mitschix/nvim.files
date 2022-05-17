@@ -1,11 +1,9 @@
-vim.g.diagnostics_visible = true
-function _G.toggle_diagnostics()
-  if vim.g.diagnostics_visible then
-    vim.g.diagnostics_visible = false
-    vim.diagnostic.disable()
+vim.g.diagnostics_active = true
+vim.keymap.set('n', '<leader>D', function()
+  vim.g.diagnostics_active = not vim.g.diagnostics_active
+  if vim.g.diagnostics_active then
+    vim.diagnostic.show()
   else
-    vim.g.diagnostics_visible = true
-    vim.diagnostic.enable()
+    vim.diagnostic.hide()
   end
-end
-vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>D', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
+end, {silent=true, noremap=true})
