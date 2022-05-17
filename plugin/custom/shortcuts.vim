@@ -161,10 +161,6 @@ map <f7> :setlocal spell! spelllang=en_us<CR>
 
 " self defined functions.vim {{{
 
-" toggle wordcount functions
-nnoremap <leader>wc :call WordCount()<CR>
-nnoremap <leader>wu :call WordCount('update')<CR>
-
 nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
 
 " map change settings with function {{{

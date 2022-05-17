@@ -46,3 +46,27 @@ vim.keymap.set('n', '<leader>qq', function() custom_exit() end, {silent=true, no
 vim.keymap.set('n', '<leader>qw', function() custom_exit(true) end, {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>q!', function() custom_exit(false, true) end, {silent=true, noremap=true})
 -- }}}
+
+-- WordCount for the Statusline {{{
+-- Toggle word count in the panel if you hit <leader>wc
+-- Update the word count if you hit <leader>wu, display in statusline
+-- Add %{lua print(WORD_COUNT)} to statusline to see wordcount.
+-- set statusline+=%{lua print(WORD_COUNT)}
+WORD_COUNT = ''
+local function word_count(update)
+    update = (update == nil and false or update)
+    if WORD_COUNT == '' or update then
+        local count = vim.fn.wordcount().words
+        if count == 0 then
+            WORD_COUNT = ".Words [none]."
+        else
+            WORD_COUNT = string.format(".Words [%d].", count)
+        end
+    else
+        WORD_COUNT = ''
+    end
+end
+-- toggle wordcount functions
+vim.keymap.set('n', '<leader>wc', function() word_count() end, {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>wu', function() word_count(true) end, {silent=true, noremap=true})
+-- }}}
