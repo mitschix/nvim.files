@@ -1,13 +1,22 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 vim.g.nvim_tree_auto_ignore_ft = {'startify'}
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_show_icons = vim.api.nvim_eval('{"git": 0, "folders": 1, "files": 1}')
 
 require'nvim-tree'.setup{
     hijack_cursor = true,
     open_on_setup = true,
-    renderer ={indent_markers = {enable = true}},
+
+    renderer ={
+        add_trailing = true,
+        highlight_git = true,
+        indent_markers = {enable = true},
+        icons = {
+            show = {
+                file = true,
+                folder = true,
+                git = false
+            }
+        }
+    },
 
     view ={
         mappings = {
