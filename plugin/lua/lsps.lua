@@ -42,19 +42,6 @@ local function on_attach(client, bufnr)
     end
 end
 
--- install and handle lsps
-local lsp_installer = require("nvim-lsp-installer")
-
-lsp_installer.settings({
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
-
 -- auto install servers
 -- Include the servers you want to have installed by default below
 local servers = {
@@ -71,13 +58,17 @@ local servers = {
     "zk" -- markdown for Zettelkasten - need 'zk' installed
 }
 
-for _, name in pairs(servers) do
-    local server_is_found, server = lsp_installer.get_server(name)
-    if server_is_found and not server:is_installed() then
-        print("Installing " .. name)
-        server:install()
-    end
-end
+-- install and handle lsps
+require("nvim-lsp-installer").setup{
+    ensure_installed = servers,
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+}
 
 
 -- Provide settings that should only apply to the "<name>" server
@@ -100,15 +91,16 @@ local enhance_server_opts = {
         opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
     end,
 
-    -- ["pylsp"] = function(opts)
-    --     opts.settings = {
-    --         pylsp = {
-    --             plugins = {
-    --                 pylint = {enabled = true; }
-    --             }
-    --         }
-    --     }
-    -- end,
+    ["pylsp"] = function(opts)
+        opts.settings = {
+            pylsp = {
+                plugins = {
+                    pylint = {enabled = true; }
+
+                }
+            }
+        }
+    end,
 
     -- Configure lua language server for neovim development
     ["sumneko_lua"] = function(opts)
@@ -136,20 +128,20 @@ local enhance_server_opts = {
 
 }
 
--- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
-lsp_installer.on_server_ready(function(server)
+for _, server in ipairs(servers) do
     local opts = {
         capabilities = capabilities,
         on_attach = on_attach
     }
 
     -- Enhance the default opts with the server-specific ones
-    if enhance_server_opts[server.name] then
-        enhance_server_opts[server.name](opts)
+    if enhance_server_opts[server] then
+        enhance_server_opts[server](opts)
     end
 
-    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
-    -- before passing it onwards to lspconfig.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
+    require("lspconfig")[server].setup{
+        capabilities = opts.capabilities,
+        on_attach = opts.on_attach,
+        settings = opts.settings,
+    }
+end
