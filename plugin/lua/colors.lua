@@ -3,11 +3,22 @@
 --
 --
 -- set sonokai if installed silent to suppress errors if not
-vim.g.sonokai_transparent_background = 1
-vim.cmd('silent! colorscheme sonokai')
+-- vim.g.sonokai_transparent_background = 1
+-- vim.cmd('silent! colorscheme sonokai')
+
+vim.g.tokyodark_transparent_background = true
+vim.g.tokyodark_color_gamma = "1.2"
+vim.cmd('silent! colorscheme tokyodark')
+
 -- " add visible column
 vim.opt.termguicolors = true
 vim.opt.colorcolumn='81'
+
+-- Overwrite defaults of tokyodark
+vim.cmd([[
+highlight Normal guifg=#E8E8E8
+highlight Comment guifg=#7f8490
+]])
 
 -- Highlight extra whitespaces
 vim.cmd('highlight ExtraWhitespace ctermbg=darkblue guibg=#81A2BE')

@@ -142,6 +142,7 @@ return require('packer').startup({function(use)
     -- themes
     use {'mitschix/plastic.vim', opt=true, cmd = {'colorscheme plastic'}}
     use 'sainnhe/sonokai'
+    use 'tiagovla/tokyodark.nvim'
 
     -- others
     use {'ThePrimeagen/vim-be-good', opt=true, cmd = {'VimBeGood'}}
