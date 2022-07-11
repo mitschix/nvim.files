@@ -1,18 +1,3 @@
-
-function GitSignsPadding(status)
-          local added, changed, removed = status.added, status.changed, status.removed
-          local status_txt = {}
-          if added   and added   > 0 then table.insert(status_txt, '+'..added  ) end
-          if changed and changed > 0 then table.insert(status_txt, '~'..changed) end
-          if removed and removed > 0 then table.insert(status_txt, '-'..removed) end
-          -- add padding at start and end
-          if next(status_txt) ~= nil then
-              table.insert(status_txt, 1, ' ')
-              table.insert(status_txt, ' ')
-          end
-          return table.concat(status_txt, ' ')
-end
-
 -- GitSigns color config {{{
 -- TODO highlight currently not in vim.api
 -- augroup -> fix to change hi even if theme uses `highlight clear`
@@ -26,9 +11,7 @@ vim.cmd([[
 ]])
 -- }}}
 
-require('gitsigns').setup{
-    signs={add={text='+'},change={text='~'}},
-    status_formatter = GitSignsPadding}
+require('gitsigns').setup{signs={add={text='+'},change={text='~'}}}
 
 local key_opts = {silent=true, noremap=true}
 vim.api.nvim_set_keymap('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', key_opts)
