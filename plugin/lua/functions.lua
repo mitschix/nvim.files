@@ -58,9 +58,9 @@ local function word_count(update)
     if WORD_COUNT == '' or update then
         local count = vim.fn.wordcount().words
         if count == 0 then
-            WORD_COUNT = ".Words [none]."
+            WORD_COUNT = "[none]"
         else
-            WORD_COUNT = string.format(".Words [%d].", count)
+            WORD_COUNT = string.format("[%d]", count)
         end
     else
         WORD_COUNT = ''

@@ -130,6 +130,10 @@ return require('packer').startup({function(use)
             vim.cmd("let g:gutentags_cache_dir = stdpath('data').'//tags'")
         end}
 
+    -- status line
+    use { 'nvim-lualine/lualine.nvim', requires = {
+        'kyazdani42/nvim-web-devicons', opt = true } }
+
     -- " start screen with file type icons
     use {'goolord/alpha-nvim'}
     use {"kyazdani42/nvim-web-devicons"}
