@@ -29,6 +29,12 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd("InsertLeave", { command = "silent! set nopaste" })
 -- }}}
 
+-- Unset relativenumber on InsertEnter.{{{
+-- https://github.com/mathletedev/dotfiles/blob/main/.config/nvim/init.lua
+vim.api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber"})
+vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber"})
+-- }}}
+
 -- go to last position when opening a buffer {{{
 vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
   group = vim.api.nvim_create_augroup('LastPosition', {clear = true}),
