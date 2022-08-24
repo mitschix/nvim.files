@@ -49,13 +49,13 @@ local servers = {
     "dockerls",
     "gopls",
     "jsonls",
+    "marksman",
     "pylsp",
     -- install 3rd party plugins
     -- :PylspInstall pylsp-mypy pylsp-rope pyls-memestra
     "sumneko_lua",
     "texlab", -- testing
     "vimls",
-    "zk" -- markdown for Zettelkasten - need 'zk' installed
 }
 
 -- install and handle lsps
