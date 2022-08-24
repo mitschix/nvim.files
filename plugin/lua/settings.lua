@@ -42,10 +42,6 @@ vim.opt.listchars={tab = '»─', nbsp = '·', eol = '¬',
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- encoding
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.opt.fileencodings = 'utf-8'
 -- EOL formats order
 vim.opt.fileformats={'unix','dos','mac'}
 

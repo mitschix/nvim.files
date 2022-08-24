@@ -145,9 +145,6 @@ imap <leader><Enter> <Esc>:w<CR>i
 cmap w!! %!sudo tee > /dev/null %
 " }}}
 
-" qq to record, Q to replay
-nnoremap Q @q
-
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
