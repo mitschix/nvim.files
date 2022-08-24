@@ -25,10 +25,6 @@ vim.api.nvim_create_autocmd(
 
 -- Misc {{{
 
--- Unset paste on InsertLeave.{{{
-vim.api.nvim_create_autocmd("InsertLeave", { command = "silent! set nopaste" })
--- }}}
-
 -- Unset relativenumber on InsertEnter.{{{
 -- https://github.com/mathletedev/dotfiles/blob/main/.config/nvim/init.lua
 vim.api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber"})

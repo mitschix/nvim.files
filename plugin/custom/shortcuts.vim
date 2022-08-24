@@ -155,7 +155,6 @@ nnoremap N Nzzzv
 " }}}
 
 " Functions Settings {{{
-set pastetoggle=<F5>
 map <f6> :setlocal spell! spelllang=de_at<CR>
 map <f7> :setlocal spell! spelllang=en_us<CR>
 
@@ -164,7 +163,6 @@ map <f7> :setlocal spell! spelllang=en_us<CR>
 nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
 
 " map change settings with function {{{
-call Map_change_option('p', 'paste')
 call Map_change_option('l', 'list')
 call Map_change_option('n', 'number')
 call Map_change_option('w', 'wrap')
