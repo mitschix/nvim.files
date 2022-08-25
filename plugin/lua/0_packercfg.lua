@@ -76,6 +76,22 @@ return require('packer').startup({function(use)
             vim.g.indentLine_fileTypeExclude = {'alpha'}
         end}
 
+    -- scad 3D modeling?
+    use {
+    'salkin-mada/openscad.nvim',
+    config = function ()
+        require('openscad')
+        -- load snippets, note requires
+        vim.g.openscad_auto_open = true
+        vim.g.openscad_load_snippets = true
+        vim.g.openscad_fuzzy_finder = 'fzf'
+        vim.g.openscad_cheatsheet_toggle_key = '<M-c>'
+        vim.g.openscad_help_manual_trig_key = '<C-m>'
+        vim.g.openscad_help_trig_key = '<M-f>'
+    end,
+    requires = 'L3MON4D3/LuaSnip'
+    }
+
     -- " completion
     -- https://github.com/hrsh7th/nvim-cmp
     use {"hrsh7th/nvim-cmp",
@@ -108,7 +124,6 @@ return require('packer').startup({function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use 'theHamsta/nvim-dap-virtual-text'
     use 'mfussenegger/nvim-dap-python'
-
 
     -- " syntax
     use {'PotatoesMaster/i3-vim-syntax', opt=true}
