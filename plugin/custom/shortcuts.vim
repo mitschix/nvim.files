@@ -159,14 +159,5 @@ map <f7> :setlocal spell! spelllang=en_us<CR>
 
 nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
 
-" map change settings with function {{{
-call Map_change_option('l', 'list')
-call Map_change_option('n', 'number')
-call Map_change_option('w', 'wrap')
-call Map_change_option('h', 'hlsearch')
-call Map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
-call Map_change_option('t', 'textwidth', 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
-call Map_change_option('b', 'background', 'let &background = &background == "dark" ? "light" : "dark"<bar>redraw')
-" }}}
 " }}}
 " }}}
