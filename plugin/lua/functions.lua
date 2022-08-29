@@ -72,3 +72,46 @@ end
 vim.keymap.set('n', '<leader>wc', function() word_count() end, key_opts_silent)
 vim.keymap.set('n', '<leader>wu', function() word_count(true) end, key_opts_silent)
 -- }}}
+
+-- Change settings function {{{
+----------------------------------------------------------------------------
+-- <leader>c? : Toggle options
+----------------------------------------------------------------------------
+local function map_change_option(key, op)
+    local opt_mappings = {
+        wrap = "vim.wo.wrap",
+        list = "vim.wo.list",
+        hlsearch = "vim.go.hlsearch"
+    }
+
+    if key == 'n' then
+        vim.keymap.set('n', '<leader>cn', function()
+            vim.wo.number = not vim.wo.number
+            vim.wo.relativenumber = not vim.wo.relativenumber
+        end, key_opts_silent)
+    else
+        -- old vim script
+        -- let [key, opt] = a:000[0:1]
+        -- let op = get(a:, 3, 'set '.opt.'!')
+        -- execute printf("nnoremap <leader>c%s :%s<bar>set %s?<CR>", key, op, opt)
+
+        vim.keymap.set('n', '<leader>c'..key, function()
+            local option = opt_mappings[op]
+            local cmd = string.format("%s = not %s", option, option)
+            loadstring(cmd)()
+            cmd = string.format("print(' %s set: '..tostring(%s))",op, option)
+            loadstring(cmd)()
+        end, key_opts_silent)
+    end
+end
+
+map_change_option("n", "number")
+map_change_option("w", "wrap")
+map_change_option("l", "list")
+map_change_option("h", "hlsearch")
+
+-- WIP - really needed?
+-- Map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
+-- map_change_option("t", "textwidth", 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
+
+--}}}
