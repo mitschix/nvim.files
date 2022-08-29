@@ -1,3 +1,5 @@
+local key_opts_silent = {silent=true, noremap=true}
+
 vim.g.diagnostics_active = true
 vim.keymap.set('n', '<leader>D', function()
     vim.g.diagnostics_active = not vim.g.diagnostics_active
@@ -6,7 +8,7 @@ vim.keymap.set('n', '<leader>D', function()
     else
         vim.diagnostic.hide()
     end
-end, {silent=true, noremap=true})
+end, key_opts_silent)
 
 
 -- Closing and Exit {{{
@@ -42,9 +44,9 @@ local function custom_exit(save, force)
     end
 end
 
-vim.keymap.set('n', '<leader>qq', function() custom_exit() end, {silent=true, noremap=true})
-vim.keymap.set('n', '<leader>qw', function() custom_exit(true) end, {silent=true, noremap=true})
-vim.keymap.set('n', '<leader>q!', function() custom_exit(false, true) end, {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>qq', function() custom_exit() end, key_opts_silent)
+vim.keymap.set('n', '<leader>qw', function() custom_exit(true) end, key_opts_silent)
+vim.keymap.set('n', '<leader>q!', function() custom_exit(false, true) end, key_opts_silent)
 -- }}}
 
 -- WordCount for the Statusline {{{
@@ -67,6 +69,6 @@ local function word_count(update)
     end
 end
 -- toggle wordcount functions
-vim.keymap.set('n', '<leader>wc', function() word_count() end, {silent=true, noremap=true})
-vim.keymap.set('n', '<leader>wu', function() word_count(true) end, {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>wc', function() word_count() end, key_opts_silent)
+vim.keymap.set('n', '<leader>wu', function() word_count(true) end, key_opts_silent)
 -- }}}
