@@ -89,6 +89,11 @@ local function map_change_option(key, op)
             vim.wo.number = not vim.wo.number
             vim.wo.relativenumber = not vim.wo.relativenumber
         end, key_opts_silent)
+    elseif key == 'm' then
+        vim.keymap.set('n', '<leader>cm', function()
+            vim.go.mouse = vim.go.mouse == "" and "a" or ""
+            print(string.format(" %s set: %s", op, vim.go.mouse == "a"))
+        end, key_opts_silent)
     else
         -- old vim script
         -- let [key, opt] = a:000[0:1]
@@ -109,9 +114,8 @@ map_change_option("n", "number")
 map_change_option("w", "wrap")
 map_change_option("l", "list")
 map_change_option("h", "hlsearch")
+map_change_option("m", "mouse")
 
 -- WIP - really needed?
--- Map_change_option('m', 'mouse', 'let &mouse = &mouse == "" ? "a" : ""')
 -- map_change_option("t", "textwidth", 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
-
 --}}}
