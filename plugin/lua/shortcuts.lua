@@ -35,6 +35,12 @@ vim.api.nvim_set_keymap('i', 'jj', '<Esc>A', key_opts)
 -- }}}
 
 
+-- run current buffer (and saves file) (lua or vim) {{{
+-- replaces 'complicated/unneeded' save_n_exec func
+-- `:so` without file execute current buffer
+vim.keymap.set('n', '<leader><leader>x', '<CMD>so<CR>', key_opts_silent)
+vim.keymap.set('n', '<leader><leader>X', '<CMD>:w<bar>so<CR>', key_opts_silent)
+-- }}} 
 
 -- short Plugin shortcuts {{{
 
