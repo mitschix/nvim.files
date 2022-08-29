@@ -136,6 +136,11 @@ nmap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Useful Misc Settings {{{
 
+" Set spelling {{{
+map <f6> :setlocal spell! spelllang=de_at<CR>
+map <f7> :setlocal spell! spelllang=en_us<CR>
+" }}}
+
 " Saving Settings {{{
 " faster saving 
 nmap <leader><Enter> :w<CR>
@@ -151,13 +156,3 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 " }}}
 
-" Functions Settings {{{
-map <f6> :setlocal spell! spelllang=de_at<CR>
-map <f7> :setlocal spell! spelllang=en_us<CR>
-
-" self defined functions.vim {{{
-
-nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
-
-" }}}
-" }}}

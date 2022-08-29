@@ -119,3 +119,22 @@ map_change_option("m", "mouse")
 -- WIP - really needed?
 -- map_change_option("t", "textwidth", 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')
 --}}}
+
+
+-- Execute the current file {{{
+-- based on https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/autoload/tj.vim
+-- but rewritten in lua
+local function save_n_exec()
+    local ft = vim.bo.filetype
+    -- TODO: find lua equivalent to vim functions
+    vim.cmd(":silent! write")
+    if ft == "vim" then
+        vim.cmd(":source %")
+    elseif ft == "lua" then
+        vim.cmd(":luafile %")
+    else
+        print("Does not work for "..ft)
+    end
+end
+
+vim.keymap.set('n', '<leader><leader>x', function() save_n_exec() end, key_opts_silent)
