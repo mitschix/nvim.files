@@ -26,9 +26,5 @@ vim.api.nvim_set_keymap('n', '<leader>pb', ":Buffers<CR>", {noremap = true})
 -- currently does not work?
 vim.api.nvim_set_keymap('i', '<c-f>', "fzf#vim#complete#path('rg --hidden --files')", {noremap = true, expr = true})
 
-vim.cmd[[au FileType fzf nnoremap <silent> q :q<CR>]]
-
-
-
-
-
+-- TODO: sets permanently -> prevent makros
+-- vim.cmd[[au FileType fzf nnoremap <silent> q :q<CR>]]
