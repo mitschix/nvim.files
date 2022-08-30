@@ -110,16 +110,15 @@ vim.api.nvim_set_keymap('n', '<M-h>', '<CMD>vertical resize -2<CR>', key_opts_si
 vim.api.nvim_set_keymap('n', '<M-l>', '<CMD>vertical resize +2<CR>', key_opts_silent)
 
 -- Split
-vim.api.nvim_set_keymap('n', '<leader>h', '<CMD><C-u>split<CR>', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<leader>v', '<CMD><C-u>vsplit<CR>', key_opts_silent)
+vim.api.nvim_set_keymap('n', '<leader>h', ':<C-u>split<CR>', key_opts_silent)
+vim.api.nvim_set_keymap('n', '<leader>v', ':<C-u>vsplit<CR>', key_opts_silent)
 
 -- Close file but not buffer
 vim.api.nvim_set_keymap('n', '<leader>d', '<CMD>b#<bar>bd#<CR>', key_opts_silent)
 
 -- " switch tabs and buffers
-vim.api.nvim_set_keymap('n', '<C-Tab>', ':tabnext<Enter>', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<Enter>', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<Enter>', key_opts_silent)
+vim.api.nvim_set_keymap('n', '<Tab>', '<CMD>bnext<CR>', key_opts_silent)
+vim.api.nvim_set_keymap('n', '<S-Tab>', '<CMD>bprevious<CR>', key_opts_silent)
 -- }}}
 
 -- Movement Settings {{{
@@ -146,9 +145,9 @@ vim.api.nvim_set_keymap('n', '<f7>', '<CMD>setlocal  spell! spelllang=en_us<CR>'
 
 -- Change the current word in insertmode.{{{
 -- Auto places you into the spot where you can start typing to change it.
-vim.api.nvim_set_keymap('n', '<leader>rr', '<CMD>%s/<c-r><c-w>//g<left><left>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>rc', '<CMD>%s/<c-r><c-w>//gc<left><left><left>', key_opts)
-vim.api.nvim_set_keymap('v', '<C-r>', '"hy<CMD>%s/<C-r>h//gc<left><left><left>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>rr', ':%s/<c-r><c-w>//g<left><left>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>rc', ':%s/<c-r><c-w>//gc<left><left><left>', key_opts)
+vim.api.nvim_set_keymap('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>', key_opts)
 -- }}}
 
 -- Search mappings: These will make it so that going to the next one in a
@@ -177,12 +176,12 @@ vim.api.nvim_set_keymap('i', '?', '?<C-g>U', key_opts_silent)
 -- short Plugin shortcuts {{{
 
 -- Trouble shortcuts {{{
-vim.api.nvim_set_keymap("n", "<leader>xx", "<CMD>Trouble<cr>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xw", "<CMD>Trouble workspace_diagnostics<cr>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xd", "<CMD>Trouble document_diagnostics<cr>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xl", "<CMD>Trouble loclist<cr>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xq", "<CMD>Trouble quickfix<cr>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "gR", "<CMD>Trouble lsp_references<cr>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xx", "<CMD>Trouble<CR>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<CMD>Trouble workspace_diagnostics<CR>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<CMD>Trouble document_diagnostics<CR>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<CMD>Trouble loclist<CR>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<CMD>Trouble quickfix<CR>", key_opts_silent)
+vim.api.nvim_set_keymap("n", "gR", "<CMD>Trouble lsp_references<CR>", key_opts_silent)
 -- }}}
 
 -- }}}
