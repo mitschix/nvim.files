@@ -14,10 +14,6 @@ nmap <silent> <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 "" Set working directory
 nnoremap <leader>cd :lcd %:p:h<CR>
-"" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " }}}
 
 " Copy/Paste Settings {{{

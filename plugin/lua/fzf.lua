@@ -23,6 +23,9 @@ vim.api.nvim_set_keymap('n', '<leader>pL', ":Lines<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>pt', ":Tags<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>pb', ":Buffers<CR>", {noremap = true})
 
+-- Opens with the path of the currently edited file filled in
+vim.keymap.set('n', '<leader>e', ':GFiles <C-R>=expand("%:p:h") <CR><CR>')
+
 -- currently does not work?
 vim.api.nvim_set_keymap('i', '<c-f>', "fzf#vim#complete#path('rg --hidden --files')", {noremap = true, expr = true})
 
