@@ -1,6 +1,5 @@
 vim.g.mapleader = ','
 
-local key_opts = {noremap=true}
 local key_opts_silent = {silent=true, noremap=true}
 
 -- Run Current Buffer {{{
@@ -145,9 +144,9 @@ vim.api.nvim_set_keymap('n', '<f7>', '<CMD>setlocal  spell! spelllang=en_us<CR>'
 
 -- Change the current word in insertmode.{{{
 -- Auto places you into the spot where you can start typing to change it.
-vim.api.nvim_set_keymap('n', '<leader>rr', ':%s/<c-r><c-w>//g<left><left>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>rc', ':%s/<c-r><c-w>//gc<left><left><left>', key_opts)
-vim.api.nvim_set_keymap('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>', key_opts)
+vim.keymap.set('n', '<leader>rr', ':%s/<c-r><c-w>//g<left><left>')
+vim.keymap.set('n', '<leader>rc', ':%s/<c-r><c-w>//gc<left><left><left>')
+vim.keymap.set('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
 -- }}}
 
 -- Search mappings: These will make it so that going to the next one in a
@@ -157,9 +156,9 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', key_opts_silent)
 
 -- Interesting input from repos {{{
 -- https://github.com/joedbenjamin/nvim/blob/master/init.vim
-vim.api.nvim_set_keymap('n', 'go', 'o<Esc>', key_opts)
-vim.api.nvim_set_keymap('n', 'gO', 'O<Esc>j', key_opts)
-vim.api.nvim_set_keymap('i', 'jj', '<Esc>A', key_opts)
+vim.keymap.set('n', 'go', 'o<Esc>')
+vim.keymap.set('n', 'gO', 'O<Esc>j')
+vim.keymap.set('i', 'jj', '<Esc>A')
 -- }}}
 
 -- break points for undo {{{
