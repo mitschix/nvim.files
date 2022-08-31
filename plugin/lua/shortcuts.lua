@@ -1,5 +1,3 @@
-vim.g.mapleader = ','
-
 local key_opts_silent = {silent=true, noremap=true}
 
 -- Run Current Buffer {{{
