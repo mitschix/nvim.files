@@ -15,10 +15,10 @@ vim.keymap.set('n', '<leader><leader>X', '<CMD>:w<bar>so<CR>', key_opts_silent)
 vim.api.nvim_set_keymap('n', '<leader><Enter>', ':w<CR>', key_opts_silent)
 vim.api.nvim_set_keymap('i', '<leader><Enter>', '<Esc>:w<CR>i', key_opts_silent)
 
--- " force writing RO file
--- https://www.reddit.com/r/neovim/comments/p3b20j/lua_solution_to_writing_a_file_using_sudo/
--- does not work with nvim -> use askpass or maybe workaround with lua
--- cmap w!! %!sudo tee > /dev/null %
+-- force writing RO file
+-- very slow!!
+vim.keymap.set('c', 'w!!', function () require'utils'.sudo_write() end, key_opts_silent)
+
 -- " }}}
 
 -- Copy/Paste Settings {{{
