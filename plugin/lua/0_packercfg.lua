@@ -75,6 +75,7 @@ return require('packer').startup({function(use)
             vim.g.indentLine_faster = 1
             vim.g.indentLine_fileTypeExclude = {'alpha'}
         end}
+    -- replace with https://github.com/lukas-reineke/indent-blankline.nvim = lua
 
     -- scad 3D modeling?
     use {

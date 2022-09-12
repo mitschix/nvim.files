@@ -31,3 +31,6 @@ vim.api.nvim_set_keymap('i', '<c-f>', "fzf#vim#complete#path('rg --hidden --file
 
 -- TODO: sets permanently -> prevent makros
 -- vim.cmd[[au FileType fzf nnoremap <silent> q :q<CR>]]
+
+-- other plugins?
+-- https://github.com/ibhagwan/fzf-lua
