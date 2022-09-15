@@ -146,7 +146,7 @@ return require('packer').startup({function(use)
     -- fuzzy search utils
     -- install fzf as command and as plugin
     use {'junegunn/fzf', run = './install --all --xdg --no-zsh --no-bash' }
-    use 'junegunn/fzf.vim'
+    use 'ibhagwan/fzf-lua'
     --
     -- themes
     use {'mitschix/plastic.vim', opt=true, cmd = {'colorscheme plastic'}}
