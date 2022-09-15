@@ -8,6 +8,15 @@ require'nvim-treesitter.configs'.setup {
   },
   rainbow = {enable = true}
 }
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#00AE00 gui=nocombine]]
+require("indent_blankline").setup {
+    show_first_indent_level = false,
+    show_current_context = true,
+    char_list = {'¦', '┆', '┊'},
+    context_char = '┃',
+    use_treesitter = true,
+    filetype_exclude = { 'alpha', "lspinfo", "packer", "checkhealth", "help", "man", "" }
+}
 
 -- plugin mappings
 local key_opts = {silent=true, noremap=true}
@@ -18,6 +27,3 @@ vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', key_opts)
 
 vim.keymap.set("n", "<leader>ss", function() require("spread").out() end)
 vim.keymap.set("n", "<leader>sc", function() require("spread").combine() end)
-
--- disable extra whitespace for alpha startup screen
-vim.cmd('autocmd FileType alpha highlight ExtraWhitespace NONE')

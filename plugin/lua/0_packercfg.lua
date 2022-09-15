@@ -49,7 +49,6 @@ return require('packer').startup({function(use)
     use 'xiyaowong/nvim-cursorword'
     use {"jbyuki/instant.nvim", opt=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         setup = function () vim.g.instant_username = "mitschix" end}
-
     use {'dyng/ctrlsf.vim', setup = [[vim.g.ctrlsf_position = 'right']]}
     use {"aarondiel/spread.nvim", after = "nvim-treesitter"}
 
@@ -65,16 +64,7 @@ return require('packer').startup({function(use)
     -- programming
     use {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end}
     use {'dhruvasagar/vim-table-mode', opt=true, cmd={'TableModeToggle'}}
-    use {'dbeniamine/cheat.sh-vim', opt=true}
-    use {'Yggdroot/indentLine', setup = function ()
-            -- indentline settings
-            vim.g.indentLine_enabled = 1
-            vim.g.indentLine_concealcursor = 0
-            vim.g.indentLine_char = '┆'
-            vim.g.indentLine_faster = 1
-            vim.g.indentLine_fileTypeExclude = {'alpha'}
-        end}
-    -- replace with https://github.com/lukas-reineke/indent-blankline.nvim = lua
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- scad 3D modeling?
     use {
