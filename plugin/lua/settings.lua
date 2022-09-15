@@ -68,4 +68,11 @@ vim.opt.whichwrap:append('h')
 vim.opt.whichwrap:append('l')
 
 vim.opt.shortmess:append("c")
+
+-- if rg exists set other vim grep method
+vim.opt.wildignore = '*.o,*.obj,.git,*.rbc,*.pyc,__pycache__'
+if 1 == vim.fn.executable("rg") then
+    vim.o.grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
+    vim.opt.grepformat = vim.opt.grepformat ^ { "%f:%l:%c:%m" }
+end
 -- }}}
