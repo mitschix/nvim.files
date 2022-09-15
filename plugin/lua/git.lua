@@ -13,10 +13,11 @@ vim.cmd([[
 
 require('gitsigns').setup{signs={add={text='+'},change={text='~'}}}
 
-local key_opts = {silent=true, noremap=true}
-vim.api.nvim_set_keymap('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>gd', ':Gitsigns preview_hunk<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>gn', ':Gitsigns next_hunk<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', key_opts)
+local key_opts = {silent=true}
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', key_opts)
+vim.keymap.set('n', '<leader>gd', ':Gitsigns preview_hunk<CR>', key_opts)
+vim.keymap.set('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', key_opts)
+vim.keymap.set('n', '<leader>gn', ':Gitsigns next_hunk<CR>', key_opts)
+vim.keymap.set('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', key_opts)
+vim.keymap.set('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', key_opts)
+vim.keymap.set('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', key_opts)

@@ -16,18 +16,15 @@ end
 
 -- shortcuts
 -- https://github.com/uolot/dotfiles/blob/master/vim/files-fzf.vim
-vim.api.nvim_set_keymap('n', '<leader>pf', ":GFiles<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>pF', ":Files<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>pl', ":BLines<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>pL', ":Lines<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>pt', ":Tags<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>pb', ":Buffers<CR>", {noremap = true})
+vim.keymap.set('n', '<leader>pf', ":GFiles<CR>")
+vim.keymap.set('n', '<leader>pF', ":Files<CR>")
+vim.keymap.set('n', '<leader>pl', ":BLines<CR>")
+vim.keymap.set('n', '<leader>pL', ":Lines<CR>")
+vim.keymap.set('n', '<leader>pt', ":Tags<CR>")
+vim.keymap.set('n', '<leader>pb', ":Buffers<CR>")
 
 -- Opens with the path of the currently edited file filled in
 vim.keymap.set('n', '<leader>e', ':GFiles <C-R>=expand("%:p:h") <CR><CR>')
-
--- currently does not work?
-vim.api.nvim_set_keymap('i', '<c-f>', "fzf#vim#complete#path('rg --hidden --files')", {noremap = true, expr = true})
 
 -- TODO: sets permanently -> prevent makros
 -- vim.cmd[[au FileType fzf nnoremap <silent> q :q<CR>]]

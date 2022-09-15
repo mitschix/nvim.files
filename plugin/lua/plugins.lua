@@ -19,11 +19,11 @@ require("indent_blankline").setup {
 }
 
 -- plugin mappings
-local key_opts = {silent=true, noremap=true}
+local key_opts = {silent=true}
 
-vim.api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<CR>', key_opts)
-vim.api.nvim_set_keymap('', '<f4>', ':Tagbar<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', key_opts)
+vim.keymap.set('n', '<F2>', ':NvimTreeToggle<CR>', key_opts)
+vim.keymap.set('', '<f4>', ':Tagbar<CR>', key_opts)
+vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>', key_opts)
 
 -- short Plugin shortcuts {{{
 
