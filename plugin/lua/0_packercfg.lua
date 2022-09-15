@@ -50,9 +50,8 @@ return require('packer').startup({function(use)
     use {"jbyuki/instant.nvim", opt=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         setup = function () vim.g.instant_username = "mitschix" end}
 
-    -- cocsearch replacement TODO: configure it
-    -- use {'dyng/ctrlsf.vim', opt=true, cmd = {''}}
     use {'dyng/ctrlsf.vim', setup = [[vim.g.ctrlsf_position = 'right']]}
+    use {"aarondiel/spread.nvim", after = "nvim-treesitter"}
 
 
     -- File explorer
