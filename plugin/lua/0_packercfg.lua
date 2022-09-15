@@ -29,7 +29,7 @@ return require('packer').startup({function(use)
     use {'kdav5758/TrueZen.nvim', opt=true, cmd = {'TZMinimalist', 'TZAtaraxis'} } -- goyo replacement
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
 
-    -- use {'voldikss/vim-floaterm', opt=true, cmd = {'FloatermNew'}} -- TODO: replace akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim
+    -- TODO: use akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim for floatterm
     use {
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim",
