@@ -21,10 +21,9 @@ vim.keymap.set('c', 'w!!', function () require'utils'.sudo_write() end, key_opts
 
 -- Copy/Paste Settings {{{
 -- Copying/pasting text to the system clipboard.
-vim.api.nvim_set_keymap('n', '<leader>p', '"+p', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<leader>y', '"+y', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<leader>y', 'V"+y', key_opts_silent)
-vim.api.nvim_set_keymap('n', '<leader>Y', '"+y', key_opts_silent)
+vim.keymap.set('n', '<leader>p', '"+p')
+vim.keymap.set({'n','v'}, '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>Y', 'V"+y')
 
 -- Yank to end of line
 vim.api.nvim_set_keymap('n', 'Y', 'y$', key_opts_silent)
