@@ -168,16 +168,3 @@ vim.api.nvim_set_keymap('i', '?', '?<C-g>U', key_opts_silent)
 -- }}}
 
 -- }}}
-
--- short Plugin shortcuts {{{
-
--- Trouble shortcuts {{{
-vim.api.nvim_set_keymap("n", "<leader>xx", "<CMD>Trouble<CR>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xw", "<CMD>Trouble workspace_diagnostics<CR>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xd", "<CMD>Trouble document_diagnostics<CR>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xl", "<CMD>Trouble loclist<CR>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "<leader>xq", "<CMD>Trouble quickfix<CR>", key_opts_silent)
-vim.api.nvim_set_keymap("n", "gR", "<CMD>Trouble lsp_references<CR>", key_opts_silent)
--- }}}
-
--- }}}

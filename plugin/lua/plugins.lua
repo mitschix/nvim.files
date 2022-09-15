@@ -25,5 +25,18 @@ vim.api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<CR>', key_opts)
 vim.api.nvim_set_keymap('', '<f4>', ':Tagbar<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', key_opts)
 
+-- short Plugin shortcuts {{{
+
+-- Trouble shortcuts {{{
+vim.keymap.set("n", "<leader>xx", "<CMD>Trouble<CR>")
+vim.keymap.set("n", "<leader>xw", "<CMD>Trouble workspace_diagnostics<CR>")
+vim.keymap.set("n", "<leader>xd", "<CMD>Trouble document_diagnostics<CR>")
+vim.keymap.set("n", "<leader>xl", "<CMD>Trouble loclist<CR>")
+vim.keymap.set("n", "<leader>xq", "<CMD>Trouble quickfix<CR>")
+vim.keymap.set("n", "gR", "<CMD>Trouble lsp_references<CR>")
+-- }}}
+
+-- }}}
+
 vim.keymap.set("n", "<leader>ss", function() require("spread").out() end)
 vim.keymap.set("n", "<leader>sc", function() require("spread").combine() end)
