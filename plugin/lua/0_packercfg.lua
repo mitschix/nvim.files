@@ -51,7 +51,7 @@ return require('packer').startup({function(use)
         setup = function () vim.g.instant_username = "mitschix" end}
     use {'dyng/ctrlsf.vim', setup = [[vim.g.ctrlsf_position = 'right']]}
     use {"aarondiel/spread.nvim", after = "nvim-treesitter"}
-
+    use "gaoDean/autolist.nvim"
 
     -- File explorer
     -- devicon for file icons
