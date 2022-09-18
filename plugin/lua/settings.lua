@@ -13,6 +13,7 @@ vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.updatetime = 30
+vim.opt.title = true
 
 -- let modified buffers move to the background
 vim.opt.hidden = true
