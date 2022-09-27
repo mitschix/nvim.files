@@ -25,10 +25,12 @@ vim.api.nvim_create_autocmd(
 
 -- Misc {{{
 
--- Unset relativenumber on InsertEnter.{{{
+-- Unset relativenumber on InsertEnter/BufLeaver.{{{
 -- https://github.com/mathletedev/dotfiles/blob/main/.config/nvim/init.lua
-vim.api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber"})
-vim.api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber"})
+vim.api.nvim_create_autocmd({"InsertEnter", "BufLeave", "FocusLost"}, { command = "set norelativenumber"})
+vim.api.nvim_create_autocmd({"InsertLeave", "BufEnter", "FocusGained"}, { command = "set relativenumber"})
+vim.api.nvim_create_autocmd({"FocusLost"}, { command = "set cursorline"})
+vim.api.nvim_create_autocmd({"FocusGained"}, { command = "set nocursorline"})
 -- }}}
 
 -- go to last position when opening a buffer {{{
