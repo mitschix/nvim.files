@@ -8,7 +8,7 @@
 vim.opt.autoread = true
 vim.opt.lazyredraw = true
 vim.opt.showcmd = true
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
