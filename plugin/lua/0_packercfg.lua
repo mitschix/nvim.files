@@ -106,7 +106,8 @@ return require('packer').startup({function(use)
 
     -- " lsps
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use 'tami5/lspsaga.nvim'
     use 'ray-x/lsp_signature.nvim'
 

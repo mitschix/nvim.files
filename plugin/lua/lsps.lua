@@ -15,7 +15,6 @@ local function on_attach(client, bufnr)
 
 
     -- LSP config mappings{{{
-    vim.g.mapleader = ','
     local key_opts = {silent=true, noremap=true}
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', key_opts)
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', key_opts)
@@ -57,89 +56,77 @@ local servers = {
 }
 
 -- install and handle lsps
-require("nvim-lsp-installer").setup{
-    ensure_installed = servers,
+require("mason").setup{
     ui = {
         icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
         }
     }
 }
 
+require("mason-lspconfig").setup{
+    ensure_installed = servers,
+}
 
--- Provide settings that should only apply to the "<name>" server
-local enhance_server_opts = {
+require("mason-lspconfig").setup_handlers({
+    function(server_name)
+        require("lspconfig")[server_name].setup{
+            capabilities = capabilities,
+            on_attach = on_attach,
+        }
+    end,
 
-    ["gopls"] = function(opts)
-        opts.settings = {
-            gopls = {
-                analyses = {
-                    unusedparams = true,
-                },
-                staticcheck = true,
+    ["gopls"] = function()
+        require("lspconfig").gopls.setup{
+            settings = {
+                gopls = {
+                    analyses = {
+                        unusedparams = true,
+                    },
+                    staticcheck = true,
+                }
             }
         }
     end,
 
-    ["jsonls"] = function(opts)
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls
-        -- should need snippet support
-        opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
-    end,
+    ["pylsp"] = function()
+        require("lspconfig").pylsp.setup{
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pylint = {enabled = true; }
 
-    ["pylsp"] = function(opts)
-        opts.settings = {
-            pylsp = {
-                plugins = {
-                    pylint = {enabled = true; }
-
+                    }
                 }
             }
         }
     end,
 
     -- Configure lua language server for neovim development
-    ["sumneko_lua"] = function(opts)
-        opts.settings = {
-            Lua = {
-                runtime = {
-                    -- LuaJIT in the case of Neovim
-                    version = 'LuaJIT',
-                    path = vim.split(package.path, ';'),
-                },
-                diagnostics = {
-                    -- Get the language server to recognize the `vim` global
-                    globals = {'vim'},
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = {
-                        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+    ["sumneko_lua"] = function()
+        require("lspconfig").sumneko_lua.setup{
+            settings = {
+                Lua = {
+                    runtime = {
+                        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                        version = 'LuaJIT',
+                    },
+                    diagnostics = {
+                        -- Get the language server to recognize the `vim` global
+                        globals = {'vim'},
+                    },
+                    workspace = {
+                        -- Make the server aware of Neovim runtime files
+                        library = vim.api.nvim_get_runtime_file("", true),
+                    },
+                    -- Do not send telemetry data containing a randomized but unique identifier
+                    telemetry = {
+                        enable = false,
                     },
                 },
             }
         }
     end,
-
-}
-
-for _, server in ipairs(servers) do
-    local opts = {
-        capabilities = capabilities,
-        on_attach = on_attach
-    }
-
-    -- Enhance the default opts with the server-specific ones
-    if enhance_server_opts[server] then
-        enhance_server_opts[server](opts)
-    end
-
-    require("lspconfig")[server].setup{
-        capabilities = opts.capabilities,
-        on_attach = opts.on_attach,
-        settings = opts.settings,
-    }
-end
+})
