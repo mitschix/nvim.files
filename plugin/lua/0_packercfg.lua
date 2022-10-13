@@ -121,6 +121,9 @@ return require('packer').startup({function(use)
     use {'p00f/nvim-ts-rainbow'} -- replace old rainbow
     use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {'m-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function () require('hlargs').setup{color = '#BFAAAA',
+        excluded_argnames = {declarations = { python = { 'self' } }} } end}
 
     use 'mechatroner/rainbow_csv'
     -- use {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
