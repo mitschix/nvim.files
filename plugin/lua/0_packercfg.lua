@@ -28,6 +28,7 @@ return require('packer').startup({function(use)
         setup = [[vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}]]}
     use {'kdav5758/TrueZen.nvim', opt=true, cmd = {'TZMinimalist', 'TZAtaraxis'} } -- goyo replacement
     use {'mbbill/undotree', opt=true, cmd = {'UndotreeToggle'}}
+    use {"ahmedkhalf/project.nvim", config = function() require("project_nvim").setup {} end }
 
     -- TODO: use akinsho/toggleterm.nvim https://github.com/akinsho/toggleterm.nvim for floatterm
     use {
@@ -60,6 +61,7 @@ return require('packer').startup({function(use)
     -- git plugins
     -- pleanary - set of lua functions needed by gitsigns
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }}
+    use "kdheepak/lazygit.nvim"
 
     -- programming
     use {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end}
