@@ -80,6 +80,8 @@ require("mason-lspconfig").setup_handlers({
 
     ["gopls"] = function()
         require("lspconfig").gopls.setup{
+            capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
                 gopls = {
                     analyses = {
@@ -93,6 +95,8 @@ require("mason-lspconfig").setup_handlers({
 
     ["pylsp"] = function()
         require("lspconfig").pylsp.setup{
+            capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
                 pylsp = {
                     plugins = {
@@ -107,6 +111,8 @@ require("mason-lspconfig").setup_handlers({
     -- Configure lua language server for neovim development
     ["sumneko_lua"] = function()
         require("lspconfig").sumneko_lua.setup{
+            capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
                 Lua = {
                     runtime = {
