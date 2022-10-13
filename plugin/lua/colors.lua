@@ -18,6 +18,7 @@ vim.opt.colorcolumn='81'
 vim.cmd([[
 highlight Normal guifg=#E8E8E8
 highlight Comment guifg=#7f8490
+highlight CursorWord gui=underline
 ]])
 
 -- Highlight extra whitespaces
