@@ -50,7 +50,7 @@ local servers = {
     "pylsp",
     -- install 3rd party plugins
     -- :PylspInstall pylsp-mypy pylsp-rope pyls-memestra
-    "sumneko_lua",
+    "lua_ls",
     "texlab", -- testing
     "vimls",
 }
@@ -109,8 +109,8 @@ require("mason-lspconfig").setup_handlers({
     end,
 
     -- Configure lua language server for neovim development
-    ["sumneko_lua"] = function()
-        require("lspconfig").sumneko_lua.setup{
+    ["lua_ls"] = function()
+        require("lspconfig").lua_ls.setup{
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
