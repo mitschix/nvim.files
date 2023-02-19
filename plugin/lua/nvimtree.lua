@@ -3,7 +3,6 @@ vim.g.nvim_tree_auto_ignore_ft = {'startify'}
 
 require'nvim-tree'.setup{
     hijack_cursor = true,
-    open_on_setup = true,
 
     renderer ={
         add_trailing = true,
