@@ -165,6 +165,11 @@ return require('packer').startup({function(use)
     -- lua module loading speedup -> improve starttime
     use 'lewis6991/impatient.nvim'
 
+    use {'tamton-aquib/duck.nvim', config = function()
+            vim.keymap.set('n', '<leader>dd', function() require("duck").hatch("🦆", 5) end, {})
+            vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+        end}
+
 
     -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
