@@ -146,6 +146,8 @@ vim.keymap.set('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
 -- search will center on the line it's found in.
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
 -- Interesting input from repos {{{
 -- https://github.com/joedbenjamin/nvim/blob/master/init.vim
