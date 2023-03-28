@@ -58,6 +58,8 @@ vim.opt.sidescrolloff = 15
 -- wrap long lines at a character in 'breakat' - display start of wrapped lines
 vim.opt.linebreak = true
 vim.opt.showbreak = '→'
+-- set text width when to break with `gq`
+vim.opt.textwidth = 100
 
 -- undo settings
 vim.opt.undofile = true

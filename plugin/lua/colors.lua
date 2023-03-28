@@ -12,7 +12,7 @@ vim.cmd('silent! colorscheme tokyodark')
 
 -- " add visible column
 vim.opt.termguicolors = true
-vim.opt.colorcolumn='81'
+vim.opt.colorcolumn='101'
 
 -- Overwrite defaults of tokyodark
 vim.cmd([[
