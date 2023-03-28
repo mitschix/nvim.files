@@ -75,7 +75,7 @@ return require('packer').startup({function(use)
     config = function ()
         require('openscad')
         -- load snippets, note requires
-        vim.g.openscad_auto_open = true
+        vim.g.openscad_auto_open = false
         vim.g.openscad_load_snippets = true
         vim.g.openscad_fuzzy_finder = 'fzf'
         vim.g.openscad_cheatsheet_toggle_key = '<M-c>'
