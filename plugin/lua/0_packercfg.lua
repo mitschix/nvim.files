@@ -46,7 +46,8 @@ return require('packer').startup({function(use)
         opt=true, cmd = {'Trouble'}
     }
     use {'will133/vim-dirdiff', opt=true, cmd = {'DirDiff'}}
-    use 'tversteeg/registers.nvim' -- previews registers
+    -- previews registers
+    use {"tversteeg/registers.nvim", config = function() require("registers").setup() end}
     use 'xiyaowong/nvim-cursorword'
     use {"jbyuki/instant.nvim", opt=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         setup = function () vim.g.instant_username = "mitschix" end}
