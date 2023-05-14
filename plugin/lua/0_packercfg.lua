@@ -152,7 +152,7 @@ return require('packer').startup({function(use)
 
     -- fuzzy search utils
     -- install fzf as command and as plugin
-    use {'junegunn/fzf', run = './install --all --xdg --no-zsh --no-bash' }
+    use {'junegunn/fzf', run = './install --all --xdg --no-update-rc' }
     use 'ibhagwan/fzf-lua'
     --
     -- themes
