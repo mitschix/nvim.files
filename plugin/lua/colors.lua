@@ -2,16 +2,10 @@
 -- === COLOR & PLUGIN SETTINGS ===
 --
 --
--- set sonokai if installed silent to suppress errors if not
--- vim.g.sonokai_transparent_background = 1
--- vim.cmd('silent! colorscheme sonokai')
-
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_color_gamma = "1.2"
+require("tokyodark").setup({transparent_background = true, gamma=1.2})
 vim.cmd('silent! colorscheme tokyodark')
 
 -- " add visible column
-vim.opt.termguicolors = true
 vim.opt.colorcolumn='101'
 
 -- Overwrite defaults of tokyodark
