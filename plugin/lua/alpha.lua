@@ -21,7 +21,7 @@ startify.section.top_buttons.val = {
 startify.section.bottom_buttons.val = {
     { type = "text", val = "Commands", opts = { hl = "SpecialComment", shrink_margin = false } },
     { type = "padding", val = 1 },
-    startify.button( "up", " Update Plugins" , ":PackerSync<CR>"),
+    startify.button( "up", " Update Plugins" , ":Lazy<CR>"),
     { type = "padding", val = 1 },
     startify.button( "q", "  Quit NVIM" , ":qa<CR>"),
 }

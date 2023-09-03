@@ -1,0 +1,167 @@
+
+
+-- === (PLUG)INS SETTINGS ===
+
+
+-- automatically load plugin manager and install plugins
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+    -- useful tools
+    {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
+    {'mbbill/undotree', lazy=true, cmd = {'UndotreeToggle'}},
+    {"ahmedkhalf/project.nvim", config = function() require("project_nvim").setup {} end },
+
+    {
+      "folke/todo-comments.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+      config = function() require("todo-comments").setup { } end,
+      lazy=true, cmd = {'TodoLocList'}
+    },
+    -- Trouble to show diagnostics/loc list/quickfix prettier
+    -- also show TODO if toggled
+    {
+        "folke/trouble.nvim",
+        dependencies = "kyazdani42/nvim-web-devicons",
+        config = function() require("trouble").setup { } end,
+        lazy=true, cmd = {'Trouble'}
+    },
+    {'will133/vim-dirdiff', lazy=true, cmd = {'DirDiff'}},
+    -- previews registers
+    {"tversteeg/registers.nvim", config = function() require("registers").setup() end},
+    'xiyaowong/nvim-cursorword',
+    {"jbyuki/instant.nvim", lazy=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
+        init = function () vim.g.instant_username = "mitschix" end},
+    {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
+
+    {"aarondiel/spread.nvim", dependencies = "nvim-treesitter"},
+    -- {"aarondiel/spread.nvim"},
+    {"gaoDean/autolist.nvim", lazy=true, ft = { "markdown", "text", "tex", "plaintex", "norg"},},
+
+    -- File explorer
+    -- devicon for file icons
+    {'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons', lazy=true }},
+
+    -- git plugins
+    -- pleanary - set of lua functions needed by gitsigns
+    { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' }},
+    "kdheepak/lazygit.nvim",
+
+    -- programming
+    {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
+    {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
+    'lukas-reineke/indent-blankline.nvim',
+
+    -- scad 3D modeling?
+    {
+    'salkin-mada/openscad.nvim',
+    config = function ()
+        require('openscad')
+        -- load snippets, note dependencies
+        vim.g.openscad_auto_open = false
+        vim.g.openscad_load_snippets = true
+        vim.g.openscad_fuzzy_finder = 'fzf'
+        vim.g.openscad_cheatsheet_toggle_key = '<M-c>'
+        vim.g.openscad_help_manual_trig_key = '<C-m>'
+        vim.g.openscad_help_trig_key = '<M-f>'
+    end,
+    dependencies = 'L3MON4D3/LuaSnip'
+    },
+
+    -- " completion
+    -- https://github.com/hrsh7th/nvim-cmp
+    {"hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-buffer",
+            "ray-x/cmp-treesitter",
+            "hrsh7th/cmp-path",
+            "f3fora/cmp-spell",
+            "hrsh7th/cmp-calc",
+            "hrsh7th/cmp-emoji",
+            {'tzachar/cmp-tabnine', build='./install.sh', dependencies = 'hrsh7th/nvim-cmp'}, -- needs unzip installed
+            "hrsh7th/cmp-cmdline",
+            { 'saadparwaiz1/cmp_luasnip' }
+        }
+    },
+
+    -- snippets
+    'L3MON4D3/LuaSnip',
+    "rafamadriz/friendly-snippets",
+
+    -- " lsps
+    'neovim/nvim-lspconfig',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    'tami5/lspsaga.nvim',
+    'ray-x/lsp_signature.nvim',
+
+    -- " debug
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+    'theHamsta/nvim-dap-virtual-text',
+    'mfussenegger/nvim-dap-python',
+
+    -- " syntax
+    {'PotatoesMaster/i3-vim-syntax', lazy=true},
+    {'p00f/nvim-ts-rainbow'}, -- replace old rainbow
+    {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end},
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    {'m-demare/hlargs.nvim', dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        config = function () require('hlargs').setup{color = '#BFAAAA',
+        excluded_argnames = {declarations = { python = { 'self' } }} } end},
+
+    'mechatroner/rainbow_csv',
+    -- {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
+
+    -- tags
+    {'majutsushi/tagbar', lazy=true, cmd={'Tagbar'}, init = function() vim.g.tagbar_autofocus = 1 end} ,
+    {'ludovicchabant/vim-gutentags', init = function ()
+            --  vim gutentags settings
+            vim.g.gutentags_add_default_project_roots = 0
+            vim.g.gutentags_project_root = {'requirements.txt', '.git'}
+            vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS'}
+            -- TODO does not work with lua?
+            vim.cmd("let g:gutentags_cache_dir = stdpath('data').'//tags'")
+        end},
+
+    -- status line
+    { 'nvim-lualine/lualine.nvim', dependencies = {
+        'kyazdani42/nvim-web-devicons', lazy = true } },
+
+    -- " start screen with file type icons
+    {'goolord/alpha-nvim'},
+    {"kyazdani42/nvim-web-devicons"},
+
+    -- fuzzy search utils
+    -- install fzf as command and as plugin
+    {'junegunn/fzf', build = './install --all --xdg --no-update-rc' },
+    'ibhagwan/fzf-lua',
+    --
+    -- themes
+    'tiagovla/tokyodark.nvim',
+
+    -- others
+    {'ThePrimeagen/vim-be-good', lazy=true, cmd = {'VimBeGood'}},
+    -- lua module loading speedup -> improve starttime
+    'lewis6991/impatient.nvim',
+
+    {'tamton-aquib/duck.nvim', config = function()
+            vim.keymap.set('n', '<leader>dd', function() require("duck").hatch("🦆", 5) end, {})
+            vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+        end},
+
+}
+local opts = {}
+require("lazy").setup(plugins, opts)
