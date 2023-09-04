@@ -48,7 +48,6 @@ local plugins = {
 
     {"aarondiel/spread.nvim", dependencies = "nvim-treesitter"},
     -- {"aarondiel/spread.nvim"},
-    {"gaoDean/autolist.nvim", lazy=true, ft = { "markdown", "text", "tex", "plaintex", "norg"},},
 
     -- File explorer
     -- devicon for file icons
@@ -63,22 +62,6 @@ local plugins = {
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
     {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
     'lukas-reineke/indent-blankline.nvim',
-
-    -- scad 3D modeling?
-    {
-    'salkin-mada/openscad.nvim',
-    config = function ()
-        require('openscad')
-        -- load snippets, note dependencies
-        vim.g.openscad_auto_open = false
-        vim.g.openscad_load_snippets = true
-        vim.g.openscad_fuzzy_finder = 'fzf'
-        vim.g.openscad_cheatsheet_toggle_key = '<M-c>'
-        vim.g.openscad_help_manual_trig_key = '<C-m>'
-        vim.g.openscad_help_trig_key = '<M-f>'
-    end,
-    dependencies = 'L3MON4D3/LuaSnip'
-    },
 
     -- " completion
     -- https://github.com/hrsh7th/nvim-cmp
@@ -115,7 +98,7 @@ local plugins = {
     'mfussenegger/nvim-dap-python',
 
     -- " syntax
-    {'PotatoesMaster/i3-vim-syntax', lazy=true},
+    {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
     {'p00f/nvim-ts-rainbow'}, -- replace old rainbow
     {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end},
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -141,8 +124,6 @@ local plugins = {
     { 'nvim-lualine/lualine.nvim', dependencies = {
         'kyazdani42/nvim-web-devicons', lazy = true } },
 
-    -- " start screen with file type icons
-    {'goolord/alpha-nvim'},
     {"kyazdani42/nvim-web-devicons"},
 
     -- fuzzy search utils
@@ -153,16 +134,13 @@ local plugins = {
     -- themes
     'tiagovla/tokyodark.nvim',
 
-    -- others
-    {'ThePrimeagen/vim-be-good', lazy=true, cmd = {'VimBeGood'}},
-    -- lua module loading speedup -> improve starttime
-    'lewis6991/impatient.nvim',
-
-    {'tamton-aquib/duck.nvim', config = function()
-            vim.keymap.set('n', '<leader>dd', function() require("duck").hatch("🦆", 5) end, {})
-            vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
-        end},
-
 }
-local opts = {}
+local opts = {  checker = {
+    enabled = true,
+    notify = false,
+    },
+    change_detection = {
+        notify = false,
+    }
+}
 require("lazy").setup(plugins, opts)
