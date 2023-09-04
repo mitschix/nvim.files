@@ -15,7 +15,7 @@ vim.keymap.set('i', '<leader><Enter>', '<Esc>:w<CR>i')
 
 -- force writing RO file
 -- very slow!!
-vim.keymap.set('c', 'w!!', function () require'utils'.sudo_write() end)
+vim.keymap.set('c', 'w!!', function () require('core.utils').sudo_write() end)
 
 -- " }}}
 

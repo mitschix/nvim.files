@@ -30,8 +30,7 @@ require('lualine').setup{
         lualine_c = {{'filename', path = 3, file_status = false, separator = ''},
                     {'%m%r%h', color = {fg=204}}},
         lualine_x = {{'WORD_COUNT', color = {fg=111}, icon = ''},
-                    {spell_stat, color = {fg=222}, icon = '🆎'},
-                    'diagnostics', 'filetype'},
+                    {spell_stat, color = {fg=222}, icon = '🆎'}, 'filetype'},
         lualine_y = {'%l/%L - %c'},
         lualine_z = {{'progress', separator = { left = '', right = ''}}}
     },

@@ -89,5 +89,3 @@ vim.keymap.set('n', '<leader>e', function() fzf_lua.files({cwd = vim.fn.expand('
 -- Spread shortcuts
 vim.keymap.set("n", "<leader>ss", function() require("spread").out() end)
 vim.keymap.set("n", "<leader>sc", function() require("spread").combine() end)
-
-require('autolist').setup({})
