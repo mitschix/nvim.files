@@ -1,5 +1,7 @@
 return {
     'goolord/alpha-nvim',
+    event = "VimEnter",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function ()
         local handle = io.popen('fortune -s -n 90')
         local fortune = handle:read("*a")

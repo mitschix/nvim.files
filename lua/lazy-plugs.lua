@@ -34,7 +34,7 @@ local plugins = {
     -- also show TODO if toggled
     {
         "folke/trouble.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = function() require("trouble").setup { } end,
         lazy=true, cmd = {'Trouble'}
     },
@@ -51,7 +51,7 @@ local plugins = {
 
     -- File explorer
     -- devicon for file icons
-    {'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons', lazy=true }},
+    {'nvim-tree/nvim-tree.lua', lazy = true, dependencies = {'nvim-tree/nvim-web-devicons'}},
 
     -- git plugins
     -- pleanary - set of lua functions needed by gitsigns
@@ -119,12 +119,6 @@ local plugins = {
             -- TODO does not work with lua?
             vim.cmd("let g:gutentags_cache_dir = stdpath('data').'//tags'")
         end},
-
-    -- status line
-    { 'nvim-lualine/lualine.nvim', dependencies = {
-        'kyazdani42/nvim-web-devicons', lazy = true } },
-
-    {"kyazdani42/nvim-web-devicons"},
 
     -- fuzzy search utils
     -- install fzf as command and as plugin
