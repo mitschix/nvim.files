@@ -18,6 +18,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    {import = "plugs"},
     -- useful tools
     {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
     {'mbbill/undotree', lazy=true, cmd = {'UndotreeToggle'}},
