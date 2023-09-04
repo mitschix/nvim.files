@@ -14,6 +14,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.updatetime = 30
 vim.opt.title = true
+vim.opt.termguicolors = true
 
 -- let modified buffers move to the background
 vim.opt.hidden = true
@@ -78,4 +79,10 @@ if 1 == vim.fn.executable("rg") then
     vim.o.grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
     vim.opt.grepformat = vim.opt.grepformat ^ { "%f:%l:%c:%m" }
 end
+
+-- https://github.com/ibhagwan/nvim-lua/blob/main/lua/init.lua
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
+
 -- }}}
