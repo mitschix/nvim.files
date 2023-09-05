@@ -21,7 +21,6 @@ local plugins = {
     {import = "plugs"},
     -- useful tools
     {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
-    {'mbbill/undotree', lazy=true, cmd = {'UndotreeToggle'}},
     {"ahmedkhalf/project.nvim", lazy = true,
     config = function() require("project_nvim").setup {} end },
 
@@ -39,10 +38,7 @@ local plugins = {
         config = function() require("trouble").setup { } end,
         lazy=true, cmd = {'Trouble'}
     },
-    {'will133/vim-dirdiff', lazy=true, cmd = {'DirDiff'}},
     -- previews registers
-    {"tversteeg/registers.nvim", config = function() require("registers").setup() end},
-    'xiyaowong/nvim-cursorword',
     {"jbyuki/instant.nvim", lazy=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         init = function () vim.g.instant_username = "mitschix" end},
     {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
@@ -101,23 +97,6 @@ local plugins = {
         excluded_argnames = {declarations = { python = { 'self' } }} } end},
 
     -- {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
-
-    -- tags
-    {'majutsushi/tagbar', lazy=true, cmd={'Tagbar'}, init = function() vim.g.tagbar_autofocus = 1 end} ,
-    {'ludovicchabant/vim-gutentags', init = function ()
-            --  vim gutentags settings
-            vim.g.gutentags_add_default_project_roots = 0
-            vim.g.gutentags_project_root = {'requirements.txt', '.git'}
-            vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS'}
-            -- TODO does not work with lua?
-            vim.cmd("let g:gutentags_cache_dir = stdpath('data').'//tags'")
-        end},
-
-    -- fuzzy search utils
-    -- install fzf as command and as plugin
-    {'junegunn/fzf', build = './install --all --xdg --no-update-rc' },
-    'ibhagwan/fzf-lua',
-    --
     -- themes
     'tiagovla/tokyodark.nvim',
 
