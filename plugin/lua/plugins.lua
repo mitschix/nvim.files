@@ -9,11 +9,6 @@ require("indent_blankline").setup {
     filetype_exclude = { 'alpha', "lspinfo", "packer", "checkhealth", "help", "man", "" }
 }
 
--- plugin mappings
-local key_opts = {silent=true}
-
-vim.keymap.set('n', '<F2>', ':NvimTreeToggle<CR>', key_opts)
-
 -- short Plugin shortcuts {{{
 
 -- Trouble shortcuts {{{

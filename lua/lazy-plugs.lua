@@ -43,10 +43,6 @@ local plugins = {
         init = function () vim.g.instant_username = "mitschix" end},
     {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
 
-    -- File explorer
-    -- devicon for file icons
-    {'nvim-tree/nvim-tree.lua', lazy = true, dependencies = {'nvim-tree/nvim-web-devicons'}},
-
     -- git plugins
     -- pleanary - set of lua functions needed by gitsigns
     { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' }},

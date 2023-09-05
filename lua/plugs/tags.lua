@@ -1,6 +1,6 @@
 return {
     {'preservim/tagbar', lazy=true,
-    keys={{'<f4>','<cmd>TagbarToggle<CR>', ''}}, init = function() vim.g.tagbar_autofocus = 1 end} ,
+    keys={{'<F4>','<cmd>TagbarToggle<CR>', ''}}, init = function() vim.g.tagbar_autofocus = 1 end} ,
 
     {'ludovicchabant/vim-gutentags', init = function ()
             --  vim gutentags settings
