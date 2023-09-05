@@ -22,7 +22,8 @@ local plugins = {
     -- useful tools
     {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
     {'mbbill/undotree', lazy=true, cmd = {'UndotreeToggle'}},
-    {"ahmedkhalf/project.nvim", config = function() require("project_nvim").setup {} end },
+    {"ahmedkhalf/project.nvim", lazy = true,
+    config = function() require("project_nvim").setup {} end },
 
     {
       "folke/todo-comments.nvim",
