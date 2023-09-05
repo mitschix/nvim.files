@@ -98,8 +98,6 @@ local plugins = {
     'mfussenegger/nvim-dap-python',
 
     -- " syntax
-    {'p00f/nvim-ts-rainbow'}, -- replace old rainbow
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     {'m-demare/hlargs.nvim', dependencies = { 'nvim-treesitter/nvim-treesitter' },
         config = function () require('hlargs').setup{color = '#BFAAAA',
         excluded_argnames = {declarations = { python = { 'self' } }} } end},
