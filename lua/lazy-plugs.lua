@@ -47,9 +47,6 @@ local plugins = {
         init = function () vim.g.instant_username = "mitschix" end},
     {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
 
-    {"aarondiel/spread.nvim", dependencies = "nvim-treesitter"},
-    -- {"aarondiel/spread.nvim"},
-
     -- File explorer
     -- devicon for file icons
     {'nvim-tree/nvim-tree.lua', lazy = true, dependencies = {'nvim-tree/nvim-web-devicons'}},
