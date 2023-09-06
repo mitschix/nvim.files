@@ -21,10 +21,6 @@ local plugins = {
     {import = "plugs"},
     {import = "plugs.cmp"},
 
-    {"jbyuki/instant.nvim", lazy=true,
-    cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
-    config = function () vim.g.instant_username = "mitschix" end},
-
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
 
     -- " lsps
