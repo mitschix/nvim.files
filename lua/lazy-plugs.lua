@@ -19,18 +19,13 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     {import = "plugs"},
-    -- useful tools
-    {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
     {import = "plugs.cmp"},
 
-    -- previews registers
-    {"jbyuki/instant.nvim", lazy=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
-        init = function () vim.g.instant_username = "mitschix" end},
-    {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
+    {"jbyuki/instant.nvim", lazy=true,
+    cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
+    config = function () vim.g.instant_username = "mitschix" end},
 
-    -- programming
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
-    {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
 
     -- " lsps
     'neovim/nvim-lspconfig',
@@ -38,10 +33,6 @@ local plugins = {
     "williamboman/mason-lspconfig.nvim",
     'tami5/lspsaga.nvim',
     'ray-x/lsp_signature.nvim',
-
-    -- {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
-    -- themes
-    'tiagovla/tokyodark.nvim',
 }
 local opts = {
     install = {

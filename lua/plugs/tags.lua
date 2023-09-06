@@ -1,10 +1,11 @@
 return {
     {'preservim/tagbar', lazy=true,
-    keys={{'<F4>','<cmd>TagbarToggle<CR>', ''}}, init = function() vim.g.tagbar_autofocus = 1 end} ,
+    keys={{'<F4>','<cmd>TagbarToggle<CR>', ''}},
+    config = function() vim.g.tagbar_autofocus = 1 end} ,
 
     {'ludovicchabant/vim-gutentags',
     event = { "BufReadPre", "BufNewFile" },
-    init = function ()
+    config = function ()
             --  vim gutentags settings
             vim.g.gutentags_add_default_project_roots = 0
             vim.g.gutentags_project_root = {'requirements.txt', '.git'}
