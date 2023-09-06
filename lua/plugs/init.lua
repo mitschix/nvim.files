@@ -2,7 +2,8 @@ return {
     -- useful tools
     {'mbbill/undotree', lazy=true, keys = {{'<leader>u', '<cmd>UndotreeToggle<CR>'}}},
     {'will133/vim-dirdiff', lazy=true, cmd = {'DirDiff'}},
-    {"tversteeg/registers.nvim", config = true, event = { "BufReadPre", "BufNewFile" }},
+    {"tversteeg/registers.nvim", cmd = "Registers",
+    keys = {{"\"", mode = {"n", "v"}}, {"<C-R>", mode = "i"}}},
     {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
 
     {'unblevable/quick-scope', lazy=true, keys = {'f', 'F', 't', 'T'},

@@ -1,5 +1,5 @@
 return {
-    'nvim-tree/nvim-tree.lua', lazy = true,
+    'nvim-tree/nvim-tree.lua', lazy = true, cmd = {'NvimTreeToggle'},
     keys = {{'<F2>','<cmd>NvimTreeToggle<CR>'}},
     dependencies = {'nvim-tree/nvim-web-devicons'},
     config = function ()
