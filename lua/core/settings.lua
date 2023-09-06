@@ -14,6 +14,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.updatetime = 30
 vim.opt.title = true
+-- " add visible column
+vim.opt.colorcolumn='101'
 vim.opt.termguicolors = true
 
 -- let modified buffers move to the background
