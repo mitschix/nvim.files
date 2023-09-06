@@ -21,6 +21,7 @@ local plugins = {
     {import = "plugs"},
     -- useful tools
     {'unblevable/quick-scope', init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
+    {import = "plugs.cmp"},
 
     -- previews registers
     {"jbyuki/instant.nvim", lazy=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
