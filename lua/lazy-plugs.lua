@@ -31,28 +31,6 @@ local plugins = {
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
     {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
 
-    -- " completion
-    -- https://github.com/hrsh7th/nvim-cmp
-    {"hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-buffer",
-            "ray-x/cmp-treesitter",
-            "hrsh7th/cmp-path",
-            "f3fora/cmp-spell",
-            "hrsh7th/cmp-calc",
-            "hrsh7th/cmp-emoji",
-            {'tzachar/cmp-tabnine', build='./install.sh', dependencies = 'hrsh7th/nvim-cmp'}, -- needs unzip installed
-            "hrsh7th/cmp-cmdline",
-            { 'saadparwaiz1/cmp_luasnip' }
-        }
-    },
-
-    -- snippets
-    'L3MON4D3/LuaSnip',
-    "rafamadriz/friendly-snippets",
-
     -- " lsps
     'neovim/nvim-lspconfig',
     "williamboman/mason.nvim",
