@@ -7,8 +7,6 @@ return {
 
     -- syntax / highlights
     {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
-    {'NvChad/nvim-colorizer.lua', config = true, event = { "BufReadPre", "BufNewFile" }},
-    {'xiyaowong/nvim-cursorword', event = { "BufReadPre", "BufNewFile" }},
 
     {"ivanjermakov/troublesum.nvim", config = function ()
         require("troublesum").setup({
