@@ -3,24 +3,26 @@ return {
     -- also show TODO if toggled
     {
         "folke/trouble.nvim",
-        lazy=true, cmd = {'Trouble'},
+        lazy=true, keys = {'<leader>xx'}, cmd = {'TroubleToggle'},
         dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
-            require("trouble").setup()
+            require("trouble").setup({
+                position = "right",
+                auto_preview = false,
+            })
             -- Trouble shortcuts {{{
-            vim.keymap.set("n", "<leader>xx", "<CMD>Trouble<CR>")
-            vim.keymap.set("n", "<leader>xw", "<CMD>Trouble workspace_diagnostics<CR>")
-            vim.keymap.set("n", "<leader>xd", "<CMD>Trouble document_diagnostics<CR>")
-            vim.keymap.set("n", "<leader>xl", "<CMD>Trouble loclist<CR>")
-            vim.keymap.set("n", "<leader>xq", "<CMD>Trouble quickfix<CR>")
+            vim.keymap.set("n", "<leader>xx", "<CMD>TroubleToggle<CR>")
+            vim.keymap.set("n", "<leader>xd", "<CMD>TroubleToggle workspace_diagnostics<CR>")
+            vim.keymap.set("n", "<leader>xl", "<CMD>TroubleToggle loclist<CR>")
+            vim.keymap.set("n", "<leader>xq", "<CMD>TroubleToggle quickfix<CR>")
             vim.keymap.set("n", "gR", "<CMD>Trouble lsp_references<CR>")
             -- }}}
         end,
     },
     {
       "folke/todo-comments.nvim",
-      dependencies = "nvim-lua/plenary.nvim",
-      config = function() require("todo-comments").setup { } end,
-      lazy=true, cmd = {'TodoLocList'}
+      dependencies = {"nvim-lua/plenary.nvim", "folke/trouble.nvim"},
+      config = true, lazy=true, cmd = {'TodoTrouble'},
+      keys = {{"<leader>xt", "<CMD>TroubleToggle todo<CR>"}}
     },
 }
