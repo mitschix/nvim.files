@@ -2,6 +2,7 @@ return {
     "hrsh7th/nvim-cmp",
     event = {'InsertEnter', 'CmdlineEnter'},
     dependencies = {
+        "onsails/lspkind.nvim",
         "hrsh7th/cmp-nvim-lsp",
         -- "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-buffer",
@@ -26,6 +27,14 @@ return {
 
         cmp.setup( {
             formatting = {
+                format = require('lspkind').cmp_format({
+                    mode = 'symbol_text',
+                    menu = (
+                        { buffer = "[Buffer]", nvim_lsp = "[LSP]", luasnip = "[LSNIP]",
+                        treesitter = "[TS]", spell = "[Spll]", cmp_tabnine = "[TN]",
+                        calc = "[Calc]", emoji = "[Emoji]", }
+                    )
+                })
             },
             sources = {
                 {name = "luasnip"},
