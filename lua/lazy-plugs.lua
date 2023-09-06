@@ -65,15 +65,9 @@ local plugins = {
     'tami5/lspsaga.nvim',
     'ray-x/lsp_signature.nvim',
 
-    -- " syntax
-    {'m-demare/hlargs.nvim', dependencies = { 'nvim-treesitter/nvim-treesitter' },
-        config = function () require('hlargs').setup{color = '#BFAAAA',
-        excluded_argnames = {declarations = { python = { 'self' } }} } end},
-
     -- {'andymass/vim-matchup', event = 'VimEnter'} -- TODO does not work
     -- themes
     'tiagovla/tokyodark.nvim',
-
 }
 local opts = {
     install = {
