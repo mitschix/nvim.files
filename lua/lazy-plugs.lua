@@ -67,11 +67,6 @@ local plugins = {
     'tami5/lspsaga.nvim',
     'ray-x/lsp_signature.nvim',
 
-    -- " debug
-    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
-    'theHamsta/nvim-dap-virtual-text',
-    'mfussenegger/nvim-dap-python',
-
     -- " syntax
     {'m-demare/hlargs.nvim', dependencies = { 'nvim-treesitter/nvim-treesitter' },
         config = function () require('hlargs').setup{color = '#BFAAAA',
