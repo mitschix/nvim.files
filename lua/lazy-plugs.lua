@@ -24,20 +24,6 @@ local plugins = {
     {"ahmedkhalf/project.nvim", lazy = true,
     config = function() require("project_nvim").setup {} end },
 
-    {
-      "folke/todo-comments.nvim",
-      dependencies = "nvim-lua/plenary.nvim",
-      config = function() require("todo-comments").setup { } end,
-      lazy=true, cmd = {'TodoLocList'}
-    },
-    -- Trouble to show diagnostics/loc list/quickfix prettier
-    -- also show TODO if toggled
-    {
-        "folke/trouble.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        config = function() require("trouble").setup { } end,
-        lazy=true, cmd = {'Trouble'}
-    },
     -- previews registers
     {"jbyuki/instant.nvim", lazy=true, cmd={'InstantStartServer','InstantJoinSession','InstantJoinSingle'},
         init = function () vim.g.instant_username = "mitschix" end},
@@ -51,7 +37,6 @@ local plugins = {
     -- programming
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
     {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
-    'lukas-reineke/indent-blankline.nvim',
 
     -- " completion
     -- https://github.com/hrsh7th/nvim-cmp
