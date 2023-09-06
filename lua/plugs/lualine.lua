@@ -41,7 +41,7 @@ return {
             lualine_y = {'%l/%L - %c'},
             lualine_z = {{'progress', separator = { left = '', right = ''}}}
         },
-        extensions = {'fzf', 'nvim-tree'}
+        extensions = {'nvim-tree'}
     }
 end
 }
