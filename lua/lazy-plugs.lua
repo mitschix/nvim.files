@@ -27,11 +27,6 @@ local plugins = {
         init = function () vim.g.instant_username = "mitschix" end},
     {'dyng/ctrlsf.vim', init = function () vim.g.ctrlsf_position = 'right' end},
 
-    -- git plugins
-    -- pleanary - set of lua functions needed by gitsigns
-    { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' }},
-    "kdheepak/lazygit.nvim",
-
     -- programming
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
     {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
