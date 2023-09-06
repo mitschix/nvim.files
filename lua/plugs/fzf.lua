@@ -1,7 +1,9 @@
 return {
     -- install fzf as command and as plugin
-    {'ibhagwan/fzf-lua', event = { "BufReadPre", "BufNewFile" },
-    dependencies = {'junegunn/fzf', build = './install --all --xdg --no-update-rc' },
+    {'junegunn/fzf', build = './install --all --xdg --no-update-rc', lazy=true},
+    {'ibhagwan/fzf-lua', cmd = {'FzfLua'},
+    keys = { "<leader>pf", "<leader>pl", "<leader>pL", "<leader>pb", "<leader>pg", "<leader>pk", "<leader>e"},
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function ()
         -- fzf-lua {{{
             local fzf_lua = require("fzf-lua")
