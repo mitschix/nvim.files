@@ -32,4 +32,13 @@ return {
 
     {"ray-x/lsp_signature.nvim", lazy = true}, -- has no trigger -> triggerd on lsp attach
     {'tami5/lspsaga.nvim', cmd = {'Lspsaga'}, lazy=true},
+
+    -- show (lsp) diagnostics on the upper right corner
+    {"ivanjermakov/troublesum.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function ()
+        require("troublesum").setup({
+            severity_format = {"󰅚","󰀪","󰋽","󰌶"},
+        })
+    end},
 }

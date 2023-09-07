@@ -14,12 +14,4 @@ return {
 
     -- syntax / highlights
     {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
-
-    {"ivanjermakov/troublesum.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function ()
-        require("troublesum").setup({
-            severity_format = {"󰅚","󰀪","󰋽","󰌶"},
-        })
-    end},
 }
