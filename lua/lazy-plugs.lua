@@ -23,12 +23,7 @@ local plugins = {
 
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
 
-    -- " lsps
-    'neovim/nvim-lspconfig',
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    'tami5/lspsaga.nvim',
-    'ray-x/lsp_signature.nvim',
+    {import = "plugs.lsp"},
 }
 local opts = {
     install = {
