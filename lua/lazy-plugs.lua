@@ -20,9 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     {import = "plugs"},
     {import = "plugs.cmp"},
-
-    {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end},
-
     {import = "plugs.lsp"},
 }
 local opts = {
