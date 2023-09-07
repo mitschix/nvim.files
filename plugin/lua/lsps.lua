@@ -10,32 +10,28 @@ require'lsp_signature'.setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local function on_attach(client, bufnr)
-    -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
 
     -- LSP config mappings{{{
-    local key_opts = {silent=true, noremap=true}
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', key_opts)
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', key_opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', key_opts)
-    buf_set_keymap('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
-    buf_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', key_opts)
-    buf_set_keymap('n', '<leader>ca', ':Lspsaga code_action<CR>', key_opts)
-    buf_set_keymap('n', 'cd', ':Lspsaga show_line_diagnostics<CR>', key_opts)
-    buf_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', key_opts)
-    buf_set_keymap('n', '[d', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
-    buf_set_keymap('n', ']d', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
-    buf_set_keymap('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
+    local key_opts = {silent=true, buffer=bufnr}
+    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', key_opts)
+    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', key_opts)
+    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
+    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', key_opts)
+    vim.keymap.set('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
+    vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', key_opts)
+    vim.keymap.set('n', '<leader>ca', ':Lspsaga code_action<CR>', key_opts)
+    vim.keymap.set('n', 'cd', ':Lspsaga show_line_diagnostics<CR>', key_opts)
+    vim.keymap.set('n', 'K', ':Lspsaga hover_doc<CR>', key_opts)
+    vim.keymap.set('n', '[d', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
+    vim.keymap.set('n', ']d', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
+    vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
     -- }}}
-
 
     -- Set some keybinds conditional on server capabilities
     if client.server_capabilities.document_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", key_opts)
+        vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", key_opts)
     elseif client.server_capabilities.document_range_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", key_opts)
+        vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", key_opts)
     end
 end
 
