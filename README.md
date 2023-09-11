@@ -1,17 +1,11 @@
 # nvim.files
-Outsourced dotfiles repository for neovim.
+Dotfiles repository for neovim with mason, nvim-cmp, treesitter and lazy and a bunch of other useful plugins.
 
 To use my setup just download this repository and create a link to your nvim config folder.
 
 ```
 git clone https://github.com/mitschix/nvim.files
 ln -s /path/to/repo/nvim.files ~/.config/nvim
-```
-
-This config is used with nvim v0.5+ and partly rewritten in lua. If you are interested in the vimscript and pre nvim 0.5 config, you can checkout the tag `pre-nvim-0.5`.
-
-```
-git checkout pre-nvim-0.5
 ```
 
 ## Read Repos/dotfiles/posts to find my gems
