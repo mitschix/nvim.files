@@ -13,7 +13,6 @@ end, key_opts_silent)
 
 -- Closing and Exit {{{
 -- custom exit function to close buffers before exiting
--- BUG: if multiple files opened at start and not loaded -> error
 
 local function count_bufs_by_type(loaded_only)
     loaded_only = (loaded_only == nil and true or loaded_only)
@@ -30,7 +29,7 @@ local function count_bufs_by_type(loaded_only)
 end
 
 local function custom_exit(save, force)
-    local bufTable = count_bufs_by_type()
+    local bufTable = count_bufs_by_type(false)
     save = (save == nil and false or save)
     force = (force == nil and false or force)
 
@@ -40,7 +39,7 @@ local function custom_exit(save, force)
     if (bufTable.normal <= 1) then
         vim.api.nvim_exec([[:q]], true)
     else
-        vim.api.nvim_exec([[:bd]], true)
+        vim.api.nvim_exec([[:bw]], true)
     end
 end
 
