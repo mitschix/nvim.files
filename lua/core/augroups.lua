@@ -48,6 +48,15 @@ vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
 })
 -- }}}
 
+-- Set q to close buffer {{{
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    desc = "Map q to close the buffer.",
+    pattern = { "checkhealth", "help", "man", "qf"},
+    callback = function(event)
+        vim.keymap.set("n", "q", function() vim.cmd.close() end, { buffer = event.buf })
+    end,
+})
+
 -- wrapping for txt {{{
 local function setupWrapping()
     vim.w.wrap = true
