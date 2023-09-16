@@ -26,9 +26,12 @@ return {
         startify.section.bottom_buttons.val = {
             { type = "text", val = "Commands", opts = { hl = "SpecialComment", shrink_margin = false } },
             { type = "padding", val = 1 },
-            startify.button( "up", " Update Plugins" , ":Lazy<CR>"),
+            startify.button( "ul", " Open Lazy (Plugins)" , "<cmd>Lazy<CR>"),
+            startify.button( "up", " Sync Lazy (Plugins)" , "<cmd>Lazy sync<CR>"),
             { type = "padding", val = 1 },
-            startify.button( "q", "  Quit NVIM" , ":qa<CR>"),
+            startify.button( "ml", " Open Mason (LSPs)" , "<cmd>Mason<CR>"),
+            { type = "padding", val = 1 },
+            startify.button( "q", " Quit NVIM" , ":qa<CR>"),
         }
         startify.section.footer.val = {
             { type = "text", val = fortune, opts = { position = "center"} },
