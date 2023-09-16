@@ -32,6 +32,33 @@ local opts = {
     },
     change_detection = {
         notify = false,
-    }
+    },
+    performance = {
+    rtp = {
+        disabled_plugins = {
+            "man",
+            "netrw",
+            "netrwFileHandlers",
+            "netrwPlugin",
+            "netrwSettings",
+            "rplugin",
+            "tohtml",
+            "tutor",
+
+            -- not exessively used but still nice to haves
+            -- "editorconfig",
+            -- "health",
+            -- "matchit",
+            -- "matchparen",
+            -- "spellfile",
+            -- "spellfile_plugin",
+            -- "tar",
+            -- "tarPlugin",
+            -- "gzip",
+            -- "zip",
+            -- "zipPlugin",
+        },
+    },
+},
 }
 require("lazy").setup(plugins, opts)
