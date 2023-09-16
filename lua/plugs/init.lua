@@ -15,7 +15,8 @@ return {
     config = function () vim.g.ctrlsf_position = 'right' end},
 
     {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end,
-    cmd = {'CommentToggle'}, keys = {'gcc'}},
+    cmd = {'CommentToggle'}, keys = {'gcc', {'gc', mode = 'v'}}},
+
 
     -- syntax / highlights
     {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
