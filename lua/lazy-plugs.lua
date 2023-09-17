@@ -34,31 +34,38 @@ local opts = {
         notify = false,
     },
     performance = {
-    rtp = {
-        disabled_plugins = {
-            "man",
-            "netrw",
-            "netrwFileHandlers",
-            "netrwPlugin",
-            "netrwSettings",
-            "rplugin",
-            "tohtml",
-            "tutor",
+        rtp = {
+            disabled_plugins = {
+                "man",
+                "netrw",
+                "netrwFileHandlers",
+                "netrwPlugin",
+                "netrwSettings",
+                "rplugin",
+                "tohtml",
+                "tutor",
 
-            -- not exessively used but still nice to haves
-            -- "editorconfig",
-            -- "health",
-            -- "matchit",
-            -- "matchparen",
-            -- "spellfile",
-            -- "spellfile_plugin",
-            -- "tar",
-            -- "tarPlugin",
-            -- "gzip",
-            -- "zip",
-            -- "zipPlugin",
+                -- not exessively used but still nice to haves
+                -- "editorconfig",
+                -- "health",
+                -- "matchit",
+                -- "matchparen",
+                -- "spellfile",
+                -- "spellfile_plugin",
+                -- "tar",
+                -- "tarPlugin",
+                -- "gzip",
+                -- "zip",
+                -- "zipPlugin",
+            },
         },
     },
-},
 }
+vim.keymap.set('n', '<leader>zz', '<cmd>Lazy<CR>', {desc='Open lazy UI'})
+vim.keymap.set('n', '<leader>zi', '<cmd>Lazy install<CR>', {desc='Lazy install'})
+vim.keymap.set('n', '<leader>zu', '<cmd>Lazy update<CR>', {desc='Lazy update'})
+vim.keymap.set('n', '<leader>zc', '<cmd>Lazy clean<CR>', {desc='Lazy clean'})
+vim.keymap.set('n', '<leader>zp', '<cmd>Lazy profile<CR>', {desc='Lazy profile'})
+vim.keymap.set('n', '<leader>zs', '<cmd>Lazy sync<CR>', {desc='Lazy sync'})
+
 require("lazy").setup(plugins, opts)
