@@ -28,19 +28,33 @@ return {
             },
             sections = {
                 lualine_a = {{'mode', separator = { left = '', right = ''},
-                fmt = function(str) return str:gsub('-',''):sub(1,2) end},
+                    fmt = function(str) return str:gsub('-',''):sub(1,2) end},},
+                -- uses gitsigns instead of builtin
+                lualine_b = {{'b:gitsigns_head', icon = ''}, {'diff', source = diff_source}},
+                lualine_c = {{'filename', path = 3, file_status = false, separator = ''},
+                    {'%m%r%h', color = {fg=204}}},
+                lualine_x = {{'WORD_COUNT', color = {fg=111}, icon = ''},
+                    {spell_stat, color = {fg=222}, icon = '🆎'},
+                    { lazy_status.updates, cond = lazy_status.has_updates,
+                        color = { fg = "#ff9e64" }, }, 'filetype'},
+                lualine_y = {'%l/%L - %c'},
+                lualine_z = {{'progress', separator = { left = '', right = ''}}}
             },
-            -- uses gitsigns instead of builtin
-            lualine_b = {{'b:gitsigns_head', icon = ''}, {'diff', source = diff_source}},
-            lualine_c = {{'filename', path = 3, file_status = false, separator = ''},
-            {'%m%r%h', color = {fg=204}}},
-            lualine_x = {{'WORD_COUNT', color = {fg=111}, icon = ''},
-            {spell_stat, color = {fg=222}, icon = '🆎'},
-            { lazy_status.updates, cond = lazy_status.has_updates,
-                color = { fg = "#ff9e64" }, }, 'filetype'},
-            lualine_y = {'%l/%L - %c'},
-            lualine_z = {{'progress', separator = { left = '', right = ''}}}
-        },
+            inactive_sections = {
+                lualine_c = {{'filename', path = 3, file_status = false, separator = ''}},
+                lualine_x = {'location'}
+            },
+            winbar = {
+                lualine_c = {
+                    {function() return require("nvim-navic").get_location() end,
+                      cond = function() return require("nvim-navic").is_available() end}
+                },
+                lualine_x = {'diagnostics'},
+                lualine_y = {'buffers'}
+            },
+            inactive_winbar = {
+                lualine_y = {'buffers'}
+            },
         extensions = {'nvim-tree'}
     }
 end
