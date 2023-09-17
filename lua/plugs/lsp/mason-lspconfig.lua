@@ -47,12 +47,17 @@ return {
             vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
             vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', key_opts)
             vim.keymap.set('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
-            vim.keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', key_opts)
-            vim.keymap.set('n', '<leader>ca', ':Lspsaga code_action<CR>', key_opts)
-            vim.keymap.set('n', 'cd', ':Lspsaga show_line_diagnostics<CR>', key_opts)
-            vim.keymap.set('n', 'K', ':Lspsaga hover_doc<CR>', key_opts)
-            vim.keymap.set('n', '[d', ':Lspsaga diagnostic_jump_prev<CR>', key_opts)
-            vim.keymap.set('n', ']d', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
+            vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', key_opts)
+            vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', key_opts)
+            vim.keymap.set('n', 'cd', '<cmd>Lspsaga show_line_diagnostics<CR>', key_opts)
+            vim.keymap.set('n', 'K',  '<cmd>Lspsaga hover_doc<CR>', key_opts)
+            -- go to next/prev diagnostic -> text is shown on the top by trld
+            vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({float=false})<CR>', key_opts)
+            vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next({float=false})<CR>', key_opts)
+            -- use lspsage to show for current diagn.
+            vim.keymap.set('n', '[D', '<cmd>Lspsaga diagnostic_jump_prev<CR>', key_opts)
+            vim.keymap.set('n', ']D', '<cmd>Lspsaga diagnostic_jump_next<CR>', key_opts)
+
             vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
             -- }}}
             vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
