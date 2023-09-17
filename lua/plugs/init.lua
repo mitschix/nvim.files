@@ -21,5 +21,6 @@ return {
     -- syntax / highlights
     {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
 
+    -- replace netrw-gx (nvim-tree can be lazy loaded and netrw can be disabled)
     { 'TobinPalmer/BetterGX.nvim', keys = { {'gx','<CMD>lua require("better-gx").BetterGx()<CR>'}}}
 }

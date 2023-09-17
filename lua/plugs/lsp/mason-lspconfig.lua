@@ -3,7 +3,13 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         'williamboman/mason.nvim',
-        'neovim/nvim-lspconfig',
+        { 'neovim/nvim-lspconfig', dependencies = {
+            {
+                "SmiteshP/nvim-navbuddy",
+                dependencies = {"SmiteshP/nvim-navic", "MunifTanjim/nui.nvim"},
+                opts = {lsp = {auto_attach = true }}
+            }},
+        },
         'ray-x/lsp_signature.nvim',
         'hrsh7th/cmp-nvim-lsp'
     },
@@ -49,12 +55,16 @@ return {
             vim.keymap.set('n', ']d', ':Lspsaga diagnostic_jump_next<CR>', key_opts)
             vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
             -- }}}
+            vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
 
             -- Set some keybinds conditional on server capabilities
             if client.server_capabilities.document_formatting then
                 vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", key_opts)
             elseif client.server_capabilities.document_range_formatting then
                 vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", key_opts)
+            end
+            if client.server_capabilities.documentSymbolProvider then
+                require("nvim-navic").attach(client, bufnr)
             end
         end
 
