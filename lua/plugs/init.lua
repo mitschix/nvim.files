@@ -20,4 +20,6 @@ return {
 
     -- syntax / highlights
     {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
+
+    { 'TobinPalmer/BetterGX.nvim', keys = { {'gx','<CMD>lua require("better-gx").BetterGx()<CR>'}}}
 }
