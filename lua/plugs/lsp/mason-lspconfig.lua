@@ -105,6 +105,10 @@ return {
                 }
             end,
 
+            ["pyright"] = function()
+                require("lspconfig").pyright.setup{}
+            end,
+
             -- Configure lua language server for neovim development
             ["lua_ls"] = function()
                 require("lspconfig").lua_ls.setup{
