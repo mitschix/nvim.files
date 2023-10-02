@@ -1,25 +1,26 @@
 return {
     'lukas-reineke/indent-blankline.nvim',
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" }, main = "ibl",
     config = function ()
-        vim.cmd [[highlight IndentBlanklineContextChar guifg=#00AE00 gui=nocombine]]
-        vim.cmd [[highlight IndentBlanklineContextStart gui=underline cterm=underline guisp=#00AE00]]
-        require("indent_blankline").setup {
-            show_first_indent_level = false,
-            show_current_context = true,
-            show_current_context_start = true,
-            char_list = {'¦', '┆', '┊'},
-            context_char = '┃',
-            use_treesitter = true,
-            filetype_exclude = {
-                'alpha',
-                "lspinfo",
-                "packer",
-                "checkhealth",
-                "help",
-                "man",
-                ""
+        local hooks = require("ibl.hooks")
+        hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+        hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
+        require("ibl").setup({
+            indent ={
+                char = {'¦', '┆', '┊'}
+            },
+            exclude = {
+                filetypes = { 'alpha', "lspinfo", "lazy", "checkhealth", "help", "man", "" },
+            },
+            scope = {
+                priority = 0,
+                char = '┃',
+                include = {
+                    node_type = {
+                        ["*"] = { "argument_list", "arguments", "assignment_statement", "Block", "chunk", "class", "ContainerDecl", "dictionary", "do_block", "do_statement", "element", "except", "FnCallArguments", "for", "for_statement", "function", "function_declaration", "function_definition", "if_statement", "IfExpr", "IfStatement", "import", "InitList", "list_literal", "method", "object", "ParamDeclList", "repeat_statement", "selector", "SwitchExpr", "table", "table_constructor", "try_statement", "tuple", "type", "var", "while", "while_statement", "with_statement", },
+                    }
+                }
             }
-        }
+        })
     end
 }
