@@ -24,11 +24,11 @@ return {
                 "jsonls",
                 "marksman",
                 "pylsp",
+                "pyright",
                 -- install 3rd party plugins
                 -- :PylspInstall pylsp-mypy pylsp-rope pyls-memestra
                 "lua_ls",
                 "texlab", -- testing
-                "vimls",
             },
         -- auto-install configured servers (with lspconfig)
         automatic_installation = true,
@@ -62,12 +62,6 @@ return {
             -- }}}
             vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
 
-            -- Set some keybinds conditional on server capabilities
-            if client.server_capabilities.document_formatting then
-                vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", key_opts)
-            elseif client.server_capabilities.document_range_formatting then
-                vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", key_opts)
-            end
             if client.server_capabilities.documentSymbolProvider then
                 require("nvim-navic").attach(client, bufnr)
             end
