@@ -61,7 +61,25 @@ return {
         event = { 'BufReadPre', 'BufNewFile' },
         config = function()
             vim.diagnostic.config({ virtual_text = { format = function() return '' end } })
-            require('trld').setup()
+            require('trld').setup({
+                formatter = function(diag)
+                    local u = require('trld.utils')
+                    local diag_lines = {}
+
+                    for line in diag.message:gmatch('[^\n]+') do
+                        line = line:gsub('[ \t]+%f[\r\n%z]', '')
+                        line = diag.source .. ': ' .. line
+                        table.insert(diag_lines, line)
+                    end
+
+                    local lines = {}
+                    for _, diag_line in ipairs(diag_lines) do
+                        table.insert(lines, { { diag_line .. ' ', u.get_hl_by_serverity(diag.severity) } })
+                    end
+
+                    return lines
+                end,
+            })
         end,
     },
 }
