@@ -99,13 +99,19 @@ return {
                         pylsp = {
                             plugins = {
                                 pylint = { enabled = true },
+                                autopep8 = { enabled = false },
+                                yapf = { enabled = false },
                             },
                         },
                     },
                 })
             end,
 
-            ['pyright'] = function() require('lspconfig').pyright.setup({}) end,
+            ['pyright'] = function()
+                require('lspconfig').pyright.setup({
+                    disableOrganizeImports = true,
+                })
+            end,
 
             -- Configure lua language server for neovim development
             ['lua_ls'] = function()
