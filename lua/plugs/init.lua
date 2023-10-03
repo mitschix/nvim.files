@@ -1,26 +1,31 @@
 return {
     -- useful tools
-    {'will133/vim-dirdiff', lazy=true, cmd = {'DirDiff'}},
-    {'dhruvasagar/vim-table-mode', lazy=true, cmd={'TableModeToggle'}},
+    { 'will133/vim-dirdiff', lazy = true, cmd = { 'DirDiff' } },
+    { 'dhruvasagar/vim-table-mode', lazy = true, cmd = { 'TableModeToggle' } },
 
-    {'mbbill/undotree', lazy=true, keys = {{'<leader>u', '<cmd>UndotreeToggle<CR>'}}},
+    { 'mbbill/undotree', lazy = true, keys = { { '<leader>u', '<cmd>UndotreeToggle<CR>' } } },
 
-    {"tversteeg/registers.nvim", cmd = "Registers",
-    keys = {{"\"", mode = {"n", "v"}}, {"<C-R>", mode = "i"}}},
+    { 'tversteeg/registers.nvim', cmd = 'Registers', keys = { { '"', mode = { 'n', 'v' } }, { '<C-R>', mode = 'i' } } },
 
-    {'unblevable/quick-scope', lazy=true, keys = {'f', 'F', 't', 'T'},
-    init = function() vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'} end },
+    {
+        'unblevable/quick-scope',
+        lazy = true,
+        keys = { 'f', 'F', 't', 'T' },
+        init = function() vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' } end,
+    },
 
-    {'dyng/ctrlsf.vim', lazy = true, cmd = {'CtrlSF'},
-    config = function () vim.g.ctrlsf_position = 'right' end},
+    { 'dyng/ctrlsf.vim', lazy = true, cmd = { 'CtrlSF' }, config = function() vim.g.ctrlsf_position = 'right' end },
 
-    {'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end,
-    cmd = {'CommentToggle'}, keys = {'gcc', {'gc', mode = 'v'}}},
-
+    {
+        'terrortylor/nvim-comment',
+        config = function() require('nvim_comment').setup() end,
+        cmd = { 'CommentToggle' },
+        keys = { 'gcc', { 'gc', mode = 'v' } },
+    },
 
     -- syntax / highlights
-    {'PotatoesMaster/i3-vim-syntax', lazy=true, ft = {"i3config",  "i3"}},
+    { 'PotatoesMaster/i3-vim-syntax', lazy = true, ft = { 'i3config', 'i3' } },
 
     -- replace netrw-gx (nvim-tree can be lazy loaded and netrw can be disabled)
-    { 'TobinPalmer/BetterGX.nvim', keys = { {'gx','<CMD>lua require("better-gx").BetterGx()<CR>'}}}
+    { 'TobinPalmer/BetterGX.nvim', keys = { { 'gx', '<CMD>lua require("better-gx").BetterGx()<CR>' } } },
 }

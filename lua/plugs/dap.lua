@@ -1,23 +1,18 @@
 return {
-    "rcarriga/nvim-dap-ui",
-    lazy = true, keys={'<Space>du', '<Space>dr'},
-    dependencies = {"mfussenegger/nvim-dap", 'theHamsta/nvim-dap-virtual-text', 'mfussenegger/nvim-dap-python'},
-    config = function ()
-        require("dapui").setup()
-        require("nvim-dap-virtual-text").setup()
-        vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+    'rcarriga/nvim-dap-ui',
+    lazy = true,
+    keys = { '<Space>du', '<Space>dr' },
+    dependencies = { 'mfussenegger/nvim-dap', 'theHamsta/nvim-dap-virtual-text', 'mfussenegger/nvim-dap-python' },
+    config = function()
+        require('dapui').setup()
+        require('nvim-dap-virtual-text').setup()
+        vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
 
-        local dap, dapui = require("dap"), require("dapui")
-        dap.listeners.after.event_initialized["dapui_config"] = function()
-            dapui.open()
-        end
+        local dap, dapui = require('dap'), require('dapui')
+        dap.listeners.after.event_initialized['dapui_config'] = function() dapui.open() end
         -- not working with closing in python
-        dap.listeners.before.event_terminated["dapui_config"] = function()
-            dapui.close()
-        end
-        dap.listeners.before.event_exited["dapui_config"] = function()
-            dapui.close()
-        end
+        dap.listeners.before.event_terminated['dapui_config'] = function() dapui.close() end
+        dap.listeners.before.event_exited['dapui_config'] = function() dapui.close() end
 
         -- TODO replace with lua commands
         vim.cmd([[
@@ -46,5 +41,5 @@ return {
         nnoremap <silent> <localleader>dtc :lua require('dap-python').test_class()<CR>
         vnoremap <silent> <localleader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
         ]])
-    end
+    end,
 }

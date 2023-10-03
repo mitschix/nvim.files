@@ -1,8 +1,9 @@
 return {
     -- scad 3D modeling?
     'salkin-mada/openscad.nvim',
-    lazy = true, ft = {'openscad'},
-    config = function ()
+    lazy = true,
+    ft = { 'openscad' },
+    config = function()
         require('openscad')
         -- load snippets, note dependencies
         vim.g.openscad_auto_open = false
@@ -12,5 +13,5 @@ return {
         vim.g.openscad_help_manual_trig_key = '<C-m>'
         vim.g.openscad_help_trig_key = '<M-f>'
     end,
-    dependencies = 'L3MON4D3/LuaSnip'
+    dependencies = 'L3MON4D3/LuaSnip',
 }

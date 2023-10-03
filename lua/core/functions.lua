@@ -1,4 +1,4 @@
-local key_opts_silent = {silent=true, noremap=true}
+local key_opts_silent = { silent = true, noremap = true }
 
 vim.g.diagnostics_active = true
 vim.keymap.set('n', '<leader>D', function()
@@ -10,13 +10,12 @@ vim.keymap.set('n', '<leader>D', function()
     end
 end, key_opts_silent)
 
-
 -- Closing and Exit {{{
 -- custom exit function to close buffers before exiting
 
 local function count_bufs_by_type(loaded_only)
     loaded_only = (loaded_only == nil and true or loaded_only)
-    local count = {normal = 0, acwrite = 0, help = 0, nofile = 0, nowrite = 0, quickfix = 0, terminal = 0, prompt = 0}
+    local count = { normal = 0, acwrite = 0, help = 0, nofile = 0, nowrite = 0, quickfix = 0, terminal = 0, prompt = 0 }
     local buftypes = vim.api.nvim_list_bufs()
     for _, bufname in pairs(buftypes) do
         if (not loaded_only) or vim.api.nvim_buf_is_loaded(bufname) then
@@ -34,9 +33,12 @@ local function custom_exit(save, force)
     force = (force == nil and false or force)
 
     if save then vim.api.nvim_exec([[:w]], true) end
-    if force then vim.api.nvim_exec([[:q!]], true) return end
+    if force then
+        vim.api.nvim_exec([[:q!]], true)
+        return
+    end
 
-    if (bufTable.normal <= 1) then
+    if bufTable.normal <= 1 then
         vim.api.nvim_exec([[:q]], true)
     else
         vim.api.nvim_exec([[:bw]], true)
@@ -59,9 +61,9 @@ local function word_count(update)
     if WORD_COUNT == '' or update then
         local count = vim.fn.wordcount().words
         if count == 0 then
-            WORD_COUNT = "[none]"
+            WORD_COUNT = '[none]'
         else
-            WORD_COUNT = string.format("[%d]", count)
+            WORD_COUNT = string.format('[%d]', count)
         end
     else
         WORD_COUNT = ''
@@ -78,9 +80,9 @@ vim.keymap.set('n', '<leader>wu', function() word_count(true) end, key_opts_sile
 ----------------------------------------------------------------------------
 local function map_change_option(key, op)
     local opt_mappings = {
-        wrap = "vim.wo.wrap",
-        list = "vim.wo.list",
-        hlsearch = "vim.go.hlsearch"
+        wrap = 'vim.wo.wrap',
+        list = 'vim.wo.list',
+        hlsearch = 'vim.go.hlsearch',
     }
 
     if key == 'n' then
@@ -90,8 +92,8 @@ local function map_change_option(key, op)
         end, key_opts_silent)
     elseif key == 'm' then
         vim.keymap.set('n', '<leader>cm', function()
-            vim.go.mouse = vim.go.mouse == "" and "a" or ""
-            print(string.format(" %s set: %s", op, vim.go.mouse == "a"))
+            vim.go.mouse = vim.go.mouse == '' and 'a' or ''
+            print(string.format(' %s set: %s', op, vim.go.mouse == 'a'))
         end, key_opts_silent)
     else
         -- old vim script
@@ -99,21 +101,21 @@ local function map_change_option(key, op)
         -- let op = get(a:, 3, 'set '.opt.'!')
         -- execute printf("nnoremap <leader>c%s :%s<bar>set %s?<CR>", key, op, opt)
 
-        vim.keymap.set('n', '<leader>c'..key, function()
+        vim.keymap.set('n', '<leader>c' .. key, function()
             local option = opt_mappings[op]
-            local cmd = string.format("%s = not %s", option, option)
+            local cmd = string.format('%s = not %s', option, option)
             loadstring(cmd)()
-            cmd = string.format("print(' %s set: '..tostring(%s))",op, option)
+            cmd = string.format("print(' %s set: '..tostring(%s))", op, option)
             loadstring(cmd)()
         end, key_opts_silent)
     end
 end
 
-map_change_option("n", "number")
-map_change_option("w", "wrap")
-map_change_option("l", "list")
-map_change_option("h", "hlsearch")
-map_change_option("m", "mouse")
+map_change_option('n', 'number')
+map_change_option('w', 'wrap')
+map_change_option('l', 'list')
+map_change_option('h', 'hlsearch')
+map_change_option('m', 'mouse')
 
 -- WIP - really needed?
 -- map_change_option("t", "textwidth", 'let &textwidth = input("textwidth (". &textwidth ."): ")<bar>redraw')

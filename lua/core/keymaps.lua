@@ -1,4 +1,4 @@
-local key_opts_silent = {silent=true}
+local key_opts_silent = { silent = true }
 
 -- Run Current Buffer {{{
 -- and saves file (lua or vim)
@@ -15,14 +15,14 @@ vim.keymap.set('i', '<leader><Enter>', '<Esc>:w<CR>i')
 
 -- force writing RO file
 -- very slow!!
-vim.keymap.set('c', 'w!!', function () require('core.utils').sudo_write() end)
+vim.keymap.set('c', 'w!!', function() require('core.utils').sudo_write() end)
 
 -- " }}}
 
 -- Copy/Paste Settings {{{
 -- Copying/pasting text to the system clipboard.
 vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set({'n','v'}, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', 'V"+y')
 
 -- Yank to end of line
@@ -120,8 +120,8 @@ vim.keymap.set('n', 'L', '$')
 
 -- remap movement up and down on wrapped files
 -- count wraped lines as one line when doing relative jumps
-vim.keymap.set('n', 'j', function() return vim.v.count == 0 and "gj" or "j" end, {expr = true})
-vim.keymap.set('n', 'k', function() return vim.v.count == 0 and "gk" or "k" end, {expr = true})
+vim.keymap.set('n', 'j', function() return vim.v.count == 0 and 'gj' or 'j' end, { expr = true })
+vim.keymap.set('n', 'k', function() return vim.v.count == 0 and 'gk' or 'k' end, { expr = true })
 -- }}}
 
 -- Useful Misc Settings {{{

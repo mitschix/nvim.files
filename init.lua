@@ -1,2 +1,2 @@
 require('core')
-require("lazy-plugs")
+require('lazy-plugs')

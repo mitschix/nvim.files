@@ -1,7 +1,4 @@
-
-
 -- === MAIN VIMRC & BASIC SETTINGS===
-
 
 -- basic settings {{{
 -- Automatically read a file that has changed on disk
@@ -15,7 +12,7 @@ vim.opt.relativenumber = true
 vim.opt.updatetime = 30
 vim.opt.title = true
 -- " add visible column
-vim.opt.colorcolumn='101'
+vim.opt.colorcolumn = '101'
 vim.opt.termguicolors = true
 
 -- let modified buffers move to the background
@@ -23,7 +20,7 @@ vim.opt.hidden = true
 -- Show matching brackets.
 vim.opt.showmatch = true
 
-vim.opt.completeopt={'menu','menuone','noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- settings for searching= true
 vim.opt.incsearch = true
@@ -39,18 +36,17 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Toggle whitespace characters
-vim.opt.listchars={tab = '»─', nbsp = '·', eol = '¬',
-                trail = '-', extends = '»', precedes = '«'}
+vim.opt.listchars = { tab = '»─', nbsp = '·', eol = '¬', trail = '-', extends = '»', precedes = '«' }
 
 -- change split behaviour
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- EOL formats order
-vim.opt.fileformats={'unix','dos','mac'}
+vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 
 -- " do not fold when opening - fold at indention
-vim.opt.foldlevel= 99
+vim.opt.foldlevel = 99
 vim.opt.foldmethod = 'indent'
 
 -- Minimal number of screen lines to keep above/below the cursor.
@@ -73,13 +69,13 @@ vim.opt.undoreload = 10000
 vim.opt.whichwrap:append('h')
 vim.opt.whichwrap:append('l')
 
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append('c')
 
 -- if rg exists set other vim grep method
 vim.opt.wildignore = '*.o,*.obj,.git,*.rbc,*.pyc,__pycache__'
-if 1 == vim.fn.executable("rg") then
+if 1 == vim.fn.executable('rg') then
     vim.o.grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
-    vim.opt.grepformat = vim.opt.grepformat ^ { "%f:%l:%c:%m" }
+    vim.opt.grepformat = vim.opt.grepformat ^ { '%f:%l:%c:%m' }
 end
 
 -- https://github.com/ibhagwan/nvim-lua/blob/main/lua/init.lua

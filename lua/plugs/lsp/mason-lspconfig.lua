@@ -1,47 +1,50 @@
 return {
-    "williamboman/mason-lspconfig.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    'williamboman/mason-lspconfig.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         'williamboman/mason.nvim',
-        { 'neovim/nvim-lspconfig', dependencies = {
-            {
-                "SmiteshP/nvim-navbuddy",
-                dependencies = {"SmiteshP/nvim-navic", "MunifTanjim/nui.nvim"},
-                opts = {lsp = {auto_attach = true }}
-            }},
+        {
+            'neovim/nvim-lspconfig',
+            dependencies = {
+                {
+                    'SmiteshP/nvim-navbuddy',
+                    dependencies = { 'SmiteshP/nvim-navic', 'MunifTanjim/nui.nvim' },
+                    opts = { lsp = { auto_attach = true } },
+                },
+            },
         },
         'ray-x/lsp_signature.nvim',
-        'hrsh7th/cmp-nvim-lsp'
+        'hrsh7th/cmp-nvim-lsp',
     },
-    config = function ()
+    config = function()
         -- auto install servers
         -- Include the servers you want to have installed by default below
-        require("mason-lspconfig").setup{
+        require('mason-lspconfig').setup({
             ensure_installed = {
-                "bashls",
-                "dockerls",
-                "gopls",
-                "jsonls",
-                "marksman",
-                "pylsp",
-                "pyright",
+                'bashls',
+                'dockerls',
+                'gopls',
+                'jsonls',
+                'marksman',
+                'pylsp',
+                'pyright',
                 -- install 3rd party plugins
                 -- :PylspInstall pylsp-mypy pylsp-rope pyls-memestra
-                "lua_ls",
-                "texlab", -- testing
+                'lua_ls',
+                'texlab', -- testing
             },
-        -- auto-install configured servers (with lspconfig)
-        automatic_installation = true,
-        }
+            -- auto-install configured servers (with lspconfig)
+            automatic_installation = true,
+        })
 
         -- Setup lspconfig for cmp
         local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
         local function on_attach(client, bufnr)
-            require "lsp_signature".on_attach({}, bufnr)
+            require('lsp_signature').on_attach({}, bufnr)
 
             -- LSP config mappings{{{
-            local key_opts = {silent=true, buffer=bufnr}
+            local key_opts = { silent = true, buffer = bufnr }
             vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', key_opts)
             vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', key_opts)
             vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
@@ -50,7 +53,7 @@ return {
             vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', key_opts)
             vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', key_opts)
             vim.keymap.set('n', 'cd', '<cmd>Lspsaga show_line_diagnostics<CR>', key_opts)
-            vim.keymap.set('n', 'K',  '<cmd>Lspsaga hover_doc<CR>', key_opts)
+            vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', key_opts)
             -- go to next/prev diagnostic -> text is shown on the top by trld
             vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({float=false})<CR>', key_opts)
             vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next({float=false})<CR>', key_opts)
@@ -62,21 +65,19 @@ return {
             -- }}}
             vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
 
-            if client.server_capabilities.documentSymbolProvider then
-                require("nvim-navic").attach(client, bufnr)
-            end
+            if client.server_capabilities.documentSymbolProvider then require('nvim-navic').attach(client, bufnr) end
         end
 
-        require("mason-lspconfig").setup_handlers({
+        require('mason-lspconfig').setup_handlers({
             function(server_name)
-                require("lspconfig")[server_name].setup{
+                require('lspconfig')[server_name].setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
-                }
+                })
             end,
 
-            ["gopls"] = function()
-                require("lspconfig").gopls.setup{
+            ['gopls'] = function()
+                require('lspconfig').gopls.setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
                     settings = {
@@ -85,33 +86,30 @@ return {
                                 unusedparams = true,
                             },
                             staticcheck = true,
-                        }
-                    }
-                }
+                        },
+                    },
+                })
             end,
 
-            ["pylsp"] = function()
-                require("lspconfig").pylsp.setup{
+            ['pylsp'] = function()
+                require('lspconfig').pylsp.setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
                     settings = {
                         pylsp = {
                             plugins = {
-                                pylint = {enabled = true; }
-
-                            }
-                        }
-                    }
-                }
+                                pylint = { enabled = true },
+                            },
+                        },
+                    },
+                })
             end,
 
-            ["pyright"] = function()
-                require("lspconfig").pyright.setup{}
-            end,
+            ['pyright'] = function() require('lspconfig').pyright.setup({}) end,
 
             -- Configure lua language server for neovim development
-            ["lua_ls"] = function()
-                require("lspconfig").lua_ls.setup{
+            ['lua_ls'] = function()
+                require('lspconfig').lua_ls.setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
                     settings = {
@@ -122,11 +120,11 @@ return {
                             },
                             diagnostics = {
                                 -- Get the language server to recognize the `vim` global
-                                globals = {'vim'},
+                                globals = { 'vim' },
                             },
                             workspace = {
                                 -- Make the server aware of Neovim runtime files
-                                library = vim.api.nvim_get_runtime_file("", true),
+                                library = vim.api.nvim_get_runtime_file('', true),
                                 checkThirdParty = false,
                             },
                             -- Do not send telemetry data containing a randomized but unique identifier
@@ -134,9 +132,9 @@ return {
                                 enable = false,
                             },
                         },
-                    }
-                }
+                    },
+                })
             end,
         })
-    end
+    end,
 }
