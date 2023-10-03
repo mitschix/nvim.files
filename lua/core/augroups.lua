@@ -1,8 +1,3 @@
--- Coding {{{
--- Auto-format *.files prior to saving them{{{
-vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*.py", command = "lua vim.lsp.buf.format()" })
--- }}}
-
 -- Highlight whitespaces {{{
 local extra_whitespace = vim.api.nvim_create_augroup("ExtraWhitespace", { clear = true })
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "InsertLeave" },
