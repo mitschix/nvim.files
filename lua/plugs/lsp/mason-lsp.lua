@@ -46,6 +46,9 @@ return {
                     'yamlfix',
                     -- linters
                     'codespell', -- is used by formatter but found at linters
+                    'ruff',
+                    -- 'vale',
+                    'yamllint',
                 },
             })
         end,
