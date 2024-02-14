@@ -17,10 +17,10 @@ return {
 
         -- Sample keybind for direct prompting. Note that the <c-u> is important for selections to work properly.
         {
-            '<leader>oG',
-            ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
-            desc = 'ollama Generate Code',
-            mode = { 'n', 'v' },
+            '<leader>ot',
+            ":<c-u>lua require('ollama').prompt('Translate_Text')<cr>",
+            desc = 'ollama translate text',
+            mode = { 'v' },
         },
     },
 
@@ -31,6 +31,7 @@ return {
             args = {
                 'run',
                 '-d',
+                '--replace',
                 '--rm',
                 '-p',
                 '11434:11434',
@@ -40,6 +41,18 @@ return {
             },
             stop_command = 'podman',
             stop_args = { 'stop', 'ollama' },
+        },
+        -- View the actual default prompts in ./lua/ollama/prompts.lua
+        prompts = {
+            Translate_Text = {
+                prompt = 'Please translate the following text to $input:\n\n$sel',
+                input_label = 'L (german/english/...) >',
+            },
+            Generate_Text = {
+                prompt = 'Generate a short paragraph about the following: $input\n\n',
+                action = 'insert',
+                extract = '.*',
+            },
         },
     },
 }
