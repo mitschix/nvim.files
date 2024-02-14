@@ -20,6 +20,20 @@ return {
             return ''
         end
 
+        -- Define a function to check that ollama is installed and working
+        local function get_condition() return package.loaded['ollama'] and require('ollama').status ~= nil end
+
+        -- Define a function to check the status and return the corresponding icon
+        local function get_status_icon()
+            local status = require('ollama').status()
+
+            if status == 'IDLE' then
+                return '󱙺 ' -- nf-md-robot-outline
+            elseif status == 'WORKING' then
+                return '󰚩 ' -- nf-md-robot
+            end
+        end
+
         require('lualine').setup({
             options = {
                 theme = 'onedark',
@@ -62,7 +76,7 @@ return {
                         cond = function() return require('nvim-navic').is_available() end,
                     },
                 },
-                lualine_x = { 'diagnostics' },
+                lualine_x = { { get_status_icon, cond = get_condition() }, 'diagnostics' },
                 lualine_y = { 'buffers' },
             },
             inactive_winbar = {
