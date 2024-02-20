@@ -55,7 +55,19 @@ return {
     },
 
     { 'ray-x/lsp_signature.nvim', lazy = true }, -- has no trigger -> triggered on lsp attach
-    { 'tami5/lspsaga.nvim', cmd = { 'Lspsaga' }, lazy = true },
+    {
+        'nvimdev/lspsaga.nvim',
+        lazy = true,
+        config = function()
+            require('lspsaga').setup({
+                symbol_in_winbar = {
+                    enable = false,
+                    show_file = false,
+                },
+            })
+        end,
+        event = 'LspAttach',
+    },
 
     -- show (lsp) diagnostics msg on the upper right corner
     -- show only lsp boxes
