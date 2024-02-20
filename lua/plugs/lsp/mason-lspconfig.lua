@@ -62,6 +62,7 @@ return {
             vim.keymap.set('n', ']D', '<cmd>Lspsaga diagnostic_jump_next<CR>', key_opts)
 
             vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
+            vim.keymap.set('n', '<F4>', '<cmd>Lspsaga outline<CR>', key_opts)
             -- }}}
             vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
 
