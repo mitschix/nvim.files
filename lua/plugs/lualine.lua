@@ -70,11 +70,8 @@ return {
                 lualine_x = { 'location' },
             },
             winbar = {
-                lualine_c = {
-                    {
-                        function() return require('nvim-navic').get_location() end,
-                        cond = function() return require('nvim-navic').is_available() end,
-                    },
+                lualine_b = {
+                    function() return require('lspsaga.symbol.winbar').get_bar() end,
                 },
                 lualine_x = { { get_status_icon, cond = get_condition() }, 'diagnostics' },
                 lualine_y = { 'buffers' },

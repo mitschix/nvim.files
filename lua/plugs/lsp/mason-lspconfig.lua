@@ -5,13 +5,6 @@ return {
         'williamboman/mason.nvim',
         {
             'neovim/nvim-lspconfig',
-            dependencies = {
-                {
-                    'SmiteshP/nvim-navbuddy',
-                    dependencies = { 'SmiteshP/nvim-navic', 'MunifTanjim/nui.nvim' },
-                    opts = { lsp = { auto_attach = true } },
-                },
-            },
         },
         'ray-x/lsp_signature.nvim',
         'hrsh7th/cmp-nvim-lsp',
@@ -64,9 +57,6 @@ return {
             vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
             vim.keymap.set('n', '<F4>', '<cmd>Lspsaga outline<CR>', key_opts)
             -- }}}
-            vim.keymap.set('n', '<leader>nb', '<cmd>lua require("nvim-navbuddy").open()<CR>', key_opts)
-
-            if client.server_capabilities.documentSymbolProvider then require('nvim-navic').attach(client, bufnr) end
         end
 
         require('mason-lspconfig').setup_handlers({
