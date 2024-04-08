@@ -64,8 +64,40 @@ return {
                     enable = false,
                     show_file = false,
                 },
+                rename = {
+                    in_select = false,
+                },
+                finder = {
+                    toggle_or_open = '<CR>',
+                },
             })
         end,
+        keys = {
+            { 'gr', '<cmd>Lspsaga finder<CR>', desc = 'Lspsaga Finder (References/Implementations)', buffer = true },
+            {
+                'gd',
+                '<cmd>Lspsaga goto_definition<CR>',
+                desc = 'Lspsaga Goto Definition',
+                buffer = true,
+            },
+            { '<leader>rn', '<cmd>Lspsaga rename<CR>', desc = 'Lspsaga Rename', buffer = true },
+            { '<leader>ca', '<cmd>Lspsaga code_action<CR>', desc = 'Lspsaga Code Action', buffer = true },
+            {
+                'cd',
+                '<cmd>Lspsaga show_line_diagnostics<CR>',
+                desc = 'Lspsaga Show Line Diagnostics',
+                buffer = true,
+            },
+            { 'K', '<cmd>Lspsaga hover_doc<CR>', desc = 'Lspsaga Hover Doc', buffer = true },
+            {
+                '[D',
+                '<cmd>Lspsaga diagnostic_jump_prev<CR>',
+                desc = 'Lspsaga Jump Previous Diagnostics',
+                buffer = true,
+            },
+            { ']D', '<cmd>Lspsaga diagnostic_jump_next<CR>', desc = 'Lspsaga Jump Next Diagnostics', buffer = true },
+            { '<F4>', '<cmd>Lspsaga outline<CR>', desc = 'Lspsaga Outline', buffer = true },
+        },
         event = 'LspAttach',
     },
 
