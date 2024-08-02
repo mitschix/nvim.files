@@ -70,6 +70,9 @@ return {
                 finder = {
                     toggle_or_open = '<CR>',
                 },
+                lightbulb = {
+                    sign = false,
+                },
             })
         end,
         keys = {
