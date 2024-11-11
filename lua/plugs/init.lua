@@ -21,12 +21,12 @@ return {
 
     { 'dyng/ctrlsf.vim', lazy = true, cmd = { 'CtrlSF' }, config = function() vim.g.ctrlsf_position = 'right' end },
 
-    {
-        'terrortylor/nvim-comment',
-        config = function() require('nvim_comment').setup() end,
-        cmd = { 'CommentToggle' },
-        keys = { 'gcc', { 'gc', mode = 'v' } },
-    },
+    -- {
+    --     'terrortylor/nvim-comment',
+    --     config = function() require('nvim_comment').setup() end,
+    --     cmd = { 'CommentToggle' },
+    --     keys = { 'gcc', { 'gc', mode = 'v' } },
+    -- },
 
     -- syntax / highlights
     { 'mboughaba/i3config.vim', lazy = true, ft = { 'i3config', 'i3' } },
