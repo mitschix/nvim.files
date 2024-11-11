@@ -14,8 +14,11 @@ return {
                 markdown = { 'markdown-toc', 'mdformat' },
                 python = { 'isort', 'black' }, -- replaces pylsp formatting (with autopep8/yapf)
                 tex = { 'latexindent' },
-                yaml = { 'yamlfix' },
-                ['*'] = { 'codespell' },
+                -- yaml = { 'yamlfix' }, -- messed up some configs
+                -- Use the "*" filetype to run formatters on all filetypes.
+                -- ['*'] = { 'codespell' }, -- renamed variables and crashed code
+                -- Use the "_" filetype to run formatters on filetypes that don't
+                -- have other formatters configured.
                 ['_'] = { 'trim_whitespace', 'squeeze_blanks' },
             },
             format_on_save = {
