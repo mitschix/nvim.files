@@ -1,14 +1,19 @@
 return {
     {
         'm4xshen/hardtime.nvim',
+        event = 'VeryLazy',
         dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-        opts = {},
+        opts = {
+            vim.keymap.set('n', '<leader><leader>Gh', '<CMD>Hardtime toggle<CR>'),
+            enabled = false,
+        },
     },
 
     {
         'tris203/precognition.nvim',
         event = 'VeryLazy',
         config = {
+            vim.keymap.set('n', '<leader><leader>Gp', function() require('precognition').toggle() end),
             -- startVisible = true,
             -- showBlankVirtLine = true,
             highlightColor = { link = 'DiagnosticHint' },
