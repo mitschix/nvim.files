@@ -26,36 +26,4 @@ return {
             -- }}}
         end,
     },
-    {
-        'ahmedkhalf/project.nvim',
-        keys = {
-            -- use project_nvim to change to project per fzf {{{
-            {
-                '<leader>pp',
-                function()
-                    local fzf_lua = require('fzf-lua')
-                    local history = require('project_nvim.utils.history')
-                    fzf_lua.fzf_exec(function(cb)
-                        local results = history.get_recent_projects()
-                        for _, e in ipairs(results) do
-                            cb(e)
-                        end
-                        cb()
-                    end, {
-                        actions = {
-                            ['default'] = {
-                                function(selected) fzf_lua.files({ cwd = selected[1] }) end,
-                            },
-                            ['ctrl-d'] = {
-                                function(selected) history.delete_project({ value = selected[1] }) end,
-                                fzf_lua.actions.resume,
-                            },
-                        },
-                    })
-                end,
-            },
-            -- }}}
-        },
-        config = function() require('project_nvim').setup() end,
-    },
 }
