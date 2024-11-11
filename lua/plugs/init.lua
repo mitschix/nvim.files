@@ -5,7 +5,12 @@ return {
 
     { 'mbbill/undotree', lazy = true, keys = { { '<leader>u', '<cmd>UndotreeToggle<CR>' } } },
 
-    { 'tversteeg/registers.nvim', cmd = 'Registers', keys = { { '"', mode = { 'n', 'v' } }, { '<C-R>', mode = 'i' } } },
+    {
+        'tversteeg/registers.nvim',
+        config = true,
+        cmd = 'Registers',
+        keys = { { '"', mode = { 'n', 'v' } }, { '<C-R>', mode = 'i' } },
+    },
 
     {
         'unblevable/quick-scope',
