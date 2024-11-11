@@ -40,10 +40,6 @@ return {
             -- LSP config mappings{{{
             local key_opts = { silent = true, buffer = bufnr }
             vim.keymap.set('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', key_opts)
-            -- go to next/prev diagnostic -> text is shown on the top by trld
-            vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({float=false})<CR>', key_opts)
-            vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next({float=false})<CR>', key_opts)
-
             vim.keymap.set('n', '<leader>l', '<cmd>lua vim.diagnostic.setloclist()<CR>', key_opts)
             -- }}}
         end

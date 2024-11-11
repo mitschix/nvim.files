@@ -2,9 +2,7 @@
 
 -- basic settings {{{
 -- Automatically read a file that has changed on disk
-vim.opt.autoread = true
 vim.opt.lazyredraw = true
-vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.showmode = false
 vim.opt.number = true
@@ -13,17 +11,13 @@ vim.opt.updatetime = 30
 vim.opt.title = true
 -- " add visible column
 vim.opt.colorcolumn = '101'
-vim.opt.termguicolors = true
 
--- let modified buffers move to the background
-vim.opt.hidden = true
 -- Show matching brackets.
 vim.opt.showmatch = true
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- settings for searching= true
-vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -60,10 +54,7 @@ vim.opt.showbreak = '→'
 -- set text width when to break with `gq`
 vim.opt.textwidth = 100
 
--- undo settings
 vim.opt.undofile = true
-vim.opt.undolevels = 1000
-vim.opt.undoreload = 10000
 
 -- <BS> <Space> h l <Left> <Right> can change lines
 vim.opt.whichwrap:append('h')

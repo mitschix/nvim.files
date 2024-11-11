@@ -25,9 +25,6 @@ vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', 'V"+y')
 
--- Yank to end of line
-vim.keymap.set('n', 'Y', 'y$')
-
 -- Prevent selecting and pasting from overwriting what you originally copied.
 vim.keymap.set('x', 'p', 'pgvy')
 
