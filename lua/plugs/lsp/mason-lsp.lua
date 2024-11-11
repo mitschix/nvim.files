@@ -73,6 +73,9 @@ return {
                 lightbulb = {
                     sign = false,
                 },
+                code_action = {
+                    extend_gitsigns = true,
+                },
             })
         end,
         keys = {

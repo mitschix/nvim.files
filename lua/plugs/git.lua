@@ -22,6 +22,7 @@ return {
             vim.keymap.set('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', key_opts)
             vim.keymap.set('n', '<leader>gs', ':Gitsigns stage_hunk<CR>', key_opts)
             vim.keymap.set('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', key_opts)
+            vim.keymap.set('n', '<leader>gD', ':Gitsigns toggle_deleted<CR>', key_opts)
         end,
     },
 
