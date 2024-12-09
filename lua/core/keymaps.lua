@@ -24,6 +24,7 @@ vim.keymap.set('c', 'w!!', function() require('core.utils').sudo_write() end)
 vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', 'V"+y')
+vim.keymap.set('n', 'yc', 'yygccp', { remap = true })
 
 -- Prevent selecting and pasting from overwriting what you originally copied.
 vim.keymap.set('x', 'p', 'pgvy')
