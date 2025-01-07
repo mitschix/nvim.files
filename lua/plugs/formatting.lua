@@ -12,7 +12,7 @@ return {
                 -- go = { "gofmt" }, -- gopls has formatting?
                 lua = { 'stylua' },
                 markdown = { 'markdown-toc', 'mdformat' },
-                python = { 'isort', 'black' }, -- replaces pylsp formatting (with autopep8/yapf)
+                python = { 'ruff_organize_imports', 'ruff_format' },
                 tex = { 'latexindent' },
                 -- yaml = { 'yamlfix' }, -- messed up some configs
                 -- Use the "*" filetype to run formatters on all filetypes.
