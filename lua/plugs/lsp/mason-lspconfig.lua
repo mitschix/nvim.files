@@ -19,10 +19,7 @@ return {
                 'gopls',
                 'jsonls',
                 'marksman',
-                'pylsp',
-                'pyright',
-                -- install 3rd party plugins
-                -- :PylspInstall pylsp-mypy pylsp-rope pyls-memestra
+                'basedpyright',
                 'lua_ls',
                 'texlab', -- testing
             },
@@ -67,24 +64,13 @@ return {
                 })
             end,
 
-            ['pylsp'] = function()
-                require('lspconfig').pylsp.setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = {
-                        pylsp = {
-                            plugins = {
-                                pylint = { enabled = true },
-                                autopep8 = { enabled = false },
-                                yapf = { enabled = false },
-                            },
-                        },
-                    },
-                })
+            ['ruff'] = function()
+                -- TODO: setup to be used as LSP instead of linter/formatter only => real time / performace
+                -- require('lspconfig').ruff.setup({
+                -- })
             end,
-
-            ['pyright'] = function()
-                require('lspconfig').pyright.setup({
+            ['basedpyright'] = function()
+                require('lspconfig').basedpyright.setup({
                     disableOrganizeImports = true,
                 })
             end,
