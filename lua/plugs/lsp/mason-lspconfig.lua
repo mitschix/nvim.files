@@ -21,6 +21,7 @@ return {
                 'marksman',
                 'basedpyright',
                 'lua_ls',
+                'ruff',
                 'texlab', -- testing
             },
             -- auto-install configured servers (with lspconfig)

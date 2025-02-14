@@ -38,15 +38,13 @@ return {
                     -- formatters (shell, lua, python, markdown, latex, yaml, spelling)
                     'shfmt',
                     'stylua',
-                    'isort',
-                    'black',
                     'markdown-toc',
                     'mdformat',
                     'latexindent',
                     'yamlfix',
                     -- linters
                     'codespell', -- is used by formatter but found at linters
-                    'ruff',
+                    'pylint',
                     -- 'vale',
                     'yamllint',
                 },
