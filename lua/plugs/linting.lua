@@ -7,7 +7,7 @@ return {
 
         lint.linters_by_ft = {
             -- markdown = { 'vale' }, -- needs ini?
-            python = { 'ruff', 'pylint' },
+            python = { 'pylint' },
             yaml = { 'yamllint' },
             ['*'] = { 'codespell' },
         }

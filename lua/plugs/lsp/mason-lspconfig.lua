@@ -66,13 +66,32 @@ return {
             end,
 
             ['ruff'] = function()
-                -- TODO: setup to be used as LSP instead of linter/formatter only => real time / performace
-                -- require('lspconfig').ruff.setup({
-                -- })
+                require('lspconfig').ruff.setup({
+                    on_attach = function(client, bufnr)
+                        client.server_capabilities.hoverProvider = false
+                        on_attach(client, bufnr)
+                    end,
+                })
             end,
             ['basedpyright'] = function()
                 require('lspconfig').basedpyright.setup({
-                    disableOrganizeImports = true,
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                    -- https://github.com/amitds1997/dotfiles/blob/main/dot_config/nvim/lua/plugins/lsp-config/basedpyright.lua
+                    settings = {
+                        basedpyright = {
+                            disableOrganizeImports = true,
+                            disableTaggedHints = false,
+                            analysis = {
+                                typeCheckingMode = 'basic',
+                                autoImportCompletions = true,
+                                autoSearchPaths = true,
+                                diagnosticSeverityOverrides = {
+                                    reportIgnoreCommentWithoutRule = true,
+                                },
+                            },
+                        },
+                    },
                 })
             end,
 
