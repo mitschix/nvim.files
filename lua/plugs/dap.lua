@@ -2,7 +2,12 @@ return {
     'rcarriga/nvim-dap-ui',
     lazy = true,
     keys = { '<Space>du', '<Space>dr' },
-    dependencies = { 'mfussenegger/nvim-dap', 'theHamsta/nvim-dap-virtual-text', 'mfussenegger/nvim-dap-python' },
+    dependencies = {
+        'mfussenegger/nvim-dap',
+        'theHamsta/nvim-dap-virtual-text',
+        'mfussenegger/nvim-dap-python',
+        'nvim-neotest/nvim-nio',
+    },
     config = function()
         require('dapui').setup()
         require('nvim-dap-virtual-text').setup()
