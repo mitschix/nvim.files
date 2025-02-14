@@ -4,7 +4,16 @@ return {
     {
         'ibhagwan/fzf-lua',
         cmd = { 'FzfLua' },
-        keys = { '<leader>pf', '<leader>pl', '<leader>pL', '<leader>pb', '<leader>pg', '<leader>pk', '<leader>e' },
+        keys = {
+            '<leader>pf',
+            '<leader>pF',
+            '<leader>pl',
+            '<leader>pL',
+            '<leader>pb',
+            '<leader>pg',
+            '<leader>pk',
+            '<leader>e',
+        },
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             -- fzf-lua {{{
@@ -15,7 +24,8 @@ return {
             })
             -- inspired by fzf.vim from https://github.com/uolot/dotfiles/blob/master/vim/files-fzf.vim
             local hide_preview = { winopts = { preview = { hidden = 'hidden' } } }
-            vim.keymap.set('n', '<leader>pf', function() fzf_lua.files() end)
+            vim.keymap.set('n', '<leader>pf', function() fzf_lua.git_files() end)
+            vim.keymap.set('n', '<leader>pF', function() fzf_lua.files() end)
             vim.keymap.set('n', '<leader>pl', function() fzf_lua.blines(hide_preview) end)
             vim.keymap.set('n', '<leader>pL', function() fzf_lua.lines(hide_preview) end)
             vim.keymap.set('n', '<leader>pb', function() fzf_lua.buffers() end)
