@@ -33,4 +33,19 @@ return {
 
     -- replace netrw-gx (nvim-tree can be lazy loaded and netrw can be disabled)
     { 'TobinPalmer/BetterGX.nvim', keys = { { 'gx', '<CMD>lua require("better-gx").BetterGx()<CR>' } } },
+
+    {
+        'duckdm/neowarrior.nvim',
+        lazy = true,
+        branch = 'develop',
+        keys = {
+            { '<leader>nn', '<cmd>NeoWarriorOpen above<CR>' },
+            { '<leader>na', '<cmd>NeoWarriorAdd<CR>' },
+        },
+        cmd = 'NeoWarriorOpen',
+        config = function()
+            require('neowarrior').setup({ mode = 'grouped' })
+            vim.keymap.set('n', '<leader>nr', '<cmd>NeoWarriorRefresh<CR>')
+        end,
+    },
 }
