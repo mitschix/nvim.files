@@ -26,6 +26,8 @@ return {
         startify.section.bottom_buttons.val = {
             { type = 'text', val = 'Commands', opts = { hl = 'SpecialComment', shrink_margin = false } },
             { type = 'padding', val = 1 },
+            startify.button('t', ' Open NeoWarrior (tasks)', '<cmd>NeoWarrior current<CR>'),
+            { type = 'padding', val = 1 },
             startify.button('ul', ' Open Lazy (Plugins)', '<cmd>Lazy<CR>'),
             startify.button('up', ' Sync Lazy (Plugins)', '<cmd>Lazy sync<CR>'),
             { type = 'padding', val = 1 },
