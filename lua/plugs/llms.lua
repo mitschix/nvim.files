@@ -6,9 +6,9 @@ return {
     },
     opts = {
         strategies = {
-            chat = { adapter = 'ollama', model = 'llama3:8b' },
-            inline = { adapter = 'ollama', model = 'deepseek-coder-v2:16b' },
-            agent = { adapter = 'ollama', model = 'llama3:8b' },
+            chat = { adapter = 'ollama', model = 'deepseek-coder-v2:latest' },
+            inline = { adapter = 'ollama', model = 'deepseek-coder-v2:latest' },
+            agent = { adapter = 'ollama', model = 'deepseek-coder-v2:latest' },
         },
         opts = {
             log_level = 'DEBUG',
