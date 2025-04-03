@@ -1,7 +1,9 @@
 return {
     {
         'williamboman/mason.nvim',
-        dependencies = { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+        dependencies = {
+            { 'WhoIsSethDaniel/mason-tool-installer.nvim', cmd = { 'MasonToolsInstallSync', 'MasonToolsUpdateSync' } },
+        },
         lazy = true,
         cmd = { 'Mason' },
         config = function()
