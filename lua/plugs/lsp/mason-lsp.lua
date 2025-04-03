@@ -45,6 +45,7 @@ return {
                     -- linters
                     'codespell', -- is used by formatter but found at linters
                     'pylint',
+                    'shellcheck',
                     -- 'vale',
                     'yamllint',
                 },
