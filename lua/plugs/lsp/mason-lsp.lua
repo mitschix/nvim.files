@@ -1,11 +1,9 @@
 return {
     {
         'williamboman/mason.nvim',
-        dependencies = {
-            { 'WhoIsSethDaniel/mason-tool-installer.nvim', cmd = { 'MasonToolsInstallSync', 'MasonToolsUpdateSync' } },
-        },
+        dependencies = { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
         lazy = true,
-        cmd = { 'Mason' },
+        cmd = { 'Mason', 'MasonToolsUpdateSync' },
         config = function()
             require('mason').setup({
                 ui = { icons = { package_installed = '✓', package_pending = '➜', package_uninstalled = '✗' } },
@@ -37,6 +35,16 @@ return {
             local mason_tool_installer = require('mason-tool-installer')
             mason_tool_installer.setup({
                 ensure_installed = {
+                    -- lsps (from mason-lspconfig)
+                    'basedpyright',
+                    'bashls',
+                    'dockerls',
+                    'gopls',
+                    'jsonls',
+                    'lua_ls',
+                    'marksman',
+                    'ruff',
+                    'texlab', -- testing
                     -- formatters (shell, lua, python, markdown, latex, yaml, spelling)
                     'shfmt',
                     'stylua',

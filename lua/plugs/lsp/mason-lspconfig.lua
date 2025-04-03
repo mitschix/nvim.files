@@ -10,23 +10,7 @@ return {
         'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-        -- auto install servers
-        -- Include the servers you want to have installed by default below
-        require('mason-lspconfig').setup({
-            ensure_installed = {
-                'bashls',
-                'dockerls',
-                'gopls',
-                'jsonls',
-                'marksman',
-                'basedpyright',
-                'lua_ls',
-                'ruff',
-                'texlab', -- testing
-            },
-            -- auto-install configured servers (with lspconfig)
-            automatic_installation = true,
-        })
+        require('mason-lspconfig').setup()
 
         -- Setup lspconfig for cmp
         local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
