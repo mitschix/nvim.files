@@ -51,7 +51,7 @@ return {
                     'markdown-toc',
                     'mdformat',
                     'latexindent',
-                    'yamlfix',
+                    'yamlfmt',
                     -- linters
                     'codespell', -- is used by formatter but found at linters
                     'pylint',

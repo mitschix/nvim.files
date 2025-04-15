@@ -14,7 +14,7 @@ return {
                 markdown = { 'markdown-toc', 'mdformat' },
                 python = { 'ruff_organize_imports', 'ruff_format' },
                 tex = { 'latexindent' },
-                -- yaml = { 'yamlfix' }, -- messed up some configs
+                yaml = { 'yamlfmt' },
                 -- Use the "*" filetype to run formatters on all filetypes.
                 -- ['*'] = { 'codespell' }, -- renamed variables and crashed code
                 -- Use the "_" filetype to run formatters on filetypes that don't
