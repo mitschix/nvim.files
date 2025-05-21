@@ -163,4 +163,17 @@ vim.keymap.set('i', '!', '!<C-g>U')
 vim.keymap.set('i', '?', '?<C-g>U')
 -- }}}
 
+-- " Typo fix Setting {{{
+-- " no one is really happy until you have this shortcuts
+vim.keymap.set('ca', 'Qall!', 'qall!')
+vim.keymap.set('ca', 'Wq', 'wq')
+vim.keymap.set('ca', 'Wa', 'wa')
+vim.keymap.set('ca', 'wQ', 'wq')
+vim.keymap.set('ca', 'WQ', 'wq')
+vim.keymap.set('ca', 'W', 'w')
+vim.keymap.set('ca', 'Q', 'q')
+vim.keymap.set('ca', 'Qall', 'qall')
+vim.keymap.set('ca', 'help', 'vertical help')
+-- }}}
+
 -- }}}
