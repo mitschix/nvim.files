@@ -1,4 +1,3 @@
-require('core.abbrev')
 require('core.augroups')
 require('core.functions')
 require('core.keymaps')
