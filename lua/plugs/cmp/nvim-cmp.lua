@@ -26,6 +26,19 @@ return {
         end
 
         cmp.setup({
+            experimental = {
+                ghost_text = true,
+            },
+            window = {
+                completion = {
+                    border = 'rounded',
+                    scrollbar = false,
+                    winblend = 10,
+                },
+                documentation = {
+                    border = 'rounded',
+                },
+            },
             formatting = {
                 format = require('lspkind').cmp_format({
                     mode = 'symbol_text',
