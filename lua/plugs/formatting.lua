@@ -13,6 +13,7 @@ return {
                 lua = { 'stylua' },
                 markdown = { 'markdown-toc', 'mdformat' },
                 python = { 'ruff_organize_imports', 'ruff_format' },
+                terraform = { 'terraform' },
                 tex = { 'latexindent' },
                 yaml = { 'yamlfmt' },
                 -- Use the "*" filetype to run formatters on all filetypes.

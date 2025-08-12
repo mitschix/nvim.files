@@ -44,6 +44,7 @@ return {
                     'lua_ls',
                     'marksman',
                     'ruff',
+                    'yamlls',
                     'texlab', -- testing
                     -- formatters (shell, lua, python, markdown, latex, yaml, spelling)
                     'shfmt',
