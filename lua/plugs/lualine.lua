@@ -66,7 +66,7 @@ return {
                 lualine_z = { { 'progress', separator = { left = '', right = '' } } },
             },
             inactive_sections = {
-                lualine_c = { { 'filename', path = 3, file_status = false, separator = '' } },
+                lualine_c = { { 'filename', path = 3, file_status = true, separator = '' } },
                 lualine_x = { 'location' },
             },
             winbar = {
