@@ -38,6 +38,11 @@ vim.opt.splitright = true
 
 -- EOL formats order
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
+vim.filetype.add({
+    filename = {
+        ['.env.secret'] = 'secret',
+    },
+})
 
 -- " do not fold when opening - fold at indention
 vim.opt.foldlevel = 99

@@ -10,18 +10,17 @@ vim.api.nvim_create_autocmd(
 )
 -- }}}
 
+-- Stop undofile creation {{{
+vim.api.nvim_create_autocmd('BufWritePre', { pattern = { '/tmp/', '.env.secret' }, command = 'setlocal noundofile' })
 -- }}}
 
 -- Folds with marker in given file types {{{
 local mark_fold = vim.api.nvim_create_augroup('FoldMaker', { clear = true })
-vim.api.nvim_create_autocmd(
-    'FileType',
-    {
-        pattern = { 'tex', 'vim', 'lua', 'zsh' },
-        command = [[setlocal foldmethod=marker foldlevel=0]],
-        group = mark_fold,
-    }
-)
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'tex', 'vim', 'lua', 'zsh' },
+    command = [[setlocal foldmethod=marker foldlevel=0]],
+    group = mark_fold,
+})
 -- }}}
 
 -- Misc {{{
