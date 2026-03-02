@@ -16,7 +16,21 @@ return {
             vim.cmd('highlight ExtraWhitespace ctermbg=darkblue guibg=#81A2BE')
         end,
     },
-    { 'NvChad/nvim-colorizer.lua', config = true, event = { 'BufReadPre', 'BufNewFile' } },
+    {
+        'catgoose/nvim-colorizer.lua',
+        opts = {
+            options = {
+                parsers = { css = true },
+                display = {
+                    mode = 'virtualtext',
+                    virtualtext = {
+                        position = 'before',
+                    },
+                },
+            },
+        },
+        event = { 'BufReadPre' },
+    },
     {
         'xiyaowong/nvim-cursorword',
         event = { 'BufReadPre', 'BufNewFile' },
