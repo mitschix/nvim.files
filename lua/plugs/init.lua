@@ -5,8 +5,9 @@ return {
 
     { 'mbbill/undotree', lazy = true, keys = { { '<leader>u', '<cmd>UndotreeToggle<CR>' } } },
 
+    -- TODO deprecated? alternative?
     {
-        'tversteeg/registers.nvim',
+        url = 'https://codeberg.org/fosk/registers.nvim.git',
         config = true,
         cmd = 'Registers',
         keys = { { '"', mode = { 'n', 'v' } }, { '<C-R>', mode = 'i' } },
@@ -20,13 +21,6 @@ return {
     },
 
     { 'dyng/ctrlsf.vim', lazy = true, cmd = { 'CtrlSF' }, config = function() vim.g.ctrlsf_position = 'right' end },
-
-    -- {
-    --     'terrortylor/nvim-comment',
-    --     config = function() require('nvim_comment').setup() end,
-    --     cmd = { 'CommentToggle' },
-    --     keys = { 'gcc', { 'gc', mode = 'v' } },
-    -- },
 
     -- syntax / highlights
     { 'mboughaba/i3config.vim', lazy = true, ft = { 'i3config', 'i3' } },
