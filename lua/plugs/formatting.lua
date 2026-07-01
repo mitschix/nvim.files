@@ -9,7 +9,7 @@ return {
             formatters_by_ft = {
                 bash = { 'shfmt' },
                 sh = { 'shfmt' },
-                -- go = { "gofmt" }, -- gopls has formatting?
+                go = { 'gofmt' },
                 lua = { 'stylua' },
                 markdown = { 'markdown-toc', 'mdformat' },
                 python = { 'ruff_organize_imports', 'ruff_format' },
