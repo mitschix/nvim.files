@@ -1,10 +1,8 @@
 return {
     {
-        'nvim-treesitter/nvim-treesitter',
-        event = { 'BufReadPre', 'BufNewFile' },
-        build = ':TSUpdate',
+        'romus204/tree-sitter-manager.nvim',
         config = function()
-            require('nvim-treesitter.configs').setup({
+            require('tree-sitter-manager').setup({
                 ensure_installed = {
                     'bash',
                     'beancount',
@@ -31,7 +29,6 @@ return {
                     'jsdoc',
                     'json',
                     'json5',
-                    'jsonc',
                     'julia',
                     'kotlin',
                     'lalrpop',
@@ -42,7 +39,6 @@ return {
                     'make',
                     'ninja',
                     'nix',
-                    'norg',
                     'pascal',
                     'perl',
                     'php',
@@ -60,6 +56,7 @@ return {
                     'solidity',
                     'sparql',
                     'svelte',
+                    'terraform',
                     'toml',
                     'tsx',
                     'typescript',
@@ -67,11 +64,7 @@ return {
                     'yaml',
                 },
                 auto_install = true,
-                highlight = {
-                    enable = true,
-                    -- handled by rainbow_csv
-                    disable = { 'csv' },
-                },
+                nohighlight = { 'csv' },
             })
         end,
     },
