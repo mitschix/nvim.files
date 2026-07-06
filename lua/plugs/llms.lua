@@ -6,6 +6,19 @@ return {
             'nvim-treesitter/nvim-treesitter',
         },
         opts = {
+            adapters = {
+                http = {
+                    copilot = function()
+                        return require('codecompanion.adapters').extend('copilot', {
+                            schema = {
+                                model = {
+                                    default = 'gpt-4.1',
+                                },
+                            },
+                        })
+                    end,
+                },
+            },
             opts = {
                 log_level = 'TRACE',
             },
