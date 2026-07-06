@@ -1,6 +1,6 @@
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons', 'AndreM222/copilot-lualine' },
     config = function()
         local lazy_status = require('lazy.status') -- to configure lazy pending updates count
         -- use gitsigns icons as source for lualine -> updates on every change
@@ -20,20 +20,20 @@ return {
             return ''
         end
 
-        -- Define a function to check that ollama is installed and working
-        local function get_condition() return package.loaded['ollama'] and require('ollama').status ~= nil end
-
-        -- Define a function to check the status and return the corresponding icon
-        local function get_status_icon()
-            local status = require('ollama').status()
-
-            if status == 'IDLE' then
-                return '󱙺 ' -- nf-md-robot-outline
-            elseif status == 'WORKING' then
-                return '󰚩 ' -- nf-md-robot
-            end
-        end
-
+        -- -- Define a function to check that ollama is installed and working
+        -- local function get_condition() return package.loaded['ollama'] and require('ollama').status ~= nil end
+        --
+        -- -- Define a function to check the status and return the corresponding icon
+        -- local function get_status_icon()
+        --     local status = require('ollama').status()
+        --
+        --     if status == 'IDLE' then
+        --         return '󱙺 ' -- nf-md-robot-outline
+        --     elseif status == 'WORKING' then
+        --         return '󰚩 ' -- nf-md-robot
+        --     end
+        -- end
+        --
         require('lualine').setup({
             options = {
                 theme = 'onedark',
@@ -73,7 +73,8 @@ return {
                 lualine_b = {
                     function() return require('lspsaga.symbol.winbar').get_bar() end,
                 },
-                lualine_x = { { get_status_icon, cond = get_condition() }, 'diagnostics' },
+                -- lualine_x = { { get_status_icon, cond = get_condition() }, 'diagnostics' },
+                lualine_x = { { 'copilot', show_colors = true }, 'diagnostics' },
                 lualine_y = { 'buffers' },
             },
             inactive_winbar = {
