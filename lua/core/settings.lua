@@ -32,6 +32,9 @@ vim.opt.smartindent = true
 -- Toggle whitespace characters
 vim.opt.listchars = { tab = '»─', nbsp = '·', eol = '¬', trail = '-', extends = '»', precedes = '«' }
 
+-- set default winborder
+vim.o.winborder = 'rounded'
+
 -- change split behaviour
 vim.opt.splitbelow = true
 vim.opt.splitright = true
