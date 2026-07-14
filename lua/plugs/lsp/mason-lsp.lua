@@ -78,8 +78,6 @@ return {
             })
         end,
     },
-
-    { 'ray-x/lsp_signature.nvim', lazy = true }, -- has no trigger -> triggered on lsp attach
     {
         'nvimdev/lspsaga.nvim',
         lazy = true,
