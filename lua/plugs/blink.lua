@@ -20,11 +20,13 @@ return {
         keymap = {
             preset = 'default',
             ['<CR>'] = { 'accept', 'fallback' },
+            ['<C-space>G'] = { function(cmp) return cmp.show({ providers = { 'copilot' } }) end },
         },
 
         sources = {
             default = {
-                'copilot',
+                -- 'copilot',
+                'minuet',
                 'lsp',
                 'snippets',
                 'path',
@@ -32,6 +34,15 @@ return {
             },
 
             providers = {
+                minuet = {
+                    name = 'minuet',
+                    module = 'minuet.blink',
+                    async = true,
+                    -- Should match minuet.config.request_timeout * 1000,
+                    -- since minuet.config.request_timeout is in seconds
+                    timeout_ms = 3000,
+                    score_offset = 50, -- Gives minuet higher priority among suggestions
+                },
                 copilot = {
                     name = 'Copilot',
                     module = 'blink-copilot',
