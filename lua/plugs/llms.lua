@@ -59,7 +59,7 @@ return {
         opts = {
             provider = 'openai_fim_compatible',
             n_completions = 1,
-            context_window = 1024,
+            context_window = 4096,
 
             provider_options = {
                 openai_fim_compatible = {
