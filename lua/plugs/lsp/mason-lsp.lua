@@ -144,7 +144,7 @@ return {
 
                     for line in diag.message:gmatch('[^\n]+') do
                         line = line:gsub('[ \t]+%f[\r\n%z]', '')
-                        line = diag.source .. ': ' .. line
+                        if diag.source then line = diag.source .. ': ' .. line end
                         table.insert(diag_lines, line)
                     end
 
